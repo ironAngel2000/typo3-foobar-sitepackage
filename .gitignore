@@ -1,0 +1,6 @@
+.idea
+src/var
+src/vendor
+src/symfony.lock
+docker/volumes
+

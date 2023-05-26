@@ -1,0 +1,118 @@
+<?php
+
+namespace App\Entity\Payment;
+
+use App\GraphQl\Helper\EntityFieldsHelper;
+use App\Repository\Payment\PaymentProvidersResponsesValuesRepository;
+use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping as ORM;
+
+
+#[ORM\Entity(repositoryClass: PaymentProvidersResponsesValuesRepository::class)]
+#[ORM\Table(name: "payment_providers_responses_values")]
+class PaymentProvidersResponsesValues
+{
+    use EntityFieldsHelper;
+
+   	#[ORM\Id]
+	#[ORM\GeneratedValue]
+	#[ORM\Column]
+	private ?int $payment_providers_responses_values_id = null;
+
+	#[ORM\Column]
+	private ?int $payment_providers_responses_id = null;
+
+	 #[ORM\Column(length: 255)]
+	private ?string $payment_providers_responses_key = null;
+
+	#[ORM\Column(nullable: true)]
+	private ?string $payment_providers_responses_value = null;
+
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $date_insert = null;
+
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $last_update = null;
+
+	#[ORM\Column(nullable: true)]
+	private ?int $last_updater = null;
+
+	public function getPaymentProvidersResponsesValuesId():  ?int
+	{
+		return $this->payment_providers_responses_values_id;
+	}
+
+	public function setPaymentProvidersResponsesValuesId(int $payment_providers_responses_values_id) : self
+	{
+		$this->payment_providers_responses_values_id = $payment_providers_responses_values_id;
+		return $this;
+	}
+
+	public function getPaymentProvidersResponsesId():  ?int
+	{
+		return $this->payment_providers_responses_id;
+	}
+
+	public function setPaymentProvidersResponsesId(int $payment_providers_responses_id) : self
+	{
+		$this->payment_providers_responses_id = $payment_providers_responses_id;
+		return $this;
+	}
+
+	public function getPaymentProvidersResponsesKey():  ?string
+	{
+		return $this->payment_providers_responses_key;
+	}
+
+	public function setPaymentProvidersResponsesKey(string $payment_providers_responses_key) : self
+	{
+		$this->payment_providers_responses_key = $payment_providers_responses_key;
+		return $this;
+	}
+
+	public function getPaymentProvidersResponsesValue():  ?string
+	{
+		return $this->payment_providers_responses_value;
+	}
+
+	public function setPaymentProvidersResponsesValue(string $payment_providers_responses_value) : self
+	{
+		$this->payment_providers_responses_value = $payment_providers_responses_value;
+		return $this;
+	}
+
+	public function getDateInsert():  ?\DateTimeInterface
+	{
+		return $this->date_insert;
+	}
+
+	public function setDateInsert(\DateTimeInterface $date_insert) : self
+	{
+		$this->date_insert = $date_insert;
+		return $this;
+	}
+
+	public function getLastUpdate():  ?\DateTimeInterface
+	{
+		return $this->last_update;
+	}
+
+	public function setLastUpdate(\DateTimeInterface $last_update) : self
+	{
+		$this->last_update = $last_update;
+		return $this;
+	}
+
+	public function getLastUpdater():  ?int
+	{
+		return $this->last_updater;
+	}
+
+	public function setLastUpdater(int $last_updater) : self
+	{
+		$this->last_updater = $last_updater;
+		return $this;
+	}
+
+
+}

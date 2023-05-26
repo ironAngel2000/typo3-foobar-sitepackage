@@ -1,0 +1,18 @@
+<?php
+
+namespace [NAMESPACE];
+
+use App\GraphQl\Helper\EntityFieldsHelper;
+use [REPOSITORYCLASS];
+use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping as ORM;
+
+
+#[ORM\Entity(repositoryClass: [REPOSITORYCLASSNAME]::class)]
+#[ORM\Table(name: "[TABLENAME]")]
+class [CLASSNAME]
+{
+    use EntityFieldsHelper;
+
+   [CLASSBODY]
+}
