@@ -26,16 +26,16 @@ class ProductsVariationsSuppliers
 	private ?int $suppliers_id = null;
 
 	#[ORM\Column]
-	private ?string $main_supplier = null;
+	private ?int $main_supplier = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $purchase_price = null;
+	private ?float $purchase_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $purchase_price_individual = null;
+	private ?float $purchase_price_individual = null;
 
 	#[ORM\Column]
-	private ?string $purchase_price_individual_active = null;
+	private ?int $purchase_price_individual_active = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $purchase_price_currencies_id = null;
@@ -47,10 +47,10 @@ class ProductsVariationsSuppliers
 	private ?string $suppliers_item_name = null;
 
 	#[ORM\Column]
-	private ?string $suppliers_available = null;
+	private ?int $suppliers_available = null;
 
 	#[ORM\Column]
-	private ?string $suppliers_locked = null;
+	private ?int $suppliers_locked = null;
 
 	#[ORM\Column]
 	private ?int $minimum_order_quantity = null;
@@ -97,45 +97,45 @@ class ProductsVariationsSuppliers
 		return $this;
 	}
 
-	public function getMainSupplier():  ?string
+	public function getMainSupplier():  ?int
 	{
 		return $this->main_supplier;
 	}
 
-	public function setMainSupplier(string $main_supplier) : self
+	public function setMainSupplier(int $main_supplier) : self
 	{
 		$this->main_supplier = $main_supplier;
 		return $this;
 	}
 
-	public function getPurchasePrice():  ?string
+	public function getPurchasePrice():  ?float
 	{
 		return $this->purchase_price;
 	}
 
-	public function setPurchasePrice(string $purchase_price) : self
+	public function setPurchasePrice(float $purchase_price) : self
 	{
 		$this->purchase_price = $purchase_price;
 		return $this;
 	}
 
-	public function getPurchasePriceIndividual():  ?string
+	public function getPurchasePriceIndividual():  ?float
 	{
 		return $this->purchase_price_individual;
 	}
 
-	public function setPurchasePriceIndividual(string $purchase_price_individual) : self
+	public function setPurchasePriceIndividual(float $purchase_price_individual) : self
 	{
 		$this->purchase_price_individual = $purchase_price_individual;
 		return $this;
 	}
 
-	public function getPurchasePriceIndividualActive():  ?string
+	public function getPurchasePriceIndividualActive():  ?int
 	{
 		return $this->purchase_price_individual_active;
 	}
 
-	public function setPurchasePriceIndividualActive(string $purchase_price_individual_active) : self
+	public function setPurchasePriceIndividualActive(int $purchase_price_individual_active) : self
 	{
 		$this->purchase_price_individual_active = $purchase_price_individual_active;
 		return $this;
@@ -174,23 +174,23 @@ class ProductsVariationsSuppliers
 		return $this;
 	}
 
-	public function getSuppliersAvailable():  ?string
+	public function getSuppliersAvailable():  ?int
 	{
 		return $this->suppliers_available;
 	}
 
-	public function setSuppliersAvailable(string $suppliers_available) : self
+	public function setSuppliersAvailable(int $suppliers_available) : self
 	{
 		$this->suppliers_available = $suppliers_available;
 		return $this;
 	}
 
-	public function getSuppliersLocked():  ?string
+	public function getSuppliersLocked():  ?int
 	{
 		return $this->suppliers_locked;
 	}
 
-	public function setSuppliersLocked(string $suppliers_locked) : self
+	public function setSuppliersLocked(int $suppliers_locked) : self
 	{
 		$this->suppliers_locked = $suppliers_locked;
 		return $this;

@@ -47,28 +47,28 @@ class OrdersLines
 	private ?int $quantity_ordered = null;
 
 	#[ORM\Column]
-	private ?string $price = null;
+	private ?float $price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $base_price = null;
+	private ?float $base_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $base_price_backend = null;
+	private ?float $base_price_backend = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $order_price = null;
+	private ?float $order_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $order_price_backend = null;
+	private ?float $order_price_backend = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $selling_price = null;
+	private ?float $selling_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $rebated_price = null;
+	private ?float $rebated_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $rebated_price_backend = null;
+	private ?float $rebated_price_backend = null;
 
 	#[ORM\Column(length: 50, nullable: true)]
 	private ?string $price_unit = null;
@@ -83,28 +83,28 @@ class OrdersLines
 	private ?string $selling_unit = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_backend = null;
+	private ?float $price_backend = null;
 
 	#[ORM\Column]
-	private ?string $price_commission = null;
+	private ?float $price_commission = null;
 
 	#[ORM\Column]
-	private ?string $pledge = null;
+	private ?float $pledge = null;
 
 	#[ORM\Column]
-	private ?string $pledge_backend = null;
+	private ?float $pledge_backend = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $shipping_costs = null;
+	private ?float $shipping_costs = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $shipping_costs_backend = null;
+	private ?float $shipping_costs_backend = null;
 
 	#[ORM\Column]
-	private ?string $is_weighted = null;
+	private ?int $is_weighted = null;
 
 	#[ORM\Column]
-	private ?string $tax_rate = null;
+	private ?float $tax_rate = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $suppliers_id = null;
@@ -125,7 +125,7 @@ class OrdersLines
 	private ?int $replaced_orders_lines_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $is_bundle = null;
+	private ?int $is_bundle = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $bundles_orders_lines_id = null;
@@ -249,89 +249,89 @@ class OrdersLines
 		return $this;
 	}
 
-	public function getPrice():  ?string
+	public function getPrice():  ?float
 	{
 		return $this->price;
 	}
 
-	public function setPrice(string $price) : self
+	public function setPrice(float $price) : self
 	{
 		$this->price = $price;
 		return $this;
 	}
 
-	public function getBasePrice():  ?string
+	public function getBasePrice():  ?float
 	{
 		return $this->base_price;
 	}
 
-	public function setBasePrice(string $base_price) : self
+	public function setBasePrice(float $base_price) : self
 	{
 		$this->base_price = $base_price;
 		return $this;
 	}
 
-	public function getBasePriceBackend():  ?string
+	public function getBasePriceBackend():  ?float
 	{
 		return $this->base_price_backend;
 	}
 
-	public function setBasePriceBackend(string $base_price_backend) : self
+	public function setBasePriceBackend(float $base_price_backend) : self
 	{
 		$this->base_price_backend = $base_price_backend;
 		return $this;
 	}
 
-	public function getOrderPrice():  ?string
+	public function getOrderPrice():  ?float
 	{
 		return $this->order_price;
 	}
 
-	public function setOrderPrice(string $order_price) : self
+	public function setOrderPrice(float $order_price) : self
 	{
 		$this->order_price = $order_price;
 		return $this;
 	}
 
-	public function getOrderPriceBackend():  ?string
+	public function getOrderPriceBackend():  ?float
 	{
 		return $this->order_price_backend;
 	}
 
-	public function setOrderPriceBackend(string $order_price_backend) : self
+	public function setOrderPriceBackend(float $order_price_backend) : self
 	{
 		$this->order_price_backend = $order_price_backend;
 		return $this;
 	}
 
-	public function getSellingPrice():  ?string
+	public function getSellingPrice():  ?float
 	{
 		return $this->selling_price;
 	}
 
-	public function setSellingPrice(string $selling_price) : self
+	public function setSellingPrice(float $selling_price) : self
 	{
 		$this->selling_price = $selling_price;
 		return $this;
 	}
 
-	public function getRebatedPrice():  ?string
+	public function getRebatedPrice():  ?float
 	{
 		return $this->rebated_price;
 	}
 
-	public function setRebatedPrice(string $rebated_price) : self
+	public function setRebatedPrice(float $rebated_price) : self
 	{
 		$this->rebated_price = $rebated_price;
 		return $this;
 	}
 
-	public function getRebatedPriceBackend():  ?string
+	public function getRebatedPriceBackend():  ?float
 	{
 		return $this->rebated_price_backend;
 	}
 
-	public function setRebatedPriceBackend(string $rebated_price_backend) : self
+	public function setRebatedPriceBackend(float $rebated_price_backend) : self
 	{
 		$this->rebated_price_backend = $rebated_price_backend;
 		return $this;
@@ -381,89 +381,89 @@ class OrdersLines
 		return $this;
 	}
 
-	public function getPriceBackend():  ?string
+	public function getPriceBackend():  ?float
 	{
 		return $this->price_backend;
 	}
 
-	public function setPriceBackend(string $price_backend) : self
+	public function setPriceBackend(float $price_backend) : self
 	{
 		$this->price_backend = $price_backend;
 		return $this;
 	}
 
-	public function getPriceCommission():  ?string
+	public function getPriceCommission():  ?float
 	{
 		return $this->price_commission;
 	}
 
-	public function setPriceCommission(string $price_commission) : self
+	public function setPriceCommission(float $price_commission) : self
 	{
 		$this->price_commission = $price_commission;
 		return $this;
 	}
 
-	public function getPledge():  ?string
+	public function getPledge():  ?float
 	{
 		return $this->pledge;
 	}
 
-	public function setPledge(string $pledge) : self
+	public function setPledge(float $pledge) : self
 	{
 		$this->pledge = $pledge;
 		return $this;
 	}
 
-	public function getPledgeBackend():  ?string
+	public function getPledgeBackend():  ?float
 	{
 		return $this->pledge_backend;
 	}
 
-	public function setPledgeBackend(string $pledge_backend) : self
+	public function setPledgeBackend(float $pledge_backend) : self
 	{
 		$this->pledge_backend = $pledge_backend;
 		return $this;
 	}
 
-	public function getShippingCosts():  ?string
+	public function getShippingCosts():  ?float
 	{
 		return $this->shipping_costs;
 	}
 
-	public function setShippingCosts(string $shipping_costs) : self
+	public function setShippingCosts(float $shipping_costs) : self
 	{
 		$this->shipping_costs = $shipping_costs;
 		return $this;
 	}
 
-	public function getShippingCostsBackend():  ?string
+	public function getShippingCostsBackend():  ?float
 	{
 		return $this->shipping_costs_backend;
 	}
 
-	public function setShippingCostsBackend(string $shipping_costs_backend) : self
+	public function setShippingCostsBackend(float $shipping_costs_backend) : self
 	{
 		$this->shipping_costs_backend = $shipping_costs_backend;
 		return $this;
 	}
 
-	public function getIsWeighted():  ?string
+	public function getIsWeighted():  ?int
 	{
 		return $this->is_weighted;
 	}
 
-	public function setIsWeighted(string $is_weighted) : self
+	public function setIsWeighted(int $is_weighted) : self
 	{
 		$this->is_weighted = $is_weighted;
 		return $this;
 	}
 
-	public function getTaxRate():  ?string
+	public function getTaxRate():  ?float
 	{
 		return $this->tax_rate;
 	}
 
-	public function setTaxRate(string $tax_rate) : self
+	public function setTaxRate(float $tax_rate) : self
 	{
 		$this->tax_rate = $tax_rate;
 		return $this;
@@ -535,12 +535,12 @@ class OrdersLines
 		return $this;
 	}
 
-	public function getIsBundle():  ?string
+	public function getIsBundle():  ?int
 	{
 		return $this->is_bundle;
 	}
 
-	public function setIsBundle(string $is_bundle) : self
+	public function setIsBundle(int $is_bundle) : self
 	{
 		$this->is_bundle = $is_bundle;
 		return $this;

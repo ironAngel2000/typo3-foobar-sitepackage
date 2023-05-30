@@ -38,13 +38,13 @@ class Coupons
 	private ?int $coupons_groups_id = null;
 
 	#[ORM\Column]
-	private ?string $rebate = null;
+	private ?float $rebate = null;
 
 	#[ORM\Column]
-	private ?string $minimum_order = null;
+	private ?float $minimum_order = null;
 
 	#[ORM\Column]
-	private ?string $active = null;
+	private ?int $active = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $start = null;
@@ -68,7 +68,7 @@ class Coupons
 	private ?int $origin_orders_id = null;
 
 	#[ORM\Column]
-	private ?string $is_deleted = null;
+	private ?int $is_deleted = null;
 
 	 #[ORM\Column(length: 255)]
 	private ?string $shops_categories_ids = null;
@@ -159,34 +159,34 @@ class Coupons
 		return $this;
 	}
 
-	public function getRebate():  ?string
+	public function getRebate():  ?float
 	{
 		return $this->rebate;
 	}
 
-	public function setRebate(string $rebate) : self
+	public function setRebate(float $rebate) : self
 	{
 		$this->rebate = $rebate;
 		return $this;
 	}
 
-	public function getMinimumOrder():  ?string
+	public function getMinimumOrder():  ?float
 	{
 		return $this->minimum_order;
 	}
 
-	public function setMinimumOrder(string $minimum_order) : self
+	public function setMinimumOrder(float $minimum_order) : self
 	{
 		$this->minimum_order = $minimum_order;
 		return $this;
 	}
 
-	public function getActive():  ?string
+	public function getActive():  ?int
 	{
 		return $this->active;
 	}
 
-	public function setActive(string $active) : self
+	public function setActive(int $active) : self
 	{
 		$this->active = $active;
 		return $this;
@@ -269,12 +269,12 @@ class Coupons
 		return $this;
 	}
 
-	public function getIsDeleted():  ?string
+	public function getIsDeleted():  ?int
 	{
 		return $this->is_deleted;
 	}
 
-	public function setIsDeleted(string $is_deleted) : self
+	public function setIsDeleted(int $is_deleted) : self
 	{
 		$this->is_deleted = $is_deleted;
 		return $this;

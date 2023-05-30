@@ -62,7 +62,7 @@ class Suppliers
 	private ?string $suppliers_image = null;
 
 	#[ORM\Column]
-	private ?string $suppliers_tasks_active = null;
+	private ?int $suppliers_tasks_active = null;
 
 	#[ORM\Column]
 	private ?int $com_type = null;
@@ -71,31 +71,31 @@ class Suppliers
 	private ?int $tax_categories_id = null;
 
 	#[ORM\Column]
-	private ?string $connection = null;
+	private ?int $connection = null;
 
 	 #[ORM\Column(length: 32)]
 	private ?string $connection_code = null;
 
 	#[ORM\Column]
-	private ?string $connection_active = null;
+	private ?int $connection_active = null;
 
 	#[ORM\Column]
-	private ?string $connection_call_advice = null;
+	private ?int $connection_call_advice = null;
 
 	#[ORM\Column]
-	private ?string $connection_expand_search_selection_spaces = null;
+	private ?int $connection_expand_search_selection_spaces = null;
 
 	#[ORM\Column]
 	private ?string $connection_default_model_year = null;
 
 	#[ORM\Column]
-	private ?string $connection_available_calculation_active = null;
+	private ?int $connection_available_calculation_active = null;
 
 	#[ORM\Column]
 	private ?int $connection_available_stock_level = null;
 
 	#[ORM\Column]
-	private ?string $bill_discount = null;
+	private ?float $bill_discount = null;
 
 	#[ORM\Column]
 	private ?int $currencies_id = null;
@@ -283,12 +283,12 @@ class Suppliers
 		return $this;
 	}
 
-	public function getSuppliersTasksActive():  ?string
+	public function getSuppliersTasksActive():  ?int
 	{
 		return $this->suppliers_tasks_active;
 	}
 
-	public function setSuppliersTasksActive(string $suppliers_tasks_active) : self
+	public function setSuppliersTasksActive(int $suppliers_tasks_active) : self
 	{
 		$this->suppliers_tasks_active = $suppliers_tasks_active;
 		return $this;
@@ -316,12 +316,12 @@ class Suppliers
 		return $this;
 	}
 
-	public function getConnection():  ?string
+	public function getConnection():  ?int
 	{
 		return $this->connection;
 	}
 
-	public function setConnection(string $connection) : self
+	public function setConnection(int $connection) : self
 	{
 		$this->connection = $connection;
 		return $this;
@@ -338,34 +338,34 @@ class Suppliers
 		return $this;
 	}
 
-	public function getConnectionActive():  ?string
+	public function getConnectionActive():  ?int
 	{
 		return $this->connection_active;
 	}
 
-	public function setConnectionActive(string $connection_active) : self
+	public function setConnectionActive(int $connection_active) : self
 	{
 		$this->connection_active = $connection_active;
 		return $this;
 	}
 
-	public function getConnectionCallAdvice():  ?string
+	public function getConnectionCallAdvice():  ?int
 	{
 		return $this->connection_call_advice;
 	}
 
-	public function setConnectionCallAdvice(string $connection_call_advice) : self
+	public function setConnectionCallAdvice(int $connection_call_advice) : self
 	{
 		$this->connection_call_advice = $connection_call_advice;
 		return $this;
 	}
 
-	public function getConnectionExpandSearchSelectionSpaces():  ?string
+	public function getConnectionExpandSearchSelectionSpaces():  ?int
 	{
 		return $this->connection_expand_search_selection_spaces;
 	}
 
-	public function setConnectionExpandSearchSelectionSpaces(string $connection_expand_search_selection_spaces) : self
+	public function setConnectionExpandSearchSelectionSpaces(int $connection_expand_search_selection_spaces) : self
 	{
 		$this->connection_expand_search_selection_spaces = $connection_expand_search_selection_spaces;
 		return $this;
@@ -382,12 +382,12 @@ class Suppliers
 		return $this;
 	}
 
-	public function getConnectionAvailableCalculationActive():  ?string
+	public function getConnectionAvailableCalculationActive():  ?int
 	{
 		return $this->connection_available_calculation_active;
 	}
 
-	public function setConnectionAvailableCalculationActive(string $connection_available_calculation_active) : self
+	public function setConnectionAvailableCalculationActive(int $connection_available_calculation_active) : self
 	{
 		$this->connection_available_calculation_active = $connection_available_calculation_active;
 		return $this;
@@ -404,12 +404,12 @@ class Suppliers
 		return $this;
 	}
 
-	public function getBillDiscount():  ?string
+	public function getBillDiscount():  ?float
 	{
 		return $this->bill_discount;
 	}
 
-	public function setBillDiscount(string $bill_discount) : self
+	public function setBillDiscount(float $bill_discount) : self
 	{
 		$this->bill_discount = $bill_discount;
 		return $this;

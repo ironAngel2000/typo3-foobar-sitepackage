@@ -41,7 +41,7 @@ class BfScriptLogger
 	private ?string $ip = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $memory = null;
+	private ?float $memory = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $pid = null;
@@ -143,12 +143,12 @@ class BfScriptLogger
 		return $this;
 	}
 
-	public function getMemory():  ?string
+	public function getMemory():  ?float
 	{
 		return $this->memory;
 	}
 
-	public function setMemory(string $memory) : self
+	public function setMemory(float $memory) : self
 	{
 		$this->memory = $memory;
 		return $this;

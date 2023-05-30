@@ -26,16 +26,16 @@ class ProductsVariationsStockHistory
 	private ?int $stock_locations_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $old_quantity = null;
+	private ?float $old_quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $new_quantity = null;
+	private ?float $new_quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $old_reserved_quantity = null;
+	private ?float $old_reserved_quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $new_reserved_quantity = null;
+	private ?float $new_reserved_quantity = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -79,45 +79,45 @@ class ProductsVariationsStockHistory
 		return $this;
 	}
 
-	public function getOldQuantity():  ?string
+	public function getOldQuantity():  ?float
 	{
 		return $this->old_quantity;
 	}
 
-	public function setOldQuantity(string $old_quantity) : self
+	public function setOldQuantity(float $old_quantity) : self
 	{
 		$this->old_quantity = $old_quantity;
 		return $this;
 	}
 
-	public function getNewQuantity():  ?string
+	public function getNewQuantity():  ?float
 	{
 		return $this->new_quantity;
 	}
 
-	public function setNewQuantity(string $new_quantity) : self
+	public function setNewQuantity(float $new_quantity) : self
 	{
 		$this->new_quantity = $new_quantity;
 		return $this;
 	}
 
-	public function getOldReservedQuantity():  ?string
+	public function getOldReservedQuantity():  ?float
 	{
 		return $this->old_reserved_quantity;
 	}
 
-	public function setOldReservedQuantity(string $old_reserved_quantity) : self
+	public function setOldReservedQuantity(float $old_reserved_quantity) : self
 	{
 		$this->old_reserved_quantity = $old_reserved_quantity;
 		return $this;
 	}
 
-	public function getNewReservedQuantity():  ?string
+	public function getNewReservedQuantity():  ?float
 	{
 		return $this->new_reserved_quantity;
 	}
 
-	public function setNewReservedQuantity(string $new_reserved_quantity) : self
+	public function setNewReservedQuantity(float $new_reserved_quantity) : self
 	{
 		$this->new_reserved_quantity = $new_reserved_quantity;
 		return $this;

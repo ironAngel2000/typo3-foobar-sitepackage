@@ -41,10 +41,10 @@ class TrackingBaskets
 	private ?int $quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $unit_price = null;
+	private ?float $unit_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $unit_price_net = null;
+	private ?float $unit_price_net = null;
 
 	#[ORM\Column(length: 128, nullable: true)]
 	private ?string $category = null;
@@ -146,23 +146,23 @@ class TrackingBaskets
 		return $this;
 	}
 
-	public function getUnitPrice():  ?string
+	public function getUnitPrice():  ?float
 	{
 		return $this->unit_price;
 	}
 
-	public function setUnitPrice(string $unit_price) : self
+	public function setUnitPrice(float $unit_price) : self
 	{
 		$this->unit_price = $unit_price;
 		return $this;
 	}
 
-	public function getUnitPriceNet():  ?string
+	public function getUnitPriceNet():  ?float
 	{
 		return $this->unit_price_net;
 	}
 
-	public function setUnitPriceNet(string $unit_price_net) : self
+	public function setUnitPriceNet(float $unit_price_net) : self
 	{
 		$this->unit_price_net = $unit_price_net;
 		return $this;

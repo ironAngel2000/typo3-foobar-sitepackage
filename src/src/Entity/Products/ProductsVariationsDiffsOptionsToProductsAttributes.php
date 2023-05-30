@@ -26,7 +26,7 @@ class ProductsVariationsDiffsOptionsToProductsAttributes
 	private ?int $products_attributes_id = null;
 
 	#[ORM\Column]
-	private ?string $export_attributes_values = null;
+	private ?int $export_attributes_values = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class ProductsVariationsDiffsOptionsToProductsAttributes
 		return $this;
 	}
 
-	public function getExportAttributesValues():  ?string
+	public function getExportAttributesValues():  ?int
 	{
 		return $this->export_attributes_values;
 	}
 
-	public function setExportAttributesValues(string $export_attributes_values) : self
+	public function setExportAttributesValues(int $export_attributes_values) : self
 	{
 		$this->export_attributes_values = $export_attributes_values;
 		return $this;

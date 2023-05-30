@@ -29,7 +29,7 @@ class ErpSystemsConfiguration
 	private ?string $configuration_value = null;
 
 	#[ORM\Column]
-	private ?string $required = null;
+	private ?int $required = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -84,12 +84,12 @@ class ErpSystemsConfiguration
 		return $this;
 	}
 
-	public function getRequired():  ?string
+	public function getRequired():  ?int
 	{
 		return $this->required;
 	}
 
-	public function setRequired(string $required) : self
+	public function setRequired(int $required) : self
 	{
 		$this->required = $required;
 		return $this;

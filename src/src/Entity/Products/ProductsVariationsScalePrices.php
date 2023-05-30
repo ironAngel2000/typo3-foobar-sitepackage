@@ -26,10 +26,10 @@ class ProductsVariationsScalePrices
 	private ?int $quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price = null;
+	private ?float $price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $percent = null;
+	private ?float $percent = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -73,23 +73,23 @@ class ProductsVariationsScalePrices
 		return $this;
 	}
 
-	public function getPrice():  ?string
+	public function getPrice():  ?float
 	{
 		return $this->price;
 	}
 
-	public function setPrice(string $price) : self
+	public function setPrice(float $price) : self
 	{
 		$this->price = $price;
 		return $this;
 	}
 
-	public function getPercent():  ?string
+	public function getPercent():  ?float
 	{
 		return $this->percent;
 	}
 
-	public function setPercent(string $percent) : self
+	public function setPercent(float $percent) : self
 	{
 		$this->percent = $percent;
 		return $this;

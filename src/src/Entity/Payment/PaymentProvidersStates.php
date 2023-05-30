@@ -23,31 +23,31 @@ class PaymentProvidersStates
 	private ?int $orders_id = null;
 
 	#[ORM\Column]
-	private ?string $auth = null;
+	private ?float $auth = null;
 
 	#[ORM\Column]
-	private ?string $cap = null;
+	private ?float $cap = null;
 
 	#[ORM\Column]
-	private ?string $capTax = null;
+	private ?float $capTax = null;
 
 	#[ORM\Column]
-	private ?string $credit = null;
+	private ?float $credit = null;
 
 	#[ORM\Column]
-	private ?string $creditTax = null;
+	private ?float $creditTax = null;
 
 	#[ORM\Column]
-	private ?string $cancelled = null;
+	private ?float $cancelled = null;
 
 	#[ORM\Column]
-	private ?string $cancelledTax = null;
+	private ?float $cancelledTax = null;
 
 	#[ORM\Column]
-	private ?string $credited_by_coupons = null;
+	private ?float $credited_by_coupons = null;
 
 	#[ORM\Column]
-	private ?string $credited_by_credit = null;
+	private ?float $credited_by_credit = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -80,100 +80,100 @@ class PaymentProvidersStates
 		return $this;
 	}
 
-	public function getAuth():  ?string
+	public function getAuth():  ?float
 	{
 		return $this->auth;
 	}
 
-	public function setAuth(string $auth) : self
+	public function setAuth(float $auth) : self
 	{
 		$this->auth = $auth;
 		return $this;
 	}
 
-	public function getCap():  ?string
+	public function getCap():  ?float
 	{
 		return $this->cap;
 	}
 
-	public function setCap(string $cap) : self
+	public function setCap(float $cap) : self
 	{
 		$this->cap = $cap;
 		return $this;
 	}
 
-	public function getCapTax():  ?string
+	public function getCapTax():  ?float
 	{
 		return $this->capTax;
 	}
 
-	public function setCapTax(string $capTax) : self
+	public function setCapTax(float $capTax) : self
 	{
 		$this->capTax = $capTax;
 		return $this;
 	}
 
-	public function getCredit():  ?string
+	public function getCredit():  ?float
 	{
 		return $this->credit;
 	}
 
-	public function setCredit(string $credit) : self
+	public function setCredit(float $credit) : self
 	{
 		$this->credit = $credit;
 		return $this;
 	}
 
-	public function getCreditTax():  ?string
+	public function getCreditTax():  ?float
 	{
 		return $this->creditTax;
 	}
 
-	public function setCreditTax(string $creditTax) : self
+	public function setCreditTax(float $creditTax) : self
 	{
 		$this->creditTax = $creditTax;
 		return $this;
 	}
 
-	public function getCancelled():  ?string
+	public function getCancelled():  ?float
 	{
 		return $this->cancelled;
 	}
 
-	public function setCancelled(string $cancelled) : self
+	public function setCancelled(float $cancelled) : self
 	{
 		$this->cancelled = $cancelled;
 		return $this;
 	}
 
-	public function getCancelledTax():  ?string
+	public function getCancelledTax():  ?float
 	{
 		return $this->cancelledTax;
 	}
 
-	public function setCancelledTax(string $cancelledTax) : self
+	public function setCancelledTax(float $cancelledTax) : self
 	{
 		$this->cancelledTax = $cancelledTax;
 		return $this;
 	}
 
-	public function getCreditedByCoupons():  ?string
+	public function getCreditedByCoupons():  ?float
 	{
 		return $this->credited_by_coupons;
 	}
 
-	public function setCreditedByCoupons(string $credited_by_coupons) : self
+	public function setCreditedByCoupons(float $credited_by_coupons) : self
 	{
 		$this->credited_by_coupons = $credited_by_coupons;
 		return $this;
 	}
 
-	public function getCreditedByCredit():  ?string
+	public function getCreditedByCredit():  ?float
 	{
 		return $this->credited_by_credit;
 	}
 
-	public function setCreditedByCredit(string $credited_by_credit) : self
+	public function setCreditedByCredit(float $credited_by_credit) : self
 	{
 		$this->credited_by_credit = $credited_by_credit;
 		return $this;

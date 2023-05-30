@@ -29,7 +29,7 @@ class OrdersCreditsLines
 	private ?int $quantity_credited = null;
 
 	#[ORM\Column]
-	private ?string $amount_credited = null;
+	private ?float $amount_credited = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -84,12 +84,12 @@ class OrdersCreditsLines
 		return $this;
 	}
 
-	public function getAmountCredited():  ?string
+	public function getAmountCredited():  ?float
 	{
 		return $this->amount_credited;
 	}
 
-	public function setAmountCredited(string $amount_credited) : self
+	public function setAmountCredited(float $amount_credited) : self
 	{
 		$this->amount_credited = $amount_credited;
 		return $this;

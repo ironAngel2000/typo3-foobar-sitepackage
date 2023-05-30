@@ -35,37 +35,37 @@ class Shops
 	private ?int $shops_price_schemes_id = null;
 
 	#[ORM\Column]
-	private ?string $absolute_surcharge = null;
+	private ?float $absolute_surcharge = null;
 
 	#[ORM\Column]
-	private ?string $surcharge = null;
+	private ?float $surcharge = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $absolute_surcharge_threshold = null;
+	private ?float $absolute_surcharge_threshold = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $exchange_rate = null;
+	private ?float $exchange_rate = null;
 
 	#[ORM\Column]
-	private ?string $shops_prices_outdated = null;
+	private ?int $shops_prices_outdated = null;
 
 	#[ORM\Column]
-	private ?string $shops_filters_outdated = null;
+	private ?int $shops_filters_outdated = null;
 
 	#[ORM\Column]
-	private ?string $shops_status = null;
+	private ?int $shops_status = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $shops_states_id = null;
 
 	#[ORM\Column]
-	private ?string $shops_visible = null;
+	private ?int $shops_visible = null;
 
 	#[ORM\Column]
-	private ?string $ignore_products_special_prices = null;
+	private ?int $ignore_products_special_prices = null;
 
 	#[ORM\Column]
-	private ?string $ignore_products_scale_prices = null;
+	private ?int $ignore_products_scale_prices = null;
 
 	#[ORM\Column]
 	private ?int $shops_types_id = null;
@@ -148,78 +148,78 @@ class Shops
 		return $this;
 	}
 
-	public function getAbsoluteSurcharge():  ?string
+	public function getAbsoluteSurcharge():  ?float
 	{
 		return $this->absolute_surcharge;
 	}
 
-	public function setAbsoluteSurcharge(string $absolute_surcharge) : self
+	public function setAbsoluteSurcharge(float $absolute_surcharge) : self
 	{
 		$this->absolute_surcharge = $absolute_surcharge;
 		return $this;
 	}
 
-	public function getSurcharge():  ?string
+	public function getSurcharge():  ?float
 	{
 		return $this->surcharge;
 	}
 
-	public function setSurcharge(string $surcharge) : self
+	public function setSurcharge(float $surcharge) : self
 	{
 		$this->surcharge = $surcharge;
 		return $this;
 	}
 
-	public function getAbsoluteSurchargeThreshold():  ?string
+	public function getAbsoluteSurchargeThreshold():  ?float
 	{
 		return $this->absolute_surcharge_threshold;
 	}
 
-	public function setAbsoluteSurchargeThreshold(string $absolute_surcharge_threshold) : self
+	public function setAbsoluteSurchargeThreshold(float $absolute_surcharge_threshold) : self
 	{
 		$this->absolute_surcharge_threshold = $absolute_surcharge_threshold;
 		return $this;
 	}
 
-	public function getExchangeRate():  ?string
+	public function getExchangeRate():  ?float
 	{
 		return $this->exchange_rate;
 	}
 
-	public function setExchangeRate(string $exchange_rate) : self
+	public function setExchangeRate(float $exchange_rate) : self
 	{
 		$this->exchange_rate = $exchange_rate;
 		return $this;
 	}
 
-	public function getShopsPricesOutdated():  ?string
+	public function getShopsPricesOutdated():  ?int
 	{
 		return $this->shops_prices_outdated;
 	}
 
-	public function setShopsPricesOutdated(string $shops_prices_outdated) : self
+	public function setShopsPricesOutdated(int $shops_prices_outdated) : self
 	{
 		$this->shops_prices_outdated = $shops_prices_outdated;
 		return $this;
 	}
 
-	public function getShopsFiltersOutdated():  ?string
+	public function getShopsFiltersOutdated():  ?int
 	{
 		return $this->shops_filters_outdated;
 	}
 
-	public function setShopsFiltersOutdated(string $shops_filters_outdated) : self
+	public function setShopsFiltersOutdated(int $shops_filters_outdated) : self
 	{
 		$this->shops_filters_outdated = $shops_filters_outdated;
 		return $this;
 	}
 
-	public function getShopsStatus():  ?string
+	public function getShopsStatus():  ?int
 	{
 		return $this->shops_status;
 	}
 
-	public function setShopsStatus(string $shops_status) : self
+	public function setShopsStatus(int $shops_status) : self
 	{
 		$this->shops_status = $shops_status;
 		return $this;
@@ -236,34 +236,34 @@ class Shops
 		return $this;
 	}
 
-	public function getShopsVisible():  ?string
+	public function getShopsVisible():  ?int
 	{
 		return $this->shops_visible;
 	}
 
-	public function setShopsVisible(string $shops_visible) : self
+	public function setShopsVisible(int $shops_visible) : self
 	{
 		$this->shops_visible = $shops_visible;
 		return $this;
 	}
 
-	public function getIgnoreProductsSpecialPrices():  ?string
+	public function getIgnoreProductsSpecialPrices():  ?int
 	{
 		return $this->ignore_products_special_prices;
 	}
 
-	public function setIgnoreProductsSpecialPrices(string $ignore_products_special_prices) : self
+	public function setIgnoreProductsSpecialPrices(int $ignore_products_special_prices) : self
 	{
 		$this->ignore_products_special_prices = $ignore_products_special_prices;
 		return $this;
 	}
 
-	public function getIgnoreProductsScalePrices():  ?string
+	public function getIgnoreProductsScalePrices():  ?int
 	{
 		return $this->ignore_products_scale_prices;
 	}
 
-	public function setIgnoreProductsScalePrices(string $ignore_products_scale_prices) : self
+	public function setIgnoreProductsScalePrices(int $ignore_products_scale_prices) : self
 	{
 		$this->ignore_products_scale_prices = $ignore_products_scale_prices;
 		return $this;

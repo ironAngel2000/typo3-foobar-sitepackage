@@ -26,10 +26,10 @@ class BfSessions
 	private ?int $bf_users_id = null;
 
 	#[ORM\Column]
-	private ?string $timestamp = null;
+	private ?int $timestamp = null;
 
-	#[ORM\Column(nullable: true)]
-	private ?string $data = null;
+	#[ORM\Column(type: Types::BLOB, nullable: true)]
+	private $data = null;
 
 	 #[ORM\Column(length: 39)]
 	private ?string $ip_lock = null;
@@ -79,23 +79,23 @@ class BfSessions
 		return $this;
 	}
 
-	public function getTimestamp():  ?string
+	public function getTimestamp():  ?int
 	{
 		return $this->timestamp;
 	}
 
-	public function setTimestamp(string $timestamp) : self
+	public function setTimestamp(int $timestamp) : self
 	{
 		$this->timestamp = $timestamp;
 		return $this;
 	}
 
-	public function getData():  ?string
+	public function getData()
 	{
 		return $this->data;
 	}
 
-	public function setData(string $data) : self
+	public function setData($data) : self
 	{
 		$this->data = $data;
 		return $this;

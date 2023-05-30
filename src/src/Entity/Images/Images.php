@@ -32,7 +32,7 @@ class Images
 	private ?int $height = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $is_invalid_path = null;
+	private ?int $is_invalid_path = null;
 
 	 #[ORM\Column(length: 255)]
 	private ?string $image_name_branded = null;
@@ -101,12 +101,12 @@ class Images
 		return $this;
 	}
 
-	public function getIsInvalidPath():  ?string
+	public function getIsInvalidPath():  ?int
 	{
 		return $this->is_invalid_path;
 	}
 
-	public function setIsInvalidPath(string $is_invalid_path) : self
+	public function setIsInvalidPath(int $is_invalid_path) : self
 	{
 		$this->is_invalid_path = $is_invalid_path;
 		return $this;

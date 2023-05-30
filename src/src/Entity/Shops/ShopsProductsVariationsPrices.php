@@ -26,34 +26,34 @@ class ShopsProductsVariationsPrices
 	private ?int $currencies_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price = null;
+	private ?float $price = null;
 
 	#[ORM\Column]
-	private ?string $repriced_price = null;
+	private ?float $repriced_price = null;
 
 	#[ORM\Column]
-	private ?string $repriced_price_status = null;
+	private ?int $repriced_price_status = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_rrp = null;
+	private ?float $price_rrp = null;
 
 	#[ORM\Column]
-	private ?string $price_locked = null;
+	private ?int $price_locked = null;
 
 	#[ORM\Column]
-	private ?string $price_rrp_locked = null;
+	private ?int $price_rrp_locked = null;
 
 	#[ORM\Column]
-	private ?string $special_price_status = null;
+	private ?int $special_price_status = null;
 
 	#[ORM\Column]
-	private ?string $overwrite_products_special_prices = null;
+	private ?int $overwrite_products_special_prices = null;
 
 	#[ORM\Column]
-	private ?string $overwrite_products_scale_prices = null;
+	private ?int $overwrite_products_scale_prices = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $special_price = null;
+	private ?float $special_price = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $special_price_stock_threshold = null;
@@ -106,111 +106,111 @@ class ShopsProductsVariationsPrices
 		return $this;
 	}
 
-	public function getPrice():  ?string
+	public function getPrice():  ?float
 	{
 		return $this->price;
 	}
 
-	public function setPrice(string $price) : self
+	public function setPrice(float $price) : self
 	{
 		$this->price = $price;
 		return $this;
 	}
 
-	public function getRepricedPrice():  ?string
+	public function getRepricedPrice():  ?float
 	{
 		return $this->repriced_price;
 	}
 
-	public function setRepricedPrice(string $repriced_price) : self
+	public function setRepricedPrice(float $repriced_price) : self
 	{
 		$this->repriced_price = $repriced_price;
 		return $this;
 	}
 
-	public function getRepricedPriceStatus():  ?string
+	public function getRepricedPriceStatus():  ?int
 	{
 		return $this->repriced_price_status;
 	}
 
-	public function setRepricedPriceStatus(string $repriced_price_status) : self
+	public function setRepricedPriceStatus(int $repriced_price_status) : self
 	{
 		$this->repriced_price_status = $repriced_price_status;
 		return $this;
 	}
 
-	public function getPriceRrp():  ?string
+	public function getPriceRrp():  ?float
 	{
 		return $this->price_rrp;
 	}
 
-	public function setPriceRrp(string $price_rrp) : self
+	public function setPriceRrp(float $price_rrp) : self
 	{
 		$this->price_rrp = $price_rrp;
 		return $this;
 	}
 
-	public function getPriceLocked():  ?string
+	public function getPriceLocked():  ?int
 	{
 		return $this->price_locked;
 	}
 
-	public function setPriceLocked(string $price_locked) : self
+	public function setPriceLocked(int $price_locked) : self
 	{
 		$this->price_locked = $price_locked;
 		return $this;
 	}
 
-	public function getPriceRrpLocked():  ?string
+	public function getPriceRrpLocked():  ?int
 	{
 		return $this->price_rrp_locked;
 	}
 
-	public function setPriceRrpLocked(string $price_rrp_locked) : self
+	public function setPriceRrpLocked(int $price_rrp_locked) : self
 	{
 		$this->price_rrp_locked = $price_rrp_locked;
 		return $this;
 	}
 
-	public function getSpecialPriceStatus():  ?string
+	public function getSpecialPriceStatus():  ?int
 	{
 		return $this->special_price_status;
 	}
 
-	public function setSpecialPriceStatus(string $special_price_status) : self
+	public function setSpecialPriceStatus(int $special_price_status) : self
 	{
 		$this->special_price_status = $special_price_status;
 		return $this;
 	}
 
-	public function getOverwriteProductsSpecialPrices():  ?string
+	public function getOverwriteProductsSpecialPrices():  ?int
 	{
 		return $this->overwrite_products_special_prices;
 	}
 
-	public function setOverwriteProductsSpecialPrices(string $overwrite_products_special_prices) : self
+	public function setOverwriteProductsSpecialPrices(int $overwrite_products_special_prices) : self
 	{
 		$this->overwrite_products_special_prices = $overwrite_products_special_prices;
 		return $this;
 	}
 
-	public function getOverwriteProductsScalePrices():  ?string
+	public function getOverwriteProductsScalePrices():  ?int
 	{
 		return $this->overwrite_products_scale_prices;
 	}
 
-	public function setOverwriteProductsScalePrices(string $overwrite_products_scale_prices) : self
+	public function setOverwriteProductsScalePrices(int $overwrite_products_scale_prices) : self
 	{
 		$this->overwrite_products_scale_prices = $overwrite_products_scale_prices;
 		return $this;
 	}
 
-	public function getSpecialPrice():  ?string
+	public function getSpecialPrice():  ?float
 	{
 		return $this->special_price;
 	}
 
-	public function setSpecialPrice(string $special_price) : self
+	public function setSpecialPrice(float $special_price) : self
 	{
 		$this->special_price = $special_price;
 		return $this;

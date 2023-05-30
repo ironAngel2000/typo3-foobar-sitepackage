@@ -17,7 +17,7 @@ class SuppliersAvailabilityStatus
    	#[ORM\Id]
 	#[ORM\GeneratedValue]
 	#[ORM\Column]
-	private ?string $suppliers_availability_status_id = null;
+	private ?int $suppliers_availability_status_id = null;
 
 	#[ORM\Column]
 	private ?int $suppliers_id = null;
@@ -26,7 +26,7 @@ class SuppliersAvailabilityStatus
 	private ?string $suppliers_availability_status_code = null;
 
 	#[ORM\Column]
-	private ?string $available = null;
+	private ?int $available = null;
 
 	 #[ORM\Column(length: 96)]
 	private ?string $icon_name = null;
@@ -40,12 +40,12 @@ class SuppliersAvailabilityStatus
 	#[ORM\Column(nullable: true)]
 	private ?int $last_updater = null;
 
-	public function getSuppliersAvailabilityStatusId():  ?string
+	public function getSuppliersAvailabilityStatusId():  ?int
 	{
 		return $this->suppliers_availability_status_id;
 	}
 
-	public function setSuppliersAvailabilityStatusId(string $suppliers_availability_status_id) : self
+	public function setSuppliersAvailabilityStatusId(int $suppliers_availability_status_id) : self
 	{
 		$this->suppliers_availability_status_id = $suppliers_availability_status_id;
 		return $this;
@@ -73,12 +73,12 @@ class SuppliersAvailabilityStatus
 		return $this;
 	}
 
-	public function getAvailable():  ?string
+	public function getAvailable():  ?int
 	{
 		return $this->available;
 	}
 
-	public function setAvailable(string $available) : self
+	public function setAvailable(int $available) : self
 	{
 		$this->available = $available;
 		return $this;

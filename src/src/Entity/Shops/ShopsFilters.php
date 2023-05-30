@@ -26,7 +26,7 @@ class ShopsFilters
 	private ?int $filters_id = null;
 
 	#[ORM\Column]
-	private ?string $is_variation_filter = null;
+	private ?int $is_variation_filter = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $filters_values_id = null;
@@ -76,12 +76,12 @@ class ShopsFilters
 		return $this;
 	}
 
-	public function getIsVariationFilter():  ?string
+	public function getIsVariationFilter():  ?int
 	{
 		return $this->is_variation_filter;
 	}
 
-	public function setIsVariationFilter(string $is_variation_filter) : self
+	public function setIsVariationFilter(int $is_variation_filter) : self
 	{
 		$this->is_variation_filter = $is_variation_filter;
 		return $this;

@@ -26,10 +26,10 @@ class OrdersLinesToOrdersReturns
 	private ?int $orders_returns_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $refund_amount = null;
+	private ?float $refund_amount = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $shipping_costs_refund_amount = null;
+	private ?float $shipping_costs_refund_amount = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $quantity_returned = null;
@@ -76,23 +76,23 @@ class OrdersLinesToOrdersReturns
 		return $this;
 	}
 
-	public function getRefundAmount():  ?string
+	public function getRefundAmount():  ?float
 	{
 		return $this->refund_amount;
 	}
 
-	public function setRefundAmount(string $refund_amount) : self
+	public function setRefundAmount(float $refund_amount) : self
 	{
 		$this->refund_amount = $refund_amount;
 		return $this;
 	}
 
-	public function getShippingCostsRefundAmount():  ?string
+	public function getShippingCostsRefundAmount():  ?float
 	{
 		return $this->shipping_costs_refund_amount;
 	}
 
-	public function setShippingCostsRefundAmount(string $shipping_costs_refund_amount) : self
+	public function setShippingCostsRefundAmount(float $shipping_costs_refund_amount) : self
 	{
 		$this->shipping_costs_refund_amount = $shipping_costs_refund_amount;
 		return $this;

@@ -26,7 +26,7 @@ class ShopsCategories
 	private ?int $shops_id = null;
 
 	#[ORM\Column]
-	private ?string $shops_categories_status = null;
+	private ?int $shops_categories_status = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $parent_id = null;
@@ -35,22 +35,22 @@ class ShopsCategories
 	private ?int $sort_order = null;
 
 	#[ORM\Column]
-	private ?string $secondary = null;
+	private ?int $secondary = null;
 
 	#[ORM\Column]
-	private ?string $categories_filters_outdated = null;
+	private ?int $categories_filters_outdated = null;
 
 	#[ORM\Column]
-	private ?string $is_deleted = null;
+	private ?int $is_deleted = null;
 
 	#[ORM\Column]
-	private ?string $has_shops_products = null;
+	private ?int $has_shops_products = null;
 
 	#[ORM\Column]
-	private ?string $has_groups = null;
+	private ?int $has_groups = null;
 
 	#[ORM\Column]
-	private ?string $to_delete = null;
+	private ?int $to_delete = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -94,12 +94,12 @@ class ShopsCategories
 		return $this;
 	}
 
-	public function getShopsCategoriesStatus():  ?string
+	public function getShopsCategoriesStatus():  ?int
 	{
 		return $this->shops_categories_status;
 	}
 
-	public function setShopsCategoriesStatus(string $shops_categories_status) : self
+	public function setShopsCategoriesStatus(int $shops_categories_status) : self
 	{
 		$this->shops_categories_status = $shops_categories_status;
 		return $this;
@@ -127,67 +127,67 @@ class ShopsCategories
 		return $this;
 	}
 
-	public function getSecondary():  ?string
+	public function getSecondary():  ?int
 	{
 		return $this->secondary;
 	}
 
-	public function setSecondary(string $secondary) : self
+	public function setSecondary(int $secondary) : self
 	{
 		$this->secondary = $secondary;
 		return $this;
 	}
 
-	public function getCategoriesFiltersOutdated():  ?string
+	public function getCategoriesFiltersOutdated():  ?int
 	{
 		return $this->categories_filters_outdated;
 	}
 
-	public function setCategoriesFiltersOutdated(string $categories_filters_outdated) : self
+	public function setCategoriesFiltersOutdated(int $categories_filters_outdated) : self
 	{
 		$this->categories_filters_outdated = $categories_filters_outdated;
 		return $this;
 	}
 
-	public function getIsDeleted():  ?string
+	public function getIsDeleted():  ?int
 	{
 		return $this->is_deleted;
 	}
 
-	public function setIsDeleted(string $is_deleted) : self
+	public function setIsDeleted(int $is_deleted) : self
 	{
 		$this->is_deleted = $is_deleted;
 		return $this;
 	}
 
-	public function getHasShopsProducts():  ?string
+	public function getHasShopsProducts():  ?int
 	{
 		return $this->has_shops_products;
 	}
 
-	public function setHasShopsProducts(string $has_shops_products) : self
+	public function setHasShopsProducts(int $has_shops_products) : self
 	{
 		$this->has_shops_products = $has_shops_products;
 		return $this;
 	}
 
-	public function getHasGroups():  ?string
+	public function getHasGroups():  ?int
 	{
 		return $this->has_groups;
 	}
 
-	public function setHasGroups(string $has_groups) : self
+	public function setHasGroups(int $has_groups) : self
 	{
 		$this->has_groups = $has_groups;
 		return $this;
 	}
 
-	public function getToDelete():  ?string
+	public function getToDelete():  ?int
 	{
 		return $this->to_delete;
 	}
 
-	public function setToDelete(string $to_delete) : self
+	public function setToDelete(int $to_delete) : self
 	{
 		$this->to_delete = $to_delete;
 		return $this;

@@ -23,7 +23,7 @@ class ProductsOptions
 	private ?string $extern_products_options_id = null;
 
 	#[ORM\Column]
-	private ?string $mandatory = null;
+	private ?int $mandatory = null;
 
 	#[ORM\Column]
 	private ?int $sort_order = null;
@@ -59,12 +59,12 @@ class ProductsOptions
 		return $this;
 	}
 
-	public function getMandatory():  ?string
+	public function getMandatory():  ?int
 	{
 		return $this->mandatory;
 	}
 
-	public function setMandatory(string $mandatory) : self
+	public function setMandatory(int $mandatory) : self
 	{
 		$this->mandatory = $mandatory;
 		return $this;

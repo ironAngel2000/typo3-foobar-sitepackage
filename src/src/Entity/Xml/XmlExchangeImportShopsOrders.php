@@ -29,7 +29,7 @@ class XmlExchangeImportShopsOrders
 	private ?string $orders_xml_data = null;
 
 	#[ORM\Column]
-	private ?string $processed = null;
+	private ?int $processed = null;
 
 	#[ORM\Column(length: 255, nullable: true)]
 	private ?string $error = null;
@@ -87,12 +87,12 @@ class XmlExchangeImportShopsOrders
 		return $this;
 	}
 
-	public function getProcessed():  ?string
+	public function getProcessed():  ?int
 	{
 		return $this->processed;
 	}
 
-	public function setProcessed(string $processed) : self
+	public function setProcessed(int $processed) : self
 	{
 		$this->processed = $processed;
 		return $this;

@@ -26,7 +26,7 @@ class TaxRates
 	private ?int $countries_id = null;
 
 	#[ORM\Column]
-	private ?string $tax_rate = null;
+	private ?float $tax_rate = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class TaxRates
 		return $this;
 	}
 
-	public function getTaxRate():  ?string
+	public function getTaxRate():  ?float
 	{
 		return $this->tax_rate;
 	}
 
-	public function setTaxRate(string $tax_rate) : self
+	public function setTaxRate(float $tax_rate) : self
 	{
 		$this->tax_rate = $tax_rate;
 		return $this;

@@ -26,7 +26,7 @@ class SuppliersCatalogsAdditionals
 	private ?int $suppliers_catalogs_additionals_types_id = null;
 
 	#[ORM\Column]
-	private ?string $additionals_status = null;
+	private ?int $additionals_status = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class SuppliersCatalogsAdditionals
 		return $this;
 	}
 
-	public function getAdditionalsStatus():  ?string
+	public function getAdditionalsStatus():  ?int
 	{
 		return $this->additionals_status;
 	}
 
-	public function setAdditionalsStatus(string $additionals_status) : self
+	public function setAdditionalsStatus(int $additionals_status) : self
 	{
 		$this->additionals_status = $additionals_status;
 		return $this;

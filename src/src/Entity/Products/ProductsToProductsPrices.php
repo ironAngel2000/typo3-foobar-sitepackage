@@ -26,7 +26,7 @@ class ProductsToProductsPrices
 	private ?int $currencies_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price = null;
+	private ?float $price = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class ProductsToProductsPrices
 		return $this;
 	}
 
-	public function getPrice():  ?string
+	public function getPrice():  ?float
 	{
 		return $this->price;
 	}
 
-	public function setPrice(string $price) : self
+	public function setPrice(float $price) : self
 	{
 		$this->price = $price;
 		return $this;

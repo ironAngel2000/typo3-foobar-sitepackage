@@ -38,43 +38,43 @@ class ShopsProducts
 	private ?string $uuid = null;
 
 	#[ORM\Column]
-	private ?string $products_status = null;
+	private ?int $products_status = null;
 
 	#[ORM\Column]
-	private ?string $online_status = null;
+	private ?int $online_status = null;
 
 	#[ORM\Column]
-	private ?string $filter_passed = null;
+	private ?int $filter_passed = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $failed_shops_filters_id = null;
 
 	#[ORM\Column]
-	private ?string $manual_assignment = null;
+	private ?int $manual_assignment = null;
 
 	#[ORM\Column]
-	private ?string $has_errors = null;
+	private ?int $has_errors = null;
 
 	#[ORM\Column]
-	private ?string $has_categories_assignments = null;
+	private ?int $has_categories_assignments = null;
 
 	#[ORM\Column]
-	private ?string $to_delete = null;
+	private ?int $to_delete = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $min_price = null;
+	private ?float $min_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $max_price = null;
+	private ?float $max_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $min_price_rrp = null;
+	private ?float $min_price_rrp = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $max_price_rrp = null;
+	private ?float $max_price_rrp = null;
 
 	#[ORM\Column]
-	private ?string $has_price_locked = null;
+	private ?int $has_price_locked = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $initial_shop_date = null;
@@ -177,34 +177,34 @@ class ShopsProducts
 		return $this;
 	}
 
-	public function getProductsStatus():  ?string
+	public function getProductsStatus():  ?int
 	{
 		return $this->products_status;
 	}
 
-	public function setProductsStatus(string $products_status) : self
+	public function setProductsStatus(int $products_status) : self
 	{
 		$this->products_status = $products_status;
 		return $this;
 	}
 
-	public function getOnlineStatus():  ?string
+	public function getOnlineStatus():  ?int
 	{
 		return $this->online_status;
 	}
 
-	public function setOnlineStatus(string $online_status) : self
+	public function setOnlineStatus(int $online_status) : self
 	{
 		$this->online_status = $online_status;
 		return $this;
 	}
 
-	public function getFilterPassed():  ?string
+	public function getFilterPassed():  ?int
 	{
 		return $this->filter_passed;
 	}
 
-	public function setFilterPassed(string $filter_passed) : self
+	public function setFilterPassed(int $filter_passed) : self
 	{
 		$this->filter_passed = $filter_passed;
 		return $this;
@@ -221,100 +221,100 @@ class ShopsProducts
 		return $this;
 	}
 
-	public function getManualAssignment():  ?string
+	public function getManualAssignment():  ?int
 	{
 		return $this->manual_assignment;
 	}
 
-	public function setManualAssignment(string $manual_assignment) : self
+	public function setManualAssignment(int $manual_assignment) : self
 	{
 		$this->manual_assignment = $manual_assignment;
 		return $this;
 	}
 
-	public function getHasErrors():  ?string
+	public function getHasErrors():  ?int
 	{
 		return $this->has_errors;
 	}
 
-	public function setHasErrors(string $has_errors) : self
+	public function setHasErrors(int $has_errors) : self
 	{
 		$this->has_errors = $has_errors;
 		return $this;
 	}
 
-	public function getHasCategoriesAssignments():  ?string
+	public function getHasCategoriesAssignments():  ?int
 	{
 		return $this->has_categories_assignments;
 	}
 
-	public function setHasCategoriesAssignments(string $has_categories_assignments) : self
+	public function setHasCategoriesAssignments(int $has_categories_assignments) : self
 	{
 		$this->has_categories_assignments = $has_categories_assignments;
 		return $this;
 	}
 
-	public function getToDelete():  ?string
+	public function getToDelete():  ?int
 	{
 		return $this->to_delete;
 	}
 
-	public function setToDelete(string $to_delete) : self
+	public function setToDelete(int $to_delete) : self
 	{
 		$this->to_delete = $to_delete;
 		return $this;
 	}
 
-	public function getMinPrice():  ?string
+	public function getMinPrice():  ?float
 	{
 		return $this->min_price;
 	}
 
-	public function setMinPrice(string $min_price) : self
+	public function setMinPrice(float $min_price) : self
 	{
 		$this->min_price = $min_price;
 		return $this;
 	}
 
-	public function getMaxPrice():  ?string
+	public function getMaxPrice():  ?float
 	{
 		return $this->max_price;
 	}
 
-	public function setMaxPrice(string $max_price) : self
+	public function setMaxPrice(float $max_price) : self
 	{
 		$this->max_price = $max_price;
 		return $this;
 	}
 
-	public function getMinPriceRrp():  ?string
+	public function getMinPriceRrp():  ?float
 	{
 		return $this->min_price_rrp;
 	}
 
-	public function setMinPriceRrp(string $min_price_rrp) : self
+	public function setMinPriceRrp(float $min_price_rrp) : self
 	{
 		$this->min_price_rrp = $min_price_rrp;
 		return $this;
 	}
 
-	public function getMaxPriceRrp():  ?string
+	public function getMaxPriceRrp():  ?float
 	{
 		return $this->max_price_rrp;
 	}
 
-	public function setMaxPriceRrp(string $max_price_rrp) : self
+	public function setMaxPriceRrp(float $max_price_rrp) : self
 	{
 		$this->max_price_rrp = $max_price_rrp;
 		return $this;
 	}
 
-	public function getHasPriceLocked():  ?string
+	public function getHasPriceLocked():  ?int
 	{
 		return $this->has_price_locked;
 	}
 
-	public function setHasPriceLocked(string $has_price_locked) : self
+	public function setHasPriceLocked(int $has_price_locked) : self
 	{
 		$this->has_price_locked = $has_price_locked;
 		return $this;

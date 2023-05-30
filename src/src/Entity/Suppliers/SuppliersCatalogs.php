@@ -56,28 +56,28 @@ class SuppliersCatalogs
 	private ?string $model_year = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_rrp = null;
+	private ?float $price_rrp = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_gross = null;
+	private ?float $price_gross = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $suppliers_price = null;
+	private ?float $suppliers_price = null;
 
 	#[ORM\Column(length: 32, nullable: true)]
 	private ?string $suppliers_price_currency_code = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $reduction1 = null;
+	private ?float $reduction1 = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $reduction2 = null;
+	private ?float $reduction2 = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $reduction3 = null;
+	private ?float $reduction3 = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $reduction4 = null;
+	private ?float $reduction4 = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?string $ean = null;
@@ -128,25 +128,25 @@ class SuppliersCatalogs
 	private ?int $available_quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $suppliers_availability_status_id = null;
+	private ?int $suppliers_availability_status_id = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $availability_date = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $product_deleted = null;
+	private ?int $product_deleted = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $product_deleted_date = null;
 
 	#[ORM\Column]
-	private ?string $force_price_calculation = null;
+	private ?int $force_price_calculation = null;
 
 	#[ORM\Column]
-	private ?string $hidden = null;
+	private ?int $hidden = null;
 
 	#[ORM\Column]
-	private ?string $image_exist = null;
+	private ?int $image_exist = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $image_update_date_changed = null;
@@ -315,34 +315,34 @@ class SuppliersCatalogs
 		return $this;
 	}
 
-	public function getPriceRrp():  ?string
+	public function getPriceRrp():  ?float
 	{
 		return $this->price_rrp;
 	}
 
-	public function setPriceRrp(string $price_rrp) : self
+	public function setPriceRrp(float $price_rrp) : self
 	{
 		$this->price_rrp = $price_rrp;
 		return $this;
 	}
 
-	public function getPriceGross():  ?string
+	public function getPriceGross():  ?float
 	{
 		return $this->price_gross;
 	}
 
-	public function setPriceGross(string $price_gross) : self
+	public function setPriceGross(float $price_gross) : self
 	{
 		$this->price_gross = $price_gross;
 		return $this;
 	}
 
-	public function getSuppliersPrice():  ?string
+	public function getSuppliersPrice():  ?float
 	{
 		return $this->suppliers_price;
 	}
 
-	public function setSuppliersPrice(string $suppliers_price) : self
+	public function setSuppliersPrice(float $suppliers_price) : self
 	{
 		$this->suppliers_price = $suppliers_price;
 		return $this;
@@ -359,45 +359,45 @@ class SuppliersCatalogs
 		return $this;
 	}
 
-	public function getReduction1():  ?string
+	public function getReduction1():  ?float
 	{
 		return $this->reduction1;
 	}
 
-	public function setReduction1(string $reduction1) : self
+	public function setReduction1(float $reduction1) : self
 	{
 		$this->reduction1 = $reduction1;
 		return $this;
 	}
 
-	public function getReduction2():  ?string
+	public function getReduction2():  ?float
 	{
 		return $this->reduction2;
 	}
 
-	public function setReduction2(string $reduction2) : self
+	public function setReduction2(float $reduction2) : self
 	{
 		$this->reduction2 = $reduction2;
 		return $this;
 	}
 
-	public function getReduction3():  ?string
+	public function getReduction3():  ?float
 	{
 		return $this->reduction3;
 	}
 
-	public function setReduction3(string $reduction3) : self
+	public function setReduction3(float $reduction3) : self
 	{
 		$this->reduction3 = $reduction3;
 		return $this;
 	}
 
-	public function getReduction4():  ?string
+	public function getReduction4():  ?float
 	{
 		return $this->reduction4;
 	}
 
-	public function setReduction4(string $reduction4) : self
+	public function setReduction4(float $reduction4) : self
 	{
 		$this->reduction4 = $reduction4;
 		return $this;
@@ -579,12 +579,12 @@ class SuppliersCatalogs
 		return $this;
 	}
 
-	public function getSuppliersAvailabilityStatusId():  ?string
+	public function getSuppliersAvailabilityStatusId():  ?int
 	{
 		return $this->suppliers_availability_status_id;
 	}
 
-	public function setSuppliersAvailabilityStatusId(string $suppliers_availability_status_id) : self
+	public function setSuppliersAvailabilityStatusId(int $suppliers_availability_status_id) : self
 	{
 		$this->suppliers_availability_status_id = $suppliers_availability_status_id;
 		return $this;
@@ -601,12 +601,12 @@ class SuppliersCatalogs
 		return $this;
 	}
 
-	public function getProductDeleted():  ?string
+	public function getProductDeleted():  ?int
 	{
 		return $this->product_deleted;
 	}
 
-	public function setProductDeleted(string $product_deleted) : self
+	public function setProductDeleted(int $product_deleted) : self
 	{
 		$this->product_deleted = $product_deleted;
 		return $this;
@@ -623,34 +623,34 @@ class SuppliersCatalogs
 		return $this;
 	}
 
-	public function getForcePriceCalculation():  ?string
+	public function getForcePriceCalculation():  ?int
 	{
 		return $this->force_price_calculation;
 	}
 
-	public function setForcePriceCalculation(string $force_price_calculation) : self
+	public function setForcePriceCalculation(int $force_price_calculation) : self
 	{
 		$this->force_price_calculation = $force_price_calculation;
 		return $this;
 	}
 
-	public function getHidden():  ?string
+	public function getHidden():  ?int
 	{
 		return $this->hidden;
 	}
 
-	public function setHidden(string $hidden) : self
+	public function setHidden(int $hidden) : self
 	{
 		$this->hidden = $hidden;
 		return $this;
 	}
 
-	public function getImageExist():  ?string
+	public function getImageExist():  ?int
 	{
 		return $this->image_exist;
 	}
 
-	public function setImageExist(string $image_exist) : self
+	public function setImageExist(int $image_exist) : self
 	{
 		$this->image_exist = $image_exist;
 		return $this;

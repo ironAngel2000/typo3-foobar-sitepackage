@@ -23,7 +23,7 @@ class ProductsVariationsTimeControlledSuppliersPrices
 	private ?int $products_variations_suppliers_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price = null;
+	private ?float $price = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $products_variations_time_controlled_suppliers_prices_start = null;
@@ -62,12 +62,12 @@ class ProductsVariationsTimeControlledSuppliersPrices
 		return $this;
 	}
 
-	public function getPrice():  ?string
+	public function getPrice():  ?float
 	{
 		return $this->price;
 	}
 
-	public function setPrice(string $price) : self
+	public function setPrice(float $price) : self
 	{
 		$this->price = $price;
 		return $this;

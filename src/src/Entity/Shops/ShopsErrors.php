@@ -29,7 +29,7 @@ class ShopsErrors
 	private ?string $shops_errors_message = null;
 
 	#[ORM\Column]
-	private ?string $fatal = null;
+	private ?int $fatal = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -84,12 +84,12 @@ class ShopsErrors
 		return $this;
 	}
 
-	public function getFatal():  ?string
+	public function getFatal():  ?int
 	{
 		return $this->fatal;
 	}
 
-	public function setFatal(string $fatal) : self
+	public function setFatal(int $fatal) : self
 	{
 		$this->fatal = $fatal;
 		return $this;

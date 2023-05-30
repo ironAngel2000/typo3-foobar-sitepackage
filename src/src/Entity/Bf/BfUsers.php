@@ -29,13 +29,13 @@ class BfUsers
 	private ?string $api_key = null;
 
 	#[ORM\Column]
-	private ?string $active = null;
+	private ?int $active = null;
 
 	#[ORM\Column]
-	private ?string $enable_login = null;
+	private ?int $enable_login = null;
 
 	#[ORM\Column]
-	private ?string $enable_get_login = null;
+	private ?int $enable_get_login = null;
 
 	#[ORM\Column]
 	private ?int $failed_logins = null;
@@ -56,7 +56,7 @@ class BfUsers
 	private ?string $initials = null;
 
 	#[ORM\Column]
-	private ?string $is_employee = null;
+	private ?int $is_employee = null;
 
 	#[ORM\Column(length: 255, nullable: true)]
 	private ?string $unit = null;
@@ -64,11 +64,11 @@ class BfUsers
 	#[ORM\Column]
 	private ?string $language = null;
 
-	#[ORM\Column(nullable: true)]
-	private ?string $start_date = null;
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $start_date = null;
 
-	#[ORM\Column(nullable: true)]
-	private ?string $end_date = null;
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $end_date = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -123,34 +123,34 @@ class BfUsers
 		return $this;
 	}
 
-	public function getActive():  ?string
+	public function getActive():  ?int
 	{
 		return $this->active;
 	}
 
-	public function setActive(string $active) : self
+	public function setActive(int $active) : self
 	{
 		$this->active = $active;
 		return $this;
 	}
 
-	public function getEnableLogin():  ?string
+	public function getEnableLogin():  ?int
 	{
 		return $this->enable_login;
 	}
 
-	public function setEnableLogin(string $enable_login) : self
+	public function setEnableLogin(int $enable_login) : self
 	{
 		$this->enable_login = $enable_login;
 		return $this;
 	}
 
-	public function getEnableGetLogin():  ?string
+	public function getEnableGetLogin():  ?int
 	{
 		return $this->enable_get_login;
 	}
 
-	public function setEnableGetLogin(string $enable_get_login) : self
+	public function setEnableGetLogin(int $enable_get_login) : self
 	{
 		$this->enable_get_login = $enable_get_login;
 		return $this;
@@ -222,12 +222,12 @@ class BfUsers
 		return $this;
 	}
 
-	public function getIsEmployee():  ?string
+	public function getIsEmployee():  ?int
 	{
 		return $this->is_employee;
 	}
 
-	public function setIsEmployee(string $is_employee) : self
+	public function setIsEmployee(int $is_employee) : self
 	{
 		$this->is_employee = $is_employee;
 		return $this;
@@ -255,23 +255,23 @@ class BfUsers
 		return $this;
 	}
 
-	public function getStartDate():  ?string
+	public function getStartDate():  ?\DateTimeInterface
 	{
 		return $this->start_date;
 	}
 
-	public function setStartDate(string $start_date) : self
+	public function setStartDate(\DateTimeInterface $start_date) : self
 	{
 		$this->start_date = $start_date;
 		return $this;
 	}
 
-	public function getEndDate():  ?string
+	public function getEndDate():  ?\DateTimeInterface
 	{
 		return $this->end_date;
 	}
 
-	public function setEndDate(string $end_date) : self
+	public function setEndDate(\DateTimeInterface $end_date) : self
 	{
 		$this->end_date = $end_date;
 		return $this;

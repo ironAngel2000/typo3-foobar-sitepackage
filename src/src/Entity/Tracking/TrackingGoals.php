@@ -32,7 +32,7 @@ class TrackingGoals
 	private ?\DateTimeInterface $goal_date = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $ecommerce = null;
+	private ?int $ecommerce = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $cookie_len = null;
@@ -41,25 +41,25 @@ class TrackingGoals
 	private ?int $cid_count = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $total = null;
+	private ?float $total = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $total_net = null;
+	private ?float $total_net = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $amount = null;
+	private ?float $amount = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $amount_net = null;
+	private ?float $amount_net = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $shipping = null;
+	private ?float $shipping = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $shipping_net = null;
+	private ?float $shipping_net = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $tax = null;
+	private ?float $tax = null;
 
 	#[ORM\Column(length: 64, nullable: true)]
 	private ?string $status = null;
@@ -131,12 +131,12 @@ class TrackingGoals
 		return $this;
 	}
 
-	public function getEcommerce():  ?string
+	public function getEcommerce():  ?int
 	{
 		return $this->ecommerce;
 	}
 
-	public function setEcommerce(string $ecommerce) : self
+	public function setEcommerce(int $ecommerce) : self
 	{
 		$this->ecommerce = $ecommerce;
 		return $this;
@@ -164,78 +164,78 @@ class TrackingGoals
 		return $this;
 	}
 
-	public function getTotal():  ?string
+	public function getTotal():  ?float
 	{
 		return $this->total;
 	}
 
-	public function setTotal(string $total) : self
+	public function setTotal(float $total) : self
 	{
 		$this->total = $total;
 		return $this;
 	}
 
-	public function getTotalNet():  ?string
+	public function getTotalNet():  ?float
 	{
 		return $this->total_net;
 	}
 
-	public function setTotalNet(string $total_net) : self
+	public function setTotalNet(float $total_net) : self
 	{
 		$this->total_net = $total_net;
 		return $this;
 	}
 
-	public function getAmount():  ?string
+	public function getAmount():  ?float
 	{
 		return $this->amount;
 	}
 
-	public function setAmount(string $amount) : self
+	public function setAmount(float $amount) : self
 	{
 		$this->amount = $amount;
 		return $this;
 	}
 
-	public function getAmountNet():  ?string
+	public function getAmountNet():  ?float
 	{
 		return $this->amount_net;
 	}
 
-	public function setAmountNet(string $amount_net) : self
+	public function setAmountNet(float $amount_net) : self
 	{
 		$this->amount_net = $amount_net;
 		return $this;
 	}
 
-	public function getShipping():  ?string
+	public function getShipping():  ?float
 	{
 		return $this->shipping;
 	}
 
-	public function setShipping(string $shipping) : self
+	public function setShipping(float $shipping) : self
 	{
 		$this->shipping = $shipping;
 		return $this;
 	}
 
-	public function getShippingNet():  ?string
+	public function getShippingNet():  ?float
 	{
 		return $this->shipping_net;
 	}
 
-	public function setShippingNet(string $shipping_net) : self
+	public function setShippingNet(float $shipping_net) : self
 	{
 		$this->shipping_net = $shipping_net;
 		return $this;
 	}
 
-	public function getTax():  ?string
+	public function getTax():  ?float
 	{
 		return $this->tax;
 	}
 
-	public function setTax(string $tax) : self
+	public function setTax(float $tax) : self
 	{
 		$this->tax = $tax;
 		return $this;

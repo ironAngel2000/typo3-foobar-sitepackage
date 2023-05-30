@@ -32,7 +32,7 @@ class ShopsProductsVariationsOffers
 	private ?int $shops_products_variations_offers_types_id = null;
 
 	#[ORM\Column]
-	private ?string $lock_active = null;
+	private ?int $lock_active = null;
 
 	#[ORM\Column(length: 50, nullable: true)]
 	private ?string $extern_shops_products_variations_id = null;
@@ -41,13 +41,13 @@ class ShopsProductsVariationsOffers
 	private ?string $extern_sku = null;
 
 	#[ORM\Column]
-	private ?string $fba_active = null;
+	private ?int $fba_active = null;
 
 	#[ORM\Column]
-	private ?string $b2b_active = null;
+	private ?int $b2b_active = null;
 
 	#[ORM\Column]
-	private ?string $fulfillment_by_marketplace = null;
+	private ?int $fulfillment_by_marketplace = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -113,12 +113,12 @@ class ShopsProductsVariationsOffers
 		return $this;
 	}
 
-	public function getLockActive():  ?string
+	public function getLockActive():  ?int
 	{
 		return $this->lock_active;
 	}
 
-	public function setLockActive(string $lock_active) : self
+	public function setLockActive(int $lock_active) : self
 	{
 		$this->lock_active = $lock_active;
 		return $this;
@@ -146,34 +146,34 @@ class ShopsProductsVariationsOffers
 		return $this;
 	}
 
-	public function getFbaActive():  ?string
+	public function getFbaActive():  ?int
 	{
 		return $this->fba_active;
 	}
 
-	public function setFbaActive(string $fba_active) : self
+	public function setFbaActive(int $fba_active) : self
 	{
 		$this->fba_active = $fba_active;
 		return $this;
 	}
 
-	public function getB2bActive():  ?string
+	public function getB2bActive():  ?int
 	{
 		return $this->b2b_active;
 	}
 
-	public function setB2bActive(string $b2b_active) : self
+	public function setB2bActive(int $b2b_active) : self
 	{
 		$this->b2b_active = $b2b_active;
 		return $this;
 	}
 
-	public function getFulfillmentByMarketplace():  ?string
+	public function getFulfillmentByMarketplace():  ?int
 	{
 		return $this->fulfillment_by_marketplace;
 	}
 
-	public function setFulfillmentByMarketplace(string $fulfillment_by_marketplace) : self
+	public function setFulfillmentByMarketplace(int $fulfillment_by_marketplace) : self
 	{
 		$this->fulfillment_by_marketplace = $fulfillment_by_marketplace;
 		return $this;

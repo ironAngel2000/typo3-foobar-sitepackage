@@ -26,7 +26,7 @@ class ErpSystemsStockLocations
 	private ?int $stock_locations_id = null;
 
 	#[ORM\Column]
-	private ?string $main_stock_location = null;
+	private ?int $main_stock_location = null;
 
 	#[ORM\Column(length: 255, nullable: true)]
 	private ?string $extern_stock_locations_id = null;
@@ -73,12 +73,12 @@ class ErpSystemsStockLocations
 		return $this;
 	}
 
-	public function getMainStockLocation():  ?string
+	public function getMainStockLocation():  ?int
 	{
 		return $this->main_stock_location;
 	}
 
-	public function setMainStockLocation(string $main_stock_location) : self
+	public function setMainStockLocation(int $main_stock_location) : self
 	{
 		$this->main_stock_location = $main_stock_location;
 		return $this;

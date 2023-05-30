@@ -26,7 +26,7 @@ class CouponsRedeemOrdersLines
 	private ?int $orders_lines_id = null;
 
 	#[ORM\Column]
-	private ?string $rebate = null;
+	private ?float $rebate = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class CouponsRedeemOrdersLines
 		return $this;
 	}
 
-	public function getRebate():  ?string
+	public function getRebate():  ?float
 	{
 		return $this->rebate;
 	}
 
-	public function setRebate(string $rebate) : self
+	public function setRebate(float $rebate) : self
 	{
 		$this->rebate = $rebate;
 		return $this;

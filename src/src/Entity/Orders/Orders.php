@@ -32,7 +32,7 @@ class Orders
 	private ?int $currencies_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $exchange_rate = null;
+	private ?float $exchange_rate = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $languages_id = null;
@@ -46,8 +46,8 @@ class Orders
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $orders_date = null;
 
-	#[ORM\Column(nullable: true)]
-	private ?string $delivery_date = null;
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $delivery_date = null;
 
 	#[ORM\Column]
 	private ?int $orders_status_id = null;
@@ -86,10 +86,10 @@ class Orders
 	private ?int $payment_methods_id = null;
 
 	#[ORM\Column]
-	private ?string $payment_costs_shop = null;
+	private ?float $payment_costs_shop = null;
 
 	#[ORM\Column]
-	private ?string $payment_costs_backend = null;
+	private ?float $payment_costs_backend = null;
 
 	#[ORM\Column]
 	private ?int $shipping_methods_id = null;
@@ -101,13 +101,13 @@ class Orders
 	private ?string $shipping_vendor = null;
 
 	#[ORM\Column]
-	private ?string $shipping_costs_shop = null;
+	private ?float $shipping_costs_shop = null;
 
 	#[ORM\Column]
-	private ?string $shipping_costs_backend = null;
+	private ?float $shipping_costs_backend = null;
 
 	#[ORM\Column]
-	private ?string $shipping_costs_net = null;
+	private ?float $shipping_costs_net = null;
 
 	#[ORM\Column(length: 32, nullable: true)]
 	private ?string $transport_remarks = null;
@@ -119,34 +119,34 @@ class Orders
 	private ?int $total_items = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $total_amount_shop = null;
+	private ?float $total_amount_shop = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $total_amount_backend = null;
+	private ?float $total_amount_backend = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $products_price_gross = null;
+	private ?float $products_price_gross = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $products_price_net = null;
+	private ?float $products_price_net = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $total_price_gross = null;
+	private ?float $total_price_gross = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $total_price_net = null;
+	private ?float $total_price_net = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $actual_price_gross = null;
+	private ?float $actual_price_gross = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $merged_orders_id = null;
 
 	#[ORM\Column]
-	private ?string $insert_finished = null;
+	private ?int $insert_finished = null;
 
 	#[ORM\Column]
-	private ?string $anonymized = null;
+	private ?int $anonymized = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -212,12 +212,12 @@ class Orders
 		return $this;
 	}
 
-	public function getExchangeRate():  ?string
+	public function getExchangeRate():  ?float
 	{
 		return $this->exchange_rate;
 	}
 
-	public function setExchangeRate(string $exchange_rate) : self
+	public function setExchangeRate(float $exchange_rate) : self
 	{
 		$this->exchange_rate = $exchange_rate;
 		return $this;
@@ -267,12 +267,12 @@ class Orders
 		return $this;
 	}
 
-	public function getDeliveryDate():  ?string
+	public function getDeliveryDate():  ?\DateTimeInterface
 	{
 		return $this->delivery_date;
 	}
 
-	public function setDeliveryDate(string $delivery_date) : self
+	public function setDeliveryDate(\DateTimeInterface $delivery_date) : self
 	{
 		$this->delivery_date = $delivery_date;
 		return $this;
@@ -410,23 +410,23 @@ class Orders
 		return $this;
 	}
 
-	public function getPaymentCostsShop():  ?string
+	public function getPaymentCostsShop():  ?float
 	{
 		return $this->payment_costs_shop;
 	}
 
-	public function setPaymentCostsShop(string $payment_costs_shop) : self
+	public function setPaymentCostsShop(float $payment_costs_shop) : self
 	{
 		$this->payment_costs_shop = $payment_costs_shop;
 		return $this;
 	}
 
-	public function getPaymentCostsBackend():  ?string
+	public function getPaymentCostsBackend():  ?float
 	{
 		return $this->payment_costs_backend;
 	}
 
-	public function setPaymentCostsBackend(string $payment_costs_backend) : self
+	public function setPaymentCostsBackend(float $payment_costs_backend) : self
 	{
 		$this->payment_costs_backend = $payment_costs_backend;
 		return $this;
@@ -465,34 +465,34 @@ class Orders
 		return $this;
 	}
 
-	public function getShippingCostsShop():  ?string
+	public function getShippingCostsShop():  ?float
 	{
 		return $this->shipping_costs_shop;
 	}
 
-	public function setShippingCostsShop(string $shipping_costs_shop) : self
+	public function setShippingCostsShop(float $shipping_costs_shop) : self
 	{
 		$this->shipping_costs_shop = $shipping_costs_shop;
 		return $this;
 	}
 
-	public function getShippingCostsBackend():  ?string
+	public function getShippingCostsBackend():  ?float
 	{
 		return $this->shipping_costs_backend;
 	}
 
-	public function setShippingCostsBackend(string $shipping_costs_backend) : self
+	public function setShippingCostsBackend(float $shipping_costs_backend) : self
 	{
 		$this->shipping_costs_backend = $shipping_costs_backend;
 		return $this;
 	}
 
-	public function getShippingCostsNet():  ?string
+	public function getShippingCostsNet():  ?float
 	{
 		return $this->shipping_costs_net;
 	}
 
-	public function setShippingCostsNet(string $shipping_costs_net) : self
+	public function setShippingCostsNet(float $shipping_costs_net) : self
 	{
 		$this->shipping_costs_net = $shipping_costs_net;
 		return $this;
@@ -531,78 +531,78 @@ class Orders
 		return $this;
 	}
 
-	public function getTotalAmountShop():  ?string
+	public function getTotalAmountShop():  ?float
 	{
 		return $this->total_amount_shop;
 	}
 
-	public function setTotalAmountShop(string $total_amount_shop) : self
+	public function setTotalAmountShop(float $total_amount_shop) : self
 	{
 		$this->total_amount_shop = $total_amount_shop;
 		return $this;
 	}
 
-	public function getTotalAmountBackend():  ?string
+	public function getTotalAmountBackend():  ?float
 	{
 		return $this->total_amount_backend;
 	}
 
-	public function setTotalAmountBackend(string $total_amount_backend) : self
+	public function setTotalAmountBackend(float $total_amount_backend) : self
 	{
 		$this->total_amount_backend = $total_amount_backend;
 		return $this;
 	}
 
-	public function getProductsPriceGross():  ?string
+	public function getProductsPriceGross():  ?float
 	{
 		return $this->products_price_gross;
 	}
 
-	public function setProductsPriceGross(string $products_price_gross) : self
+	public function setProductsPriceGross(float $products_price_gross) : self
 	{
 		$this->products_price_gross = $products_price_gross;
 		return $this;
 	}
 
-	public function getProductsPriceNet():  ?string
+	public function getProductsPriceNet():  ?float
 	{
 		return $this->products_price_net;
 	}
 
-	public function setProductsPriceNet(string $products_price_net) : self
+	public function setProductsPriceNet(float $products_price_net) : self
 	{
 		$this->products_price_net = $products_price_net;
 		return $this;
 	}
 
-	public function getTotalPriceGross():  ?string
+	public function getTotalPriceGross():  ?float
 	{
 		return $this->total_price_gross;
 	}
 
-	public function setTotalPriceGross(string $total_price_gross) : self
+	public function setTotalPriceGross(float $total_price_gross) : self
 	{
 		$this->total_price_gross = $total_price_gross;
 		return $this;
 	}
 
-	public function getTotalPriceNet():  ?string
+	public function getTotalPriceNet():  ?float
 	{
 		return $this->total_price_net;
 	}
 
-	public function setTotalPriceNet(string $total_price_net) : self
+	public function setTotalPriceNet(float $total_price_net) : self
 	{
 		$this->total_price_net = $total_price_net;
 		return $this;
 	}
 
-	public function getActualPriceGross():  ?string
+	public function getActualPriceGross():  ?float
 	{
 		return $this->actual_price_gross;
 	}
 
-	public function setActualPriceGross(string $actual_price_gross) : self
+	public function setActualPriceGross(float $actual_price_gross) : self
 	{
 		$this->actual_price_gross = $actual_price_gross;
 		return $this;
@@ -619,23 +619,23 @@ class Orders
 		return $this;
 	}
 
-	public function getInsertFinished():  ?string
+	public function getInsertFinished():  ?int
 	{
 		return $this->insert_finished;
 	}
 
-	public function setInsertFinished(string $insert_finished) : self
+	public function setInsertFinished(int $insert_finished) : self
 	{
 		$this->insert_finished = $insert_finished;
 		return $this;
 	}
 
-	public function getAnonymized():  ?string
+	public function getAnonymized():  ?int
 	{
 		return $this->anonymized;
 	}
 
-	public function setAnonymized(string $anonymized) : self
+	public function setAnonymized(int $anonymized) : self
 	{
 		$this->anonymized = $anonymized;
 		return $this;

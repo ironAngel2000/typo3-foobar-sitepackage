@@ -41,13 +41,13 @@ class FiltersValues
 	private ?string $on = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $re_join = null;
+	private ?int $re_join = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $last_join = null;
+	private ?int $last_join = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $null = null;
+	private ?int $null = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -146,34 +146,34 @@ class FiltersValues
 		return $this;
 	}
 
-	public function getReJoin():  ?string
+	public function getReJoin():  ?int
 	{
 		return $this->re_join;
 	}
 
-	public function setReJoin(string $re_join) : self
+	public function setReJoin(int $re_join) : self
 	{
 		$this->re_join = $re_join;
 		return $this;
 	}
 
-	public function getLastJoin():  ?string
+	public function getLastJoin():  ?int
 	{
 		return $this->last_join;
 	}
 
-	public function setLastJoin(string $last_join) : self
+	public function setLastJoin(int $last_join) : self
 	{
 		$this->last_join = $last_join;
 		return $this;
 	}
 
-	public function getNull():  ?string
+	public function getNull():  ?int
 	{
 		return $this->null;
 	}
 
-	public function setNull(string $null) : self
+	public function setNull(int $null) : self
 	{
 		$this->null = $null;
 		return $this;

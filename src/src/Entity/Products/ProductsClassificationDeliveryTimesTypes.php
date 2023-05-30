@@ -32,7 +32,7 @@ class ProductsClassificationDeliveryTimesTypes
 	private ?int $delivery_times_if_no_stock_but_third_party_stock_id = null;
 
 	#[ORM\Column]
-	private ?string $delivery_times_from_supplier = null;
+	private ?int $delivery_times_from_supplier = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -98,12 +98,12 @@ class ProductsClassificationDeliveryTimesTypes
 		return $this;
 	}
 
-	public function getDeliveryTimesFromSupplier():  ?string
+	public function getDeliveryTimesFromSupplier():  ?int
 	{
 		return $this->delivery_times_from_supplier;
 	}
 
-	public function setDeliveryTimesFromSupplier(string $delivery_times_from_supplier) : self
+	public function setDeliveryTimesFromSupplier(int $delivery_times_from_supplier) : self
 	{
 		$this->delivery_times_from_supplier = $delivery_times_from_supplier;
 		return $this;

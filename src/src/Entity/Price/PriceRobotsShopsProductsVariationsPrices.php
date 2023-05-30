@@ -26,34 +26,34 @@ class PriceRobotsShopsProductsVariationsPrices
 	private ?int $shops_products_variations_id = null;
 
 	#[ORM\Column]
-	private ?string $price_robots_prices_locked = null;
+	private ?int $price_robots_prices_locked = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_robots_min_price = null;
+	private ?float $price_robots_min_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_robots_max_price = null;
+	private ?float $price_robots_max_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_robots_stand_alone_price = null;
+	private ?float $price_robots_stand_alone_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $shipping_costs = null;
+	private ?float $shipping_costs = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_robots_price_interval = null;
+	private ?float $price_robots_price_interval = null;
 
 	#[ORM\Column(length: 10, nullable: true)]
 	private ?string $price_robots_repricing_target_position = null;
 
 	#[ORM\Column]
-	private ?string $price_robots_optimization_active = null;
+	private ?int $price_robots_optimization_active = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_robots_fixed_price = null;
+	private ?float $price_robots_fixed_price = null;
 
 	#[ORM\Column]
-	private ?string $price_robots_fixed_price_active = null;
+	private ?int $price_robots_fixed_price_active = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?string $price_robots_additional_object = null;
@@ -100,67 +100,67 @@ class PriceRobotsShopsProductsVariationsPrices
 		return $this;
 	}
 
-	public function getPriceRobotsPricesLocked():  ?string
+	public function getPriceRobotsPricesLocked():  ?int
 	{
 		return $this->price_robots_prices_locked;
 	}
 
-	public function setPriceRobotsPricesLocked(string $price_robots_prices_locked) : self
+	public function setPriceRobotsPricesLocked(int $price_robots_prices_locked) : self
 	{
 		$this->price_robots_prices_locked = $price_robots_prices_locked;
 		return $this;
 	}
 
-	public function getPriceRobotsMinPrice():  ?string
+	public function getPriceRobotsMinPrice():  ?float
 	{
 		return $this->price_robots_min_price;
 	}
 
-	public function setPriceRobotsMinPrice(string $price_robots_min_price) : self
+	public function setPriceRobotsMinPrice(float $price_robots_min_price) : self
 	{
 		$this->price_robots_min_price = $price_robots_min_price;
 		return $this;
 	}
 
-	public function getPriceRobotsMaxPrice():  ?string
+	public function getPriceRobotsMaxPrice():  ?float
 	{
 		return $this->price_robots_max_price;
 	}
 
-	public function setPriceRobotsMaxPrice(string $price_robots_max_price) : self
+	public function setPriceRobotsMaxPrice(float $price_robots_max_price) : self
 	{
 		$this->price_robots_max_price = $price_robots_max_price;
 		return $this;
 	}
 
-	public function getPriceRobotsStandAlonePrice():  ?string
+	public function getPriceRobotsStandAlonePrice():  ?float
 	{
 		return $this->price_robots_stand_alone_price;
 	}
 
-	public function setPriceRobotsStandAlonePrice(string $price_robots_stand_alone_price) : self
+	public function setPriceRobotsStandAlonePrice(float $price_robots_stand_alone_price) : self
 	{
 		$this->price_robots_stand_alone_price = $price_robots_stand_alone_price;
 		return $this;
 	}
 
-	public function getShippingCosts():  ?string
+	public function getShippingCosts():  ?float
 	{
 		return $this->shipping_costs;
 	}
 
-	public function setShippingCosts(string $shipping_costs) : self
+	public function setShippingCosts(float $shipping_costs) : self
 	{
 		$this->shipping_costs = $shipping_costs;
 		return $this;
 	}
 
-	public function getPriceRobotsPriceInterval():  ?string
+	public function getPriceRobotsPriceInterval():  ?float
 	{
 		return $this->price_robots_price_interval;
 	}
 
-	public function setPriceRobotsPriceInterval(string $price_robots_price_interval) : self
+	public function setPriceRobotsPriceInterval(float $price_robots_price_interval) : self
 	{
 		$this->price_robots_price_interval = $price_robots_price_interval;
 		return $this;
@@ -177,34 +177,34 @@ class PriceRobotsShopsProductsVariationsPrices
 		return $this;
 	}
 
-	public function getPriceRobotsOptimizationActive():  ?string
+	public function getPriceRobotsOptimizationActive():  ?int
 	{
 		return $this->price_robots_optimization_active;
 	}
 
-	public function setPriceRobotsOptimizationActive(string $price_robots_optimization_active) : self
+	public function setPriceRobotsOptimizationActive(int $price_robots_optimization_active) : self
 	{
 		$this->price_robots_optimization_active = $price_robots_optimization_active;
 		return $this;
 	}
 
-	public function getPriceRobotsFixedPrice():  ?string
+	public function getPriceRobotsFixedPrice():  ?float
 	{
 		return $this->price_robots_fixed_price;
 	}
 
-	public function setPriceRobotsFixedPrice(string $price_robots_fixed_price) : self
+	public function setPriceRobotsFixedPrice(float $price_robots_fixed_price) : self
 	{
 		$this->price_robots_fixed_price = $price_robots_fixed_price;
 		return $this;
 	}
 
-	public function getPriceRobotsFixedPriceActive():  ?string
+	public function getPriceRobotsFixedPriceActive():  ?int
 	{
 		return $this->price_robots_fixed_price_active;
 	}
 
-	public function setPriceRobotsFixedPriceActive(string $price_robots_fixed_price_active) : self
+	public function setPriceRobotsFixedPriceActive(int $price_robots_fixed_price_active) : self
 	{
 		$this->price_robots_fixed_price_active = $price_robots_fixed_price_active;
 		return $this;

@@ -23,13 +23,13 @@ class BfUsersHistory
 	private ?int $bf_users_id = null;
 
 	#[ORM\Column]
-	private ?string $active = null;
+	private ?int $active = null;
 
 	#[ORM\Column]
-	private ?string $enable_login = null;
+	private ?int $enable_login = null;
 
 	#[ORM\Column]
-	private ?string $enable_get_login = null;
+	private ?int $enable_get_login = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -62,34 +62,34 @@ class BfUsersHistory
 		return $this;
 	}
 
-	public function getActive():  ?string
+	public function getActive():  ?int
 	{
 		return $this->active;
 	}
 
-	public function setActive(string $active) : self
+	public function setActive(int $active) : self
 	{
 		$this->active = $active;
 		return $this;
 	}
 
-	public function getEnableLogin():  ?string
+	public function getEnableLogin():  ?int
 	{
 		return $this->enable_login;
 	}
 
-	public function setEnableLogin(string $enable_login) : self
+	public function setEnableLogin(int $enable_login) : self
 	{
 		$this->enable_login = $enable_login;
 		return $this;
 	}
 
-	public function getEnableGetLogin():  ?string
+	public function getEnableGetLogin():  ?int
 	{
 		return $this->enable_get_login;
 	}
 
-	public function setEnableGetLogin(string $enable_get_login) : self
+	public function setEnableGetLogin(int $enable_get_login) : self
 	{
 		$this->enable_get_login = $enable_get_login;
 		return $this;

@@ -32,7 +32,7 @@ class ShopsLanguages
 	private ?string $extern_shops_languages_id = null;
 
 	#[ORM\Column]
-	private ?string $main_language = null;
+	private ?int $main_language = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -98,12 +98,12 @@ class ShopsLanguages
 		return $this;
 	}
 
-	public function getMainLanguage():  ?string
+	public function getMainLanguage():  ?int
 	{
 		return $this->main_language;
 	}
 
-	public function setMainLanguage(string $main_language) : self
+	public function setMainLanguage(int $main_language) : self
 	{
 		$this->main_language = $main_language;
 		return $this;

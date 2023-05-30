@@ -26,10 +26,10 @@ class ProductsVariationsPricesHistory
 	private ?int $currencies_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $old_price = null;
+	private ?float $old_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $new_price = null;
+	private ?float $new_price = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -73,23 +73,23 @@ class ProductsVariationsPricesHistory
 		return $this;
 	}
 
-	public function getOldPrice():  ?string
+	public function getOldPrice():  ?float
 	{
 		return $this->old_price;
 	}
 
-	public function setOldPrice(string $old_price) : self
+	public function setOldPrice(float $old_price) : self
 	{
 		$this->old_price = $old_price;
 		return $this;
 	}
 
-	public function getNewPrice():  ?string
+	public function getNewPrice():  ?float
 	{
 		return $this->new_price;
 	}
 
-	public function setNewPrice(string $new_price) : self
+	public function setNewPrice(float $new_price) : self
 	{
 		$this->new_price = $new_price;
 		return $this;

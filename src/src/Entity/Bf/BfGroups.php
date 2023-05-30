@@ -20,7 +20,7 @@ class BfGroups
 	private ?int $bf_groups_id = null;
 
 	#[ORM\Column]
-	private ?string $bf_groups_visible = null;
+	private ?int $bf_groups_visible = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -42,12 +42,12 @@ class BfGroups
 		return $this;
 	}
 
-	public function getBfGroupsVisible():  ?string
+	public function getBfGroupsVisible():  ?int
 	{
 		return $this->bf_groups_visible;
 	}
 
-	public function setBfGroupsVisible(string $bf_groups_visible) : self
+	public function setBfGroupsVisible(int $bf_groups_visible) : self
 	{
 		$this->bf_groups_visible = $bf_groups_visible;
 		return $this;

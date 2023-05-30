@@ -29,7 +29,7 @@ class ErpSystems
 	private ?int $erp_systems_types_id = null;
 
 	#[ORM\Column]
-	private ?string $erp_systems_visible = null;
+	private ?int $erp_systems_visible = null;
 
 	#[ORM\Column]
 	private ?int $sort_order = null;
@@ -87,12 +87,12 @@ class ErpSystems
 		return $this;
 	}
 
-	public function getErpSystemsVisible():  ?string
+	public function getErpSystemsVisible():  ?int
 	{
 		return $this->erp_systems_visible;
 	}
 
-	public function setErpSystemsVisible(string $erp_systems_visible) : self
+	public function setErpSystemsVisible(int $erp_systems_visible) : self
 	{
 		$this->erp_systems_visible = $erp_systems_visible;
 		return $this;

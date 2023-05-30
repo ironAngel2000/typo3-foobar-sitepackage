@@ -35,7 +35,7 @@ class TrackingCids
 	private ?string $cid = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $goal_total = null;
+	private ?float $goal_total = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $goal_date = null;
@@ -50,37 +50,37 @@ class TrackingCids
 	private ?int $tracking_channels_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $channel_total = null;
+	private ?float $channel_total = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $tracking_utm_sources_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $source_total = null;
+	private ?float $source_total = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $tracking_utm_mediums_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $medium_total = null;
+	private ?float $medium_total = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $tracking_utm_terms_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $term_total = null;
+	private ?float $term_total = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $tracking_utm_contents_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $content_total = null;
+	private ?float $content_total = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $tracking_utm_campaigns_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $campaign_total = null;
+	private ?float $campaign_total = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -157,12 +157,12 @@ class TrackingCids
 		return $this;
 	}
 
-	public function getGoalTotal():  ?string
+	public function getGoalTotal():  ?float
 	{
 		return $this->goal_total;
 	}
 
-	public function setGoalTotal(string $goal_total) : self
+	public function setGoalTotal(float $goal_total) : self
 	{
 		$this->goal_total = $goal_total;
 		return $this;
@@ -212,12 +212,12 @@ class TrackingCids
 		return $this;
 	}
 
-	public function getChannelTotal():  ?string
+	public function getChannelTotal():  ?float
 	{
 		return $this->channel_total;
 	}
 
-	public function setChannelTotal(string $channel_total) : self
+	public function setChannelTotal(float $channel_total) : self
 	{
 		$this->channel_total = $channel_total;
 		return $this;
@@ -234,12 +234,12 @@ class TrackingCids
 		return $this;
 	}
 
-	public function getSourceTotal():  ?string
+	public function getSourceTotal():  ?float
 	{
 		return $this->source_total;
 	}
 
-	public function setSourceTotal(string $source_total) : self
+	public function setSourceTotal(float $source_total) : self
 	{
 		$this->source_total = $source_total;
 		return $this;
@@ -256,12 +256,12 @@ class TrackingCids
 		return $this;
 	}
 
-	public function getMediumTotal():  ?string
+	public function getMediumTotal():  ?float
 	{
 		return $this->medium_total;
 	}
 
-	public function setMediumTotal(string $medium_total) : self
+	public function setMediumTotal(float $medium_total) : self
 	{
 		$this->medium_total = $medium_total;
 		return $this;
@@ -278,12 +278,12 @@ class TrackingCids
 		return $this;
 	}
 
-	public function getTermTotal():  ?string
+	public function getTermTotal():  ?float
 	{
 		return $this->term_total;
 	}
 
-	public function setTermTotal(string $term_total) : self
+	public function setTermTotal(float $term_total) : self
 	{
 		$this->term_total = $term_total;
 		return $this;
@@ -300,12 +300,12 @@ class TrackingCids
 		return $this;
 	}
 
-	public function getContentTotal():  ?string
+	public function getContentTotal():  ?float
 	{
 		return $this->content_total;
 	}
 
-	public function setContentTotal(string $content_total) : self
+	public function setContentTotal(float $content_total) : self
 	{
 		$this->content_total = $content_total;
 		return $this;
@@ -322,12 +322,12 @@ class TrackingCids
 		return $this;
 	}
 
-	public function getCampaignTotal():  ?string
+	public function getCampaignTotal():  ?float
 	{
 		return $this->campaign_total;
 	}
 
-	public function setCampaignTotal(string $campaign_total) : self
+	public function setCampaignTotal(float $campaign_total) : self
 	{
 		$this->campaign_total = $campaign_total;
 		return $this;

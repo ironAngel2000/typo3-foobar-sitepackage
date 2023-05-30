@@ -23,10 +23,10 @@ class TasksSuppliersToSuppliersSchedules
 	private ?int $tasks_suppliers_to_suppliers_id = null;
 
 	#[ORM\Column]
-	private ?string $tasks_suppliers_to_suppliers_schedules_active = null;
+	private ?int $tasks_suppliers_to_suppliers_schedules_active = null;
 
 	#[ORM\Column]
-	private ?string $scheduled_weekday = null;
+	private ?int $scheduled_weekday = null;
 
 	#[ORM\Column]
 	private ?string $scheduled_time = null;
@@ -62,23 +62,23 @@ class TasksSuppliersToSuppliersSchedules
 		return $this;
 	}
 
-	public function getTasksSuppliersToSuppliersSchedulesActive():  ?string
+	public function getTasksSuppliersToSuppliersSchedulesActive():  ?int
 	{
 		return $this->tasks_suppliers_to_suppliers_schedules_active;
 	}
 
-	public function setTasksSuppliersToSuppliersSchedulesActive(string $tasks_suppliers_to_suppliers_schedules_active) : self
+	public function setTasksSuppliersToSuppliersSchedulesActive(int $tasks_suppliers_to_suppliers_schedules_active) : self
 	{
 		$this->tasks_suppliers_to_suppliers_schedules_active = $tasks_suppliers_to_suppliers_schedules_active;
 		return $this;
 	}
 
-	public function getScheduledWeekday():  ?string
+	public function getScheduledWeekday():  ?int
 	{
 		return $this->scheduled_weekday;
 	}
 
-	public function setScheduledWeekday(string $scheduled_weekday) : self
+	public function setScheduledWeekday(int $scheduled_weekday) : self
 	{
 		$this->scheduled_weekday = $scheduled_weekday;
 		return $this;

@@ -38,7 +38,7 @@ class BfCrons
 	private ?string $bf_crons_command = null;
 
 	#[ORM\Column]
-	private ?string $bf_crons_status = null;
+	private ?int $bf_crons_status = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $is_extern_url = null;
@@ -138,12 +138,12 @@ class BfCrons
 		return $this;
 	}
 
-	public function getBfCronsStatus():  ?string
+	public function getBfCronsStatus():  ?int
 	{
 		return $this->bf_crons_status;
 	}
 
-	public function setBfCronsStatus(string $bf_crons_status) : self
+	public function setBfCronsStatus(int $bf_crons_status) : self
 	{
 		$this->bf_crons_status = $bf_crons_status;
 		return $this;

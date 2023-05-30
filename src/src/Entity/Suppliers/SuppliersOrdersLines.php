@@ -50,7 +50,7 @@ class SuppliersOrdersLines
 	private ?string $item_number = null;
 
 	#[ORM\Column]
-	private ?string $price = null;
+	private ?float $price = null;
 
 	 #[ORM\Column(length: 50)]
 	private ?string $price_unit = null;
@@ -185,12 +185,12 @@ class SuppliersOrdersLines
 		return $this;
 	}
 
-	public function getPrice():  ?string
+	public function getPrice():  ?float
 	{
 		return $this->price;
 	}
 
-	public function setPrice(string $price) : self
+	public function setPrice(float $price) : self
 	{
 		$this->price = $price;
 		return $this;

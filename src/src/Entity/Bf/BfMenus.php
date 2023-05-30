@@ -35,7 +35,7 @@ class BfMenus
 	private ?int $sort = null;
 
 	#[ORM\Column]
-	private ?string $level = null;
+	private ?int $level = null;
 
 	#[ORM\Column(length: 30, nullable: true)]
 	private ?string $icon_cls = null;
@@ -115,12 +115,12 @@ class BfMenus
 		return $this;
 	}
 
-	public function getLevel():  ?string
+	public function getLevel():  ?int
 	{
 		return $this->level;
 	}
 
-	public function setLevel(string $level) : self
+	public function setLevel(int $level) : self
 	{
 		$this->level = $level;
 		return $this;

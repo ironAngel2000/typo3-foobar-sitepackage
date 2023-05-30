@@ -20,7 +20,7 @@ class TrackingClients
 	private ?int $tracking_clients_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $active = null;
+	private ?int $active = null;
 
 	#[ORM\Column(length: 32, nullable: true)]
 	private ?string $name = null;
@@ -42,12 +42,12 @@ class TrackingClients
 		return $this;
 	}
 
-	public function getActive():  ?string
+	public function getActive():  ?int
 	{
 		return $this->active;
 	}
 
-	public function setActive(string $active) : self
+	public function setActive(int $active) : self
 	{
 		$this->active = $active;
 		return $this;

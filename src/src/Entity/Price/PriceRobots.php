@@ -29,7 +29,7 @@ class PriceRobots
 	private ?string $price_robots_name = null;
 
 	#[ORM\Column]
-	private ?string $price_robots_visible = null;
+	private ?int $price_robots_visible = null;
 
 	#[ORM\Column]
 	private ?int $sort_order = null;
@@ -87,12 +87,12 @@ class PriceRobots
 		return $this;
 	}
 
-	public function getPriceRobotsVisible():  ?string
+	public function getPriceRobotsVisible():  ?int
 	{
 		return $this->price_robots_visible;
 	}
 
-	public function setPriceRobotsVisible(string $price_robots_visible) : self
+	public function setPriceRobotsVisible(int $price_robots_visible) : self
 	{
 		$this->price_robots_visible = $price_robots_visible;
 		return $this;

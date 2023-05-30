@@ -41,7 +41,7 @@ class MailingsSendingList
 	private ?string $mail_body = null;
 
 	#[ORM\Column]
-	private ?string $mail_html = null;
+	private ?int $mail_html = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $mail_send_date_first = null;
@@ -158,12 +158,12 @@ class MailingsSendingList
 		return $this;
 	}
 
-	public function getMailHtml():  ?string
+	public function getMailHtml():  ?int
 	{
 		return $this->mail_html;
 	}
 
-	public function setMailHtml(string $mail_html) : self
+	public function setMailHtml(int $mail_html) : self
 	{
 		$this->mail_html = $mail_html;
 		return $this;

@@ -37,8 +37,8 @@ class Customers
 	#[ORM\Column(length: 255, nullable: true)]
 	private ?string $last_name = null;
 
-	#[ORM\Column(nullable: true)]
-	private ?string $date_of_birth = null;
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $date_of_birth = null;
 
 	 #[ORM\Column(length: 128)]
 	private ?string $email_address = null;
@@ -56,7 +56,7 @@ class Customers
 	private ?string $fax = null;
 
 	#[ORM\Column]
-	private ?string $guest = null;
+	private ?int $guest = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -144,12 +144,12 @@ class Customers
 		return $this;
 	}
 
-	public function getDateOfBirth():  ?string
+	public function getDateOfBirth():  ?\DateTimeInterface
 	{
 		return $this->date_of_birth;
 	}
 
-	public function setDateOfBirth(string $date_of_birth) : self
+	public function setDateOfBirth(\DateTimeInterface $date_of_birth) : self
 	{
 		$this->date_of_birth = $date_of_birth;
 		return $this;
@@ -210,12 +210,12 @@ class Customers
 		return $this;
 	}
 
-	public function getGuest():  ?string
+	public function getGuest():  ?int
 	{
 		return $this->guest;
 	}
 
-	public function setGuest(string $guest) : self
+	public function setGuest(int $guest) : self
 	{
 		$this->guest = $guest;
 		return $this;

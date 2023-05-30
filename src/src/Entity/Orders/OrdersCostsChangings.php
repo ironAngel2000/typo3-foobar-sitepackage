@@ -23,13 +23,13 @@ class OrdersCostsChangings
 	private ?int $orders_id = null;
 
 	#[ORM\Column]
-	private ?string $orders_costs_changings_type = null;
+	private ?int $orders_costs_changings_type = null;
 
 	#[ORM\Column]
-	private ?string $orders_costs_changings_type_value = null;
+	private ?float $orders_costs_changings_type_value = null;
 
 	#[ORM\Column]
-	private ?string $orders_costs_changings_value = null;
+	private ?float $orders_costs_changings_value = null;
 
 	#[ORM\Column(length: 255, nullable: true)]
 	private ?string $orders_costs_changings_name = null;
@@ -65,34 +65,34 @@ class OrdersCostsChangings
 		return $this;
 	}
 
-	public function getOrdersCostsChangingsType():  ?string
+	public function getOrdersCostsChangingsType():  ?int
 	{
 		return $this->orders_costs_changings_type;
 	}
 
-	public function setOrdersCostsChangingsType(string $orders_costs_changings_type) : self
+	public function setOrdersCostsChangingsType(int $orders_costs_changings_type) : self
 	{
 		$this->orders_costs_changings_type = $orders_costs_changings_type;
 		return $this;
 	}
 
-	public function getOrdersCostsChangingsTypeValue():  ?string
+	public function getOrdersCostsChangingsTypeValue():  ?float
 	{
 		return $this->orders_costs_changings_type_value;
 	}
 
-	public function setOrdersCostsChangingsTypeValue(string $orders_costs_changings_type_value) : self
+	public function setOrdersCostsChangingsTypeValue(float $orders_costs_changings_type_value) : self
 	{
 		$this->orders_costs_changings_type_value = $orders_costs_changings_type_value;
 		return $this;
 	}
 
-	public function getOrdersCostsChangingsValue():  ?string
+	public function getOrdersCostsChangingsValue():  ?float
 	{
 		return $this->orders_costs_changings_value;
 	}
 
-	public function setOrdersCostsChangingsValue(string $orders_costs_changings_value) : self
+	public function setOrdersCostsChangingsValue(float $orders_costs_changings_value) : self
 	{
 		$this->orders_costs_changings_value = $orders_costs_changings_value;
 		return $this;

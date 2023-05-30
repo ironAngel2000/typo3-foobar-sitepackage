@@ -76,8 +76,8 @@ class OrdersParties
 	#[ORM\Column(length: 50, nullable: true)]
 	private ?string $vat_id = null;
 
-	#[ORM\Column(nullable: true)]
-	private ?string $date_of_birth = null;
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $date_of_birth = null;
 
 	#[ORM\Column(length: 32, nullable: true)]
 	private ?string $phone_private = null;
@@ -95,13 +95,13 @@ class OrdersParties
 	private ?string $email_address = null;
 
 	#[ORM\Column]
-	private ?string $guest = null;
+	private ?int $guest = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?string $iv = null;
 
-	#[ORM\Column(nullable: true)]
-	private ?string $data = null;
+	#[ORM\Column(type: Types::BLOB, nullable: true)]
+	private $data = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -332,12 +332,12 @@ class OrdersParties
 		return $this;
 	}
 
-	public function getDateOfBirth():  ?string
+	public function getDateOfBirth():  ?\DateTimeInterface
 	{
 		return $this->date_of_birth;
 	}
 
-	public function setDateOfBirth(string $date_of_birth) : self
+	public function setDateOfBirth(\DateTimeInterface $date_of_birth) : self
 	{
 		$this->date_of_birth = $date_of_birth;
 		return $this;
@@ -398,12 +398,12 @@ class OrdersParties
 		return $this;
 	}
 
-	public function getGuest():  ?string
+	public function getGuest():  ?int
 	{
 		return $this->guest;
 	}
 
-	public function setGuest(string $guest) : self
+	public function setGuest(int $guest) : self
 	{
 		$this->guest = $guest;
 		return $this;
@@ -420,12 +420,12 @@ class OrdersParties
 		return $this;
 	}
 
-	public function getData():  ?string
+	public function getData()
 	{
 		return $this->data;
 	}
 
-	public function setData(string $data) : self
+	public function setData($data) : self
 	{
 		$this->data = $data;
 		return $this;

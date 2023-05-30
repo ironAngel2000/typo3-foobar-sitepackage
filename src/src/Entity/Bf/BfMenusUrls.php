@@ -26,7 +26,7 @@ class BfMenusUrls
 	private ?string $url = null;
 
 	#[ORM\Column]
-	private ?string $sort_order = null;
+	private ?int $sort_order = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class BfMenusUrls
 		return $this;
 	}
 
-	public function getSortOrder():  ?string
+	public function getSortOrder():  ?int
 	{
 		return $this->sort_order;
 	}
 
-	public function setSortOrder(string $sort_order) : self
+	public function setSortOrder(int $sort_order) : self
 	{
 		$this->sort_order = $sort_order;
 		return $this;

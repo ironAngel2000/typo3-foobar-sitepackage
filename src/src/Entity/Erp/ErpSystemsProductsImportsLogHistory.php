@@ -29,10 +29,10 @@ class ErpSystemsProductsImportsLogHistory
 	private ?\DateTimeInterface $import_date = null;
 
 	#[ORM\Column]
-	private ?string $processed = null;
+	private ?int $processed = null;
 
 	#[ORM\Column]
-	private ?string $success = null;
+	private ?int $success = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -87,23 +87,23 @@ class ErpSystemsProductsImportsLogHistory
 		return $this;
 	}
 
-	public function getProcessed():  ?string
+	public function getProcessed():  ?int
 	{
 		return $this->processed;
 	}
 
-	public function setProcessed(string $processed) : self
+	public function setProcessed(int $processed) : self
 	{
 		$this->processed = $processed;
 		return $this;
 	}
 
-	public function getSuccess():  ?string
+	public function getSuccess():  ?int
 	{
 		return $this->success;
 	}
 
-	public function setSuccess(string $success) : self
+	public function setSuccess(int $success) : self
 	{
 		$this->success = $success;
 		return $this;

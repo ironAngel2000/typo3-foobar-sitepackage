@@ -29,7 +29,7 @@ class CustomersToAddresses
 	private ?int $customers_addresses_types_id = null;
 
 	#[ORM\Column]
-	private ?string $main_address = null;
+	private ?int $main_address = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -84,12 +84,12 @@ class CustomersToAddresses
 		return $this;
 	}
 
-	public function getMainAddress():  ?string
+	public function getMainAddress():  ?int
 	{
 		return $this->main_address;
 	}
 
-	public function setMainAddress(string $main_address) : self
+	public function setMainAddress(int $main_address) : self
 	{
 		$this->main_address = $main_address;
 		return $this;

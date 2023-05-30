@@ -23,7 +23,7 @@ class ReturnTrackingIdFreeList
 	private ?string $return_tracking_id = null;
 
 	#[ORM\Column]
-	private ?string $used = null;
+	private ?int $used = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_of_use = null;
@@ -59,12 +59,12 @@ class ReturnTrackingIdFreeList
 		return $this;
 	}
 
-	public function getUsed():  ?string
+	public function getUsed():  ?int
 	{
 		return $this->used;
 	}
 
-	public function setUsed(string $used) : self
+	public function setUsed(int $used) : self
 	{
 		$this->used = $used;
 		return $this;

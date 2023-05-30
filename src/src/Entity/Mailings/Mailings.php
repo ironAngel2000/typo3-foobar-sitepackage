@@ -38,10 +38,10 @@ class Mailings
 	private ?string $mailings_type = null;
 
 	#[ORM\Column]
-	private ?string $mailings_active = null;
+	private ?int $mailings_active = null;
 
 	#[ORM\Column]
-	private ?string $direct_sending = null;
+	private ?int $direct_sending = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $first_mailings_send_status_id = null;
@@ -135,23 +135,23 @@ class Mailings
 		return $this;
 	}
 
-	public function getMailingsActive():  ?string
+	public function getMailingsActive():  ?int
 	{
 		return $this->mailings_active;
 	}
 
-	public function setMailingsActive(string $mailings_active) : self
+	public function setMailingsActive(int $mailings_active) : self
 	{
 		$this->mailings_active = $mailings_active;
 		return $this;
 	}
 
-	public function getDirectSending():  ?string
+	public function getDirectSending():  ?int
 	{
 		return $this->direct_sending;
 	}
 
-	public function setDirectSending(string $direct_sending) : self
+	public function setDirectSending(int $direct_sending) : self
 	{
 		$this->direct_sending = $direct_sending;
 		return $this;

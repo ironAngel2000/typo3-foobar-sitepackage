@@ -19,8 +19,8 @@ class ControllingOrderedProducts
 	#[ORM\Column]
 	private ?int $controlling_ordered_products_id = null;
 
-	#[ORM\Column]
-	private ?string $transaction_date = null;
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $transaction_date = null;
 
 	#[ORM\Column]
 	private ?int $products_id = null;
@@ -50,40 +50,40 @@ class ControllingOrderedProducts
 	private ?int $sales_volume = null;
 
 	#[ORM\Column]
-	private ?string $value_ordered = null;
+	private ?float $value_ordered = null;
 
 	#[ORM\Column]
-	private ?string $value_cancelled = null;
+	private ?float $value_cancelled = null;
 
 	#[ORM\Column]
-	private ?string $value_shipped = null;
+	private ?float $value_shipped = null;
 
 	#[ORM\Column]
-	private ?string $value_returned = null;
+	private ?float $value_returned = null;
 
 	#[ORM\Column]
-	private ?string $value_ordered_gross = null;
+	private ?float $value_ordered_gross = null;
 
 	#[ORM\Column]
-	private ?string $value_cancelled_gross = null;
+	private ?float $value_cancelled_gross = null;
 
 	#[ORM\Column]
-	private ?string $value_shipped_gross = null;
+	private ?float $value_shipped_gross = null;
 
 	#[ORM\Column]
-	private ?string $value_returned_gross = null;
+	private ?float $value_returned_gross = null;
 
 	#[ORM\Column]
-	private ?string $purchase_value = null;
+	private ?float $purchase_value = null;
 
 	#[ORM\Column]
-	private ?string $gross_profit = null;
+	private ?float $gross_profit = null;
 
 	#[ORM\Column]
-	private ?string $turnover = null;
+	private ?float $turnover = null;
 
 	#[ORM\Column]
-	private ?string $turnover_gross = null;
+	private ?float $turnover_gross = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -105,12 +105,12 @@ class ControllingOrderedProducts
 		return $this;
 	}
 
-	public function getTransactionDate():  ?string
+	public function getTransactionDate():  ?\DateTimeInterface
 	{
 		return $this->transaction_date;
 	}
 
-	public function setTransactionDate(string $transaction_date) : self
+	public function setTransactionDate(\DateTimeInterface $transaction_date) : self
 	{
 		$this->transaction_date = $transaction_date;
 		return $this;
@@ -215,133 +215,133 @@ class ControllingOrderedProducts
 		return $this;
 	}
 
-	public function getValueOrdered():  ?string
+	public function getValueOrdered():  ?float
 	{
 		return $this->value_ordered;
 	}
 
-	public function setValueOrdered(string $value_ordered) : self
+	public function setValueOrdered(float $value_ordered) : self
 	{
 		$this->value_ordered = $value_ordered;
 		return $this;
 	}
 
-	public function getValueCancelled():  ?string
+	public function getValueCancelled():  ?float
 	{
 		return $this->value_cancelled;
 	}
 
-	public function setValueCancelled(string $value_cancelled) : self
+	public function setValueCancelled(float $value_cancelled) : self
 	{
 		$this->value_cancelled = $value_cancelled;
 		return $this;
 	}
 
-	public function getValueShipped():  ?string
+	public function getValueShipped():  ?float
 	{
 		return $this->value_shipped;
 	}
 
-	public function setValueShipped(string $value_shipped) : self
+	public function setValueShipped(float $value_shipped) : self
 	{
 		$this->value_shipped = $value_shipped;
 		return $this;
 	}
 
-	public function getValueReturned():  ?string
+	public function getValueReturned():  ?float
 	{
 		return $this->value_returned;
 	}
 
-	public function setValueReturned(string $value_returned) : self
+	public function setValueReturned(float $value_returned) : self
 	{
 		$this->value_returned = $value_returned;
 		return $this;
 	}
 
-	public function getValueOrderedGross():  ?string
+	public function getValueOrderedGross():  ?float
 	{
 		return $this->value_ordered_gross;
 	}
 
-	public function setValueOrderedGross(string $value_ordered_gross) : self
+	public function setValueOrderedGross(float $value_ordered_gross) : self
 	{
 		$this->value_ordered_gross = $value_ordered_gross;
 		return $this;
 	}
 
-	public function getValueCancelledGross():  ?string
+	public function getValueCancelledGross():  ?float
 	{
 		return $this->value_cancelled_gross;
 	}
 
-	public function setValueCancelledGross(string $value_cancelled_gross) : self
+	public function setValueCancelledGross(float $value_cancelled_gross) : self
 	{
 		$this->value_cancelled_gross = $value_cancelled_gross;
 		return $this;
 	}
 
-	public function getValueShippedGross():  ?string
+	public function getValueShippedGross():  ?float
 	{
 		return $this->value_shipped_gross;
 	}
 
-	public function setValueShippedGross(string $value_shipped_gross) : self
+	public function setValueShippedGross(float $value_shipped_gross) : self
 	{
 		$this->value_shipped_gross = $value_shipped_gross;
 		return $this;
 	}
 
-	public function getValueReturnedGross():  ?string
+	public function getValueReturnedGross():  ?float
 	{
 		return $this->value_returned_gross;
 	}
 
-	public function setValueReturnedGross(string $value_returned_gross) : self
+	public function setValueReturnedGross(float $value_returned_gross) : self
 	{
 		$this->value_returned_gross = $value_returned_gross;
 		return $this;
 	}
 
-	public function getPurchaseValue():  ?string
+	public function getPurchaseValue():  ?float
 	{
 		return $this->purchase_value;
 	}
 
-	public function setPurchaseValue(string $purchase_value) : self
+	public function setPurchaseValue(float $purchase_value) : self
 	{
 		$this->purchase_value = $purchase_value;
 		return $this;
 	}
 
-	public function getGrossProfit():  ?string
+	public function getGrossProfit():  ?float
 	{
 		return $this->gross_profit;
 	}
 
-	public function setGrossProfit(string $gross_profit) : self
+	public function setGrossProfit(float $gross_profit) : self
 	{
 		$this->gross_profit = $gross_profit;
 		return $this;
 	}
 
-	public function getTurnover():  ?string
+	public function getTurnover():  ?float
 	{
 		return $this->turnover;
 	}
 
-	public function setTurnover(string $turnover) : self
+	public function setTurnover(float $turnover) : self
 	{
 		$this->turnover = $turnover;
 		return $this;
 	}
 
-	public function getTurnoverGross():  ?string
+	public function getTurnoverGross():  ?float
 	{
 		return $this->turnover_gross;
 	}
 
-	public function setTurnoverGross(string $turnover_gross) : self
+	public function setTurnoverGross(float $turnover_gross) : self
 	{
 		$this->turnover_gross = $turnover_gross;
 		return $this;

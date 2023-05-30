@@ -26,7 +26,7 @@ class ShopsTypes
 	private ?string $shops_types_code = null;
 
 	#[ORM\Column]
-	private ?string $shops_types_marketplace = null;
+	private ?int $shops_types_marketplace = null;
 
 	 #[ORM\Column(length: 64)]
 	private ?string $shops_module_name = null;
@@ -73,12 +73,12 @@ class ShopsTypes
 		return $this;
 	}
 
-	public function getShopsTypesMarketplace():  ?string
+	public function getShopsTypesMarketplace():  ?int
 	{
 		return $this->shops_types_marketplace;
 	}
 
-	public function setShopsTypesMarketplace(string $shops_types_marketplace) : self
+	public function setShopsTypesMarketplace(int $shops_types_marketplace) : self
 	{
 		$this->shops_types_marketplace = $shops_types_marketplace;
 		return $this;

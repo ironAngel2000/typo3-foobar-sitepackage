@@ -32,22 +32,22 @@ class GroupsRulesToShops
 	private ?int $prices_rules_active = null;
 
 	#[ORM\Column]
-	private ?string $prices_factor = null;
+	private ?float $prices_factor = null;
 
 	#[ORM\Column]
-	private ?string $absolute_prices_additions = null;
+	private ?float $absolute_prices_additions = null;
 
 	#[ORM\Column]
-	private ?string $absolute_prices_addition_threshold = null;
+	private ?float $absolute_prices_addition_threshold = null;
 
 	#[ORM\Column]
 	private ?int $fee_and_margin_active = null;
 
 	#[ORM\Column]
-	private ?string $fee_factor = null;
+	private ?float $fee_factor = null;
 
 	#[ORM\Column]
-	private ?string $minimum_margin_factor = null;
+	private ?float $minimum_margin_factor = null;
 
 	#[ORM\Column]
 	private ?int $automatic_reach_minimum_margin_factor = null;
@@ -71,10 +71,10 @@ class GroupsRulesToShops
 	private ?int $stock_threshold = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $stock_quota = null;
+	private ?int $stock_quota = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $stock_up_round = null;
+	private ?int $stock_up_round = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $stock_over_threshold = null;
@@ -104,13 +104,13 @@ class GroupsRulesToShops
 	private ?string $merchant_shipping_group_third_party_stock_name = null;
 
 	#[ORM\Column]
-	private ?string $template_active = null;
+	private ?int $template_active = null;
 
 	#[ORM\Column(length: 256, nullable: true)]
 	private ?string $template_name = null;
 
 	#[ORM\Column]
-	private ?string $ebay_policies_active = null;
+	private ?int $ebay_policies_active = null;
 
 	#[ORM\Column(length: 255, nullable: true)]
 	private ?string $ebay_shipping_policy = null;
@@ -185,34 +185,34 @@ class GroupsRulesToShops
 		return $this;
 	}
 
-	public function getPricesFactor():  ?string
+	public function getPricesFactor():  ?float
 	{
 		return $this->prices_factor;
 	}
 
-	public function setPricesFactor(string $prices_factor) : self
+	public function setPricesFactor(float $prices_factor) : self
 	{
 		$this->prices_factor = $prices_factor;
 		return $this;
 	}
 
-	public function getAbsolutePricesAdditions():  ?string
+	public function getAbsolutePricesAdditions():  ?float
 	{
 		return $this->absolute_prices_additions;
 	}
 
-	public function setAbsolutePricesAdditions(string $absolute_prices_additions) : self
+	public function setAbsolutePricesAdditions(float $absolute_prices_additions) : self
 	{
 		$this->absolute_prices_additions = $absolute_prices_additions;
 		return $this;
 	}
 
-	public function getAbsolutePricesAdditionThreshold():  ?string
+	public function getAbsolutePricesAdditionThreshold():  ?float
 	{
 		return $this->absolute_prices_addition_threshold;
 	}
 
-	public function setAbsolutePricesAdditionThreshold(string $absolute_prices_addition_threshold) : self
+	public function setAbsolutePricesAdditionThreshold(float $absolute_prices_addition_threshold) : self
 	{
 		$this->absolute_prices_addition_threshold = $absolute_prices_addition_threshold;
 		return $this;
@@ -229,23 +229,23 @@ class GroupsRulesToShops
 		return $this;
 	}
 
-	public function getFeeFactor():  ?string
+	public function getFeeFactor():  ?float
 	{
 		return $this->fee_factor;
 	}
 
-	public function setFeeFactor(string $fee_factor) : self
+	public function setFeeFactor(float $fee_factor) : self
 	{
 		$this->fee_factor = $fee_factor;
 		return $this;
 	}
 
-	public function getMinimumMarginFactor():  ?string
+	public function getMinimumMarginFactor():  ?float
 	{
 		return $this->minimum_margin_factor;
 	}
 
-	public function setMinimumMarginFactor(string $minimum_margin_factor) : self
+	public function setMinimumMarginFactor(float $minimum_margin_factor) : self
 	{
 		$this->minimum_margin_factor = $minimum_margin_factor;
 		return $this;
@@ -328,23 +328,23 @@ class GroupsRulesToShops
 		return $this;
 	}
 
-	public function getStockQuota():  ?string
+	public function getStockQuota():  ?int
 	{
 		return $this->stock_quota;
 	}
 
-	public function setStockQuota(string $stock_quota) : self
+	public function setStockQuota(int $stock_quota) : self
 	{
 		$this->stock_quota = $stock_quota;
 		return $this;
 	}
 
-	public function getStockUpRound():  ?string
+	public function getStockUpRound():  ?int
 	{
 		return $this->stock_up_round;
 	}
 
-	public function setStockUpRound(string $stock_up_round) : self
+	public function setStockUpRound(int $stock_up_round) : self
 	{
 		$this->stock_up_round = $stock_up_round;
 		return $this;
@@ -449,12 +449,12 @@ class GroupsRulesToShops
 		return $this;
 	}
 
-	public function getTemplateActive():  ?string
+	public function getTemplateActive():  ?int
 	{
 		return $this->template_active;
 	}
 
-	public function setTemplateActive(string $template_active) : self
+	public function setTemplateActive(int $template_active) : self
 	{
 		$this->template_active = $template_active;
 		return $this;
@@ -471,12 +471,12 @@ class GroupsRulesToShops
 		return $this;
 	}
 
-	public function getEbayPoliciesActive():  ?string
+	public function getEbayPoliciesActive():  ?int
 	{
 		return $this->ebay_policies_active;
 	}
 
-	public function setEbayPoliciesActive(string $ebay_policies_active) : self
+	public function setEbayPoliciesActive(int $ebay_policies_active) : self
 	{
 		$this->ebay_policies_active = $ebay_policies_active;
 		return $this;

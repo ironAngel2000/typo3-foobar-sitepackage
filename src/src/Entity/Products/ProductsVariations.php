@@ -38,13 +38,13 @@ class ProductsVariations
 	private ?string $manufacturers_item_num = null;
 
 	#[ORM\Column]
-	private ?string $available = null;
+	private ?int $available = null;
 
 	#[ORM\Column]
-	private ?string $products_variations_status = null;
+	private ?int $products_variations_status = null;
 
 	#[ORM\Column]
-	private ?string $is_deleted = null;
+	private ?int $is_deleted = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $permanently_delete_after = null;
@@ -74,7 +74,7 @@ class ProductsVariations
 	private ?int $weight = null;
 
 	#[ORM\Column]
-	private ?string $default_quantity = null;
+	private ?float $default_quantity = null;
 
 	#[ORM\Column]
 	private ?int $minimum_order_quantity = null;
@@ -83,13 +83,13 @@ class ProductsVariations
 	private ?int $maximum_order_quantity = null;
 
 	#[ORM\Column]
-	private ?string $is_weighted = null;
+	private ?int $is_weighted = null;
 
 	#[ORM\Column]
 	private ?int $products_classification_id = null;
 
 	#[ORM\Column]
-	private ?string $third_party_stock = null;
+	private ?int $third_party_stock = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $delivery_times_id = null;
@@ -101,10 +101,10 @@ class ProductsVariations
 	private ?string $customs_tariff_text = null;
 
 	#[ORM\Column]
-	private ?string $is_bundle = null;
+	private ?int $is_bundle = null;
 
 	#[ORM\Column]
-	private ?string $is_base_price_required = null;
+	private ?int $is_base_price_required = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $cloned_from_products_variations_id = null;
@@ -195,34 +195,34 @@ class ProductsVariations
 		return $this;
 	}
 
-	public function getAvailable():  ?string
+	public function getAvailable():  ?int
 	{
 		return $this->available;
 	}
 
-	public function setAvailable(string $available) : self
+	public function setAvailable(int $available) : self
 	{
 		$this->available = $available;
 		return $this;
 	}
 
-	public function getProductsVariationsStatus():  ?string
+	public function getProductsVariationsStatus():  ?int
 	{
 		return $this->products_variations_status;
 	}
 
-	public function setProductsVariationsStatus(string $products_variations_status) : self
+	public function setProductsVariationsStatus(int $products_variations_status) : self
 	{
 		$this->products_variations_status = $products_variations_status;
 		return $this;
 	}
 
-	public function getIsDeleted():  ?string
+	public function getIsDeleted():  ?int
 	{
 		return $this->is_deleted;
 	}
 
-	public function setIsDeleted(string $is_deleted) : self
+	public function setIsDeleted(int $is_deleted) : self
 	{
 		$this->is_deleted = $is_deleted;
 		return $this;
@@ -327,12 +327,12 @@ class ProductsVariations
 		return $this;
 	}
 
-	public function getDefaultQuantity():  ?string
+	public function getDefaultQuantity():  ?float
 	{
 		return $this->default_quantity;
 	}
 
-	public function setDefaultQuantity(string $default_quantity) : self
+	public function setDefaultQuantity(float $default_quantity) : self
 	{
 		$this->default_quantity = $default_quantity;
 		return $this;
@@ -360,12 +360,12 @@ class ProductsVariations
 		return $this;
 	}
 
-	public function getIsWeighted():  ?string
+	public function getIsWeighted():  ?int
 	{
 		return $this->is_weighted;
 	}
 
-	public function setIsWeighted(string $is_weighted) : self
+	public function setIsWeighted(int $is_weighted) : self
 	{
 		$this->is_weighted = $is_weighted;
 		return $this;
@@ -382,12 +382,12 @@ class ProductsVariations
 		return $this;
 	}
 
-	public function getThirdPartyStock():  ?string
+	public function getThirdPartyStock():  ?int
 	{
 		return $this->third_party_stock;
 	}
 
-	public function setThirdPartyStock(string $third_party_stock) : self
+	public function setThirdPartyStock(int $third_party_stock) : self
 	{
 		$this->third_party_stock = $third_party_stock;
 		return $this;
@@ -426,23 +426,23 @@ class ProductsVariations
 		return $this;
 	}
 
-	public function getIsBundle():  ?string
+	public function getIsBundle():  ?int
 	{
 		return $this->is_bundle;
 	}
 
-	public function setIsBundle(string $is_bundle) : self
+	public function setIsBundle(int $is_bundle) : self
 	{
 		$this->is_bundle = $is_bundle;
 		return $this;
 	}
 
-	public function getIsBasePriceRequired():  ?string
+	public function getIsBasePriceRequired():  ?int
 	{
 		return $this->is_base_price_required;
 	}
 
-	public function setIsBasePriceRequired(string $is_base_price_required) : self
+	public function setIsBasePriceRequired(int $is_base_price_required) : self
 	{
 		$this->is_base_price_required = $is_base_price_required;
 		return $this;

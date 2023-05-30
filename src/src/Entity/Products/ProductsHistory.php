@@ -23,10 +23,10 @@ class ProductsHistory
 	private ?int $products_id = null;
 
 	#[ORM\Column]
-	private ?string $products_status = null;
+	private ?int $products_status = null;
 
 	#[ORM\Column]
-	private ?string $is_deleted = null;
+	private ?int $is_deleted = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -59,23 +59,23 @@ class ProductsHistory
 		return $this;
 	}
 
-	public function getProductsStatus():  ?string
+	public function getProductsStatus():  ?int
 	{
 		return $this->products_status;
 	}
 
-	public function setProductsStatus(string $products_status) : self
+	public function setProductsStatus(int $products_status) : self
 	{
 		$this->products_status = $products_status;
 		return $this;
 	}
 
-	public function getIsDeleted():  ?string
+	public function getIsDeleted():  ?int
 	{
 		return $this->is_deleted;
 	}
 
-	public function setIsDeleted(string $is_deleted) : self
+	public function setIsDeleted(int $is_deleted) : self
 	{
 		$this->is_deleted = $is_deleted;
 		return $this;

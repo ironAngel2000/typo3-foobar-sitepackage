@@ -35,7 +35,7 @@ class ErpSystemsMatchingCarriersCodes
 	private ?int $groups_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $if_pack_station = null;
+	private ?int $if_pack_station = null;
 
 	 #[ORM\Column(length: 64)]
 	private ?string $erp_carriers_code = null;
@@ -115,12 +115,12 @@ class ErpSystemsMatchingCarriersCodes
 		return $this;
 	}
 
-	public function getIfPackStation():  ?string
+	public function getIfPackStation():  ?int
 	{
 		return $this->if_pack_station;
 	}
 
-	public function setIfPackStation(string $if_pack_station) : self
+	public function setIfPackStation(int $if_pack_station) : self
 	{
 		$this->if_pack_station = $if_pack_station;
 		return $this;

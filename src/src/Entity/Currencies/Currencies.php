@@ -20,10 +20,10 @@ class Currencies
 	private ?int $currencies_id = null;
 
 	#[ORM\Column]
-	private ?string $exchange_rate = null;
+	private ?float $exchange_rate = null;
 
 	#[ORM\Column]
-	private ?string $default_is_net = null;
+	private ?int $default_is_net = null;
 
 	 #[ORM\Column(length: 32)]
 	private ?string $currencies_name = null;
@@ -75,23 +75,23 @@ class Currencies
 		return $this;
 	}
 
-	public function getExchangeRate():  ?string
+	public function getExchangeRate():  ?float
 	{
 		return $this->exchange_rate;
 	}
 
-	public function setExchangeRate(string $exchange_rate) : self
+	public function setExchangeRate(float $exchange_rate) : self
 	{
 		$this->exchange_rate = $exchange_rate;
 		return $this;
 	}
 
-	public function getDefaultIsNet():  ?string
+	public function getDefaultIsNet():  ?int
 	{
 		return $this->default_is_net;
 	}
 
-	public function setDefaultIsNet(string $default_is_net) : self
+	public function setDefaultIsNet(int $default_is_net) : self
 	{
 		$this->default_is_net = $default_is_net;
 		return $this;

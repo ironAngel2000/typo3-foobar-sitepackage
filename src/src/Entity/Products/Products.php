@@ -44,16 +44,16 @@ class Products
 	private ?string $item_number = null;
 
 	#[ORM\Column]
-	private ?string $products_status = null;
+	private ?int $products_status = null;
 
 	#[ORM\Column]
-	private ?string $is_deleted = null;
+	private ?int $is_deleted = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $permanently_delete_after = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $hidden = null;
+	private ?int $hidden = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $products_conditions_id = null;
@@ -65,7 +65,7 @@ class Products
 	private ?int $sort = null;
 
 	#[ORM\Column]
-	private ?string $is_bundle = null;
+	private ?int $is_bundle = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?string $products_model_year = null;
@@ -77,16 +77,16 @@ class Products
 	private ?string $use_text_blocks = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $min_price = null;
+	private ?float $min_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $max_price = null;
+	private ?float $max_price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $min_price_rrp = null;
+	private ?float $min_price_rrp = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $max_price_rrp = null;
+	private ?float $max_price_rrp = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $products_last_update = null;
@@ -217,23 +217,23 @@ class Products
 		return $this;
 	}
 
-	public function getProductsStatus():  ?string
+	public function getProductsStatus():  ?int
 	{
 		return $this->products_status;
 	}
 
-	public function setProductsStatus(string $products_status) : self
+	public function setProductsStatus(int $products_status) : self
 	{
 		$this->products_status = $products_status;
 		return $this;
 	}
 
-	public function getIsDeleted():  ?string
+	public function getIsDeleted():  ?int
 	{
 		return $this->is_deleted;
 	}
 
-	public function setIsDeleted(string $is_deleted) : self
+	public function setIsDeleted(int $is_deleted) : self
 	{
 		$this->is_deleted = $is_deleted;
 		return $this;
@@ -250,12 +250,12 @@ class Products
 		return $this;
 	}
 
-	public function getHidden():  ?string
+	public function getHidden():  ?int
 	{
 		return $this->hidden;
 	}
 
-	public function setHidden(string $hidden) : self
+	public function setHidden(int $hidden) : self
 	{
 		$this->hidden = $hidden;
 		return $this;
@@ -294,12 +294,12 @@ class Products
 		return $this;
 	}
 
-	public function getIsBundle():  ?string
+	public function getIsBundle():  ?int
 	{
 		return $this->is_bundle;
 	}
 
-	public function setIsBundle(string $is_bundle) : self
+	public function setIsBundle(int $is_bundle) : self
 	{
 		$this->is_bundle = $is_bundle;
 		return $this;
@@ -338,45 +338,45 @@ class Products
 		return $this;
 	}
 
-	public function getMinPrice():  ?string
+	public function getMinPrice():  ?float
 	{
 		return $this->min_price;
 	}
 
-	public function setMinPrice(string $min_price) : self
+	public function setMinPrice(float $min_price) : self
 	{
 		$this->min_price = $min_price;
 		return $this;
 	}
 
-	public function getMaxPrice():  ?string
+	public function getMaxPrice():  ?float
 	{
 		return $this->max_price;
 	}
 
-	public function setMaxPrice(string $max_price) : self
+	public function setMaxPrice(float $max_price) : self
 	{
 		$this->max_price = $max_price;
 		return $this;
 	}
 
-	public function getMinPriceRrp():  ?string
+	public function getMinPriceRrp():  ?float
 	{
 		return $this->min_price_rrp;
 	}
 
-	public function setMinPriceRrp(string $min_price_rrp) : self
+	public function setMinPriceRrp(float $min_price_rrp) : self
 	{
 		$this->min_price_rrp = $min_price_rrp;
 		return $this;
 	}
 
-	public function getMaxPriceRrp():  ?string
+	public function getMaxPriceRrp():  ?float
 	{
 		return $this->max_price_rrp;
 	}
 
-	public function setMaxPriceRrp(string $max_price_rrp) : self
+	public function setMaxPriceRrp(float $max_price_rrp) : self
 	{
 		$this->max_price_rrp = $max_price_rrp;
 		return $this;

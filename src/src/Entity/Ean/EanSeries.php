@@ -32,7 +32,7 @@ class EanSeries
 	private ?int $ean_count = null;
 
 	#[ORM\Column]
-	private ?string $status_active = null;
+	private ?int $status_active = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -98,12 +98,12 @@ class EanSeries
 		return $this;
 	}
 
-	public function getStatusActive():  ?string
+	public function getStatusActive():  ?int
 	{
 		return $this->status_active;
 	}
 
-	public function setStatusActive(string $status_active) : self
+	public function setStatusActive(int $status_active) : self
 	{
 		$this->status_active = $status_active;
 		return $this;

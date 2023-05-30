@@ -29,7 +29,7 @@ class EmailsBlacklistsHistory
 	private ?string $blocked_domain = null;
 
 	#[ORM\Column]
-	private ?string $blockes_active = null;
+	private ?int $blockes_active = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -84,12 +84,12 @@ class EmailsBlacklistsHistory
 		return $this;
 	}
 
-	public function getBlockesActive():  ?string
+	public function getBlockesActive():  ?int
 	{
 		return $this->blockes_active;
 	}
 
-	public function setBlockesActive(string $blockes_active) : self
+	public function setBlockesActive(int $blockes_active) : self
 	{
 		$this->blockes_active = $blockes_active;
 		return $this;

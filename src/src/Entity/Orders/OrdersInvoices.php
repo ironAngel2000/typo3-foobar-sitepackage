@@ -38,10 +38,10 @@ class OrdersInvoices
 	private ?string $file_path = null;
 
 	#[ORM\Column]
-	private ?string $downloaded = null;
+	private ?int $downloaded = null;
 
 	#[ORM\Column]
-	private ?string $sent = null;
+	private ?int $sent = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -129,23 +129,23 @@ class OrdersInvoices
 		return $this;
 	}
 
-	public function getDownloaded():  ?string
+	public function getDownloaded():  ?int
 	{
 		return $this->downloaded;
 	}
 
-	public function setDownloaded(string $downloaded) : self
+	public function setDownloaded(int $downloaded) : self
 	{
 		$this->downloaded = $downloaded;
 		return $this;
 	}
 
-	public function getSent():  ?string
+	public function getSent():  ?int
 	{
 		return $this->sent;
 	}
 
-	public function setSent(string $sent) : self
+	public function setSent(int $sent) : self
 	{
 		$this->sent = $sent;
 		return $this;

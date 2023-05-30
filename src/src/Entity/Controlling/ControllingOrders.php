@@ -35,7 +35,7 @@ class ControllingOrders
 	private ?string $shops_customers_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $age = null;
+	private ?int $age = null;
 
 	#[ORM\Column(length: 16, nullable: true)]
 	private ?string $postal_code = null;
@@ -44,7 +44,7 @@ class ControllingOrders
 	private ?string $city = null;
 
 	#[ORM\Column]
-	private ?string $value_ordered = null;
+	private ?float $value_ordered = null;
 
 	#[ORM\Column]
 	private ?int $number_of_orders_lines = null;
@@ -124,12 +124,12 @@ class ControllingOrders
 		return $this;
 	}
 
-	public function getAge():  ?string
+	public function getAge():  ?int
 	{
 		return $this->age;
 	}
 
-	public function setAge(string $age) : self
+	public function setAge(int $age) : self
 	{
 		$this->age = $age;
 		return $this;
@@ -157,12 +157,12 @@ class ControllingOrders
 		return $this;
 	}
 
-	public function getValueOrdered():  ?string
+	public function getValueOrdered():  ?float
 	{
 		return $this->value_ordered;
 	}
 
-	public function setValueOrdered(string $value_ordered) : self
+	public function setValueOrdered(float $value_ordered) : self
 	{
 		$this->value_ordered = $value_ordered;
 		return $this;

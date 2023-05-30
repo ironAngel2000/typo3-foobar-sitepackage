@@ -26,7 +26,7 @@ class OrdersStatus
 	private ?int $sort_order = null;
 
 	#[ORM\Column]
-	private ?string $frontend_hidden = null;
+	private ?int $frontend_hidden = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class OrdersStatus
 		return $this;
 	}
 
-	public function getFrontendHidden():  ?string
+	public function getFrontendHidden():  ?int
 	{
 		return $this->frontend_hidden;
 	}
 
-	public function setFrontendHidden(string $frontend_hidden) : self
+	public function setFrontendHidden(int $frontend_hidden) : self
 	{
 		$this->frontend_hidden = $frontend_hidden;
 		return $this;

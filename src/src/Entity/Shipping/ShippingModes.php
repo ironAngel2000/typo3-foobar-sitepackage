@@ -23,7 +23,7 @@ class ShippingModes
 	private ?string $shipping_name = null;
 
 	#[ORM\Column]
-	private ?string $default_shipping = null;
+	private ?int $default_shipping = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -56,12 +56,12 @@ class ShippingModes
 		return $this;
 	}
 
-	public function getDefaultShipping():  ?string
+	public function getDefaultShipping():  ?int
 	{
 		return $this->default_shipping;
 	}
 
-	public function setDefaultShipping(string $default_shipping) : self
+	public function setDefaultShipping(int $default_shipping) : self
 	{
 		$this->default_shipping = $default_shipping;
 		return $this;

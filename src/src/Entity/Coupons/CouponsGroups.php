@@ -44,10 +44,10 @@ class CouponsGroups
 	private ?int $coupons_reduce_types_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $rebate = null;
+	private ?float $rebate = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $minimum_order = null;
+	private ?float $minimum_order = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $start = null;
@@ -56,7 +56,7 @@ class CouponsGroups
 	private ?\DateTimeInterface $end = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $restricted_to_user = null;
+	private ?int $restricted_to_user = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $creates_per_coupon = null;
@@ -175,23 +175,23 @@ class CouponsGroups
 		return $this;
 	}
 
-	public function getRebate():  ?string
+	public function getRebate():  ?float
 	{
 		return $this->rebate;
 	}
 
-	public function setRebate(string $rebate) : self
+	public function setRebate(float $rebate) : self
 	{
 		$this->rebate = $rebate;
 		return $this;
 	}
 
-	public function getMinimumOrder():  ?string
+	public function getMinimumOrder():  ?float
 	{
 		return $this->minimum_order;
 	}
 
-	public function setMinimumOrder(string $minimum_order) : self
+	public function setMinimumOrder(float $minimum_order) : self
 	{
 		$this->minimum_order = $minimum_order;
 		return $this;
@@ -219,12 +219,12 @@ class CouponsGroups
 		return $this;
 	}
 
-	public function getRestrictedToUser():  ?string
+	public function getRestrictedToUser():  ?int
 	{
 		return $this->restricted_to_user;
 	}
 
-	public function setRestrictedToUser(string $restricted_to_user) : self
+	public function setRestrictedToUser(int $restricted_to_user) : self
 	{
 		$this->restricted_to_user = $restricted_to_user;
 		return $this;

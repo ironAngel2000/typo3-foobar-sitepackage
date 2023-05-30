@@ -26,7 +26,7 @@ class ShopsBrands
 	private ?int $brands_id = null;
 
 	#[ORM\Column]
-	private ?string $shops_brands_status = null;
+	private ?int $shops_brands_status = null;
 
 	#[ORM\Column(length: 32, nullable: true)]
 	private ?string $extern_shops_brands_id = null;
@@ -73,12 +73,12 @@ class ShopsBrands
 		return $this;
 	}
 
-	public function getShopsBrandsStatus():  ?string
+	public function getShopsBrandsStatus():  ?int
 	{
 		return $this->shops_brands_status;
 	}
 
-	public function setShopsBrandsStatus(string $shops_brands_status) : self
+	public function setShopsBrandsStatus(int $shops_brands_status) : self
 	{
 		$this->shops_brands_status = $shops_brands_status;
 		return $this;

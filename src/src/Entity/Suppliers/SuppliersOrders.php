@@ -22,14 +22,14 @@ class SuppliersOrders
 	#[ORM\Column]
 	private ?int $suppliers_id = null;
 
-	#[ORM\Column]
-	private ?string $delivery_date = null;
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $delivery_date = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $shops_id = null;
 
 	#[ORM\Column]
-	private ?string $send_status = null;
+	private ?int $send_status = null;
 
 	#[ORM\Column(length: 50, nullable: true)]
 	private ?string $customers_id = null;
@@ -65,12 +65,12 @@ class SuppliersOrders
 		return $this;
 	}
 
-	public function getDeliveryDate():  ?string
+	public function getDeliveryDate():  ?\DateTimeInterface
 	{
 		return $this->delivery_date;
 	}
 
-	public function setDeliveryDate(string $delivery_date) : self
+	public function setDeliveryDate(\DateTimeInterface $delivery_date) : self
 	{
 		$this->delivery_date = $delivery_date;
 		return $this;
@@ -87,12 +87,12 @@ class SuppliersOrders
 		return $this;
 	}
 
-	public function getSendStatus():  ?string
+	public function getSendStatus():  ?int
 	{
 		return $this->send_status;
 	}
 
-	public function setSendStatus(string $send_status) : self
+	public function setSendStatus(int $send_status) : self
 	{
 		$this->send_status = $send_status;
 		return $this;

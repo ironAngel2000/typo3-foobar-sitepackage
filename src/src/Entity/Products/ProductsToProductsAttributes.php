@@ -32,10 +32,10 @@ class ProductsToProductsAttributes
 	private ?int $products_attributes_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $value = null;
+	private ?float $value = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $value_to = null;
+	private ?float $value_to = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -101,23 +101,23 @@ class ProductsToProductsAttributes
 		return $this;
 	}
 
-	public function getValue():  ?string
+	public function getValue():  ?float
 	{
 		return $this->value;
 	}
 
-	public function setValue(string $value) : self
+	public function setValue(float $value) : self
 	{
 		$this->value = $value;
 		return $this;
 	}
 
-	public function getValueTo():  ?string
+	public function getValueTo():  ?float
 	{
 		return $this->value_to;
 	}
 
-	public function setValueTo(string $value_to) : self
+	public function setValueTo(float $value_to) : self
 	{
 		$this->value_to = $value_to;
 		return $this;

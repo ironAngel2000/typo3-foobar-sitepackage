@@ -23,43 +23,43 @@ class ShopsPriceSchemes
 	private ?string $title = null;
 
 	#[ORM\Column]
-	private ?string $smaller10_half1 = null;
+	private ?float $smaller10_half1 = null;
 
 	#[ORM\Column]
-	private ?string $smaller10_half2 = null;
+	private ?float $smaller10_half2 = null;
 
 	#[ORM\Column]
 	private ?int $smaller10_precision = null;
 
 	#[ORM\Column]
-	private ?string $smaller100_half1 = null;
+	private ?float $smaller100_half1 = null;
 
 	#[ORM\Column]
-	private ?string $smaller100_half2 = null;
+	private ?float $smaller100_half2 = null;
 
 	#[ORM\Column]
 	private ?int $smaller100_precision = null;
 
 	#[ORM\Column]
-	private ?string $smaller1000_half1 = null;
+	private ?float $smaller1000_half1 = null;
 
 	#[ORM\Column]
-	private ?string $smaller1000_half2 = null;
+	private ?float $smaller1000_half2 = null;
 
 	#[ORM\Column]
 	private ?int $smaller1000_precision = null;
 
 	#[ORM\Column]
-	private ?string $bigger1000_half1 = null;
+	private ?float $bigger1000_half1 = null;
 
 	#[ORM\Column]
-	private ?string $bigger1000_half2 = null;
+	private ?float $bigger1000_half2 = null;
 
 	#[ORM\Column]
 	private ?int $bigger1000_precision = null;
 
 	#[ORM\Column]
-	private ?string $round_full_values = null;
+	private ?int $round_full_values = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -92,23 +92,23 @@ class ShopsPriceSchemes
 		return $this;
 	}
 
-	public function getSmaller10Half1():  ?string
+	public function getSmaller10Half1():  ?float
 	{
 		return $this->smaller10_half1;
 	}
 
-	public function setSmaller10Half1(string $smaller10_half1) : self
+	public function setSmaller10Half1(float $smaller10_half1) : self
 	{
 		$this->smaller10_half1 = $smaller10_half1;
 		return $this;
 	}
 
-	public function getSmaller10Half2():  ?string
+	public function getSmaller10Half2():  ?float
 	{
 		return $this->smaller10_half2;
 	}
 
-	public function setSmaller10Half2(string $smaller10_half2) : self
+	public function setSmaller10Half2(float $smaller10_half2) : self
 	{
 		$this->smaller10_half2 = $smaller10_half2;
 		return $this;
@@ -125,23 +125,23 @@ class ShopsPriceSchemes
 		return $this;
 	}
 
-	public function getSmaller100Half1():  ?string
+	public function getSmaller100Half1():  ?float
 	{
 		return $this->smaller100_half1;
 	}
 
-	public function setSmaller100Half1(string $smaller100_half1) : self
+	public function setSmaller100Half1(float $smaller100_half1) : self
 	{
 		$this->smaller100_half1 = $smaller100_half1;
 		return $this;
 	}
 
-	public function getSmaller100Half2():  ?string
+	public function getSmaller100Half2():  ?float
 	{
 		return $this->smaller100_half2;
 	}
 
-	public function setSmaller100Half2(string $smaller100_half2) : self
+	public function setSmaller100Half2(float $smaller100_half2) : self
 	{
 		$this->smaller100_half2 = $smaller100_half2;
 		return $this;
@@ -158,23 +158,23 @@ class ShopsPriceSchemes
 		return $this;
 	}
 
-	public function getSmaller1000Half1():  ?string
+	public function getSmaller1000Half1():  ?float
 	{
 		return $this->smaller1000_half1;
 	}
 
-	public function setSmaller1000Half1(string $smaller1000_half1) : self
+	public function setSmaller1000Half1(float $smaller1000_half1) : self
 	{
 		$this->smaller1000_half1 = $smaller1000_half1;
 		return $this;
 	}
 
-	public function getSmaller1000Half2():  ?string
+	public function getSmaller1000Half2():  ?float
 	{
 		return $this->smaller1000_half2;
 	}
 
-	public function setSmaller1000Half2(string $smaller1000_half2) : self
+	public function setSmaller1000Half2(float $smaller1000_half2) : self
 	{
 		$this->smaller1000_half2 = $smaller1000_half2;
 		return $this;
@@ -191,23 +191,23 @@ class ShopsPriceSchemes
 		return $this;
 	}
 
-	public function getBigger1000Half1():  ?string
+	public function getBigger1000Half1():  ?float
 	{
 		return $this->bigger1000_half1;
 	}
 
-	public function setBigger1000Half1(string $bigger1000_half1) : self
+	public function setBigger1000Half1(float $bigger1000_half1) : self
 	{
 		$this->bigger1000_half1 = $bigger1000_half1;
 		return $this;
 	}
 
-	public function getBigger1000Half2():  ?string
+	public function getBigger1000Half2():  ?float
 	{
 		return $this->bigger1000_half2;
 	}
 
-	public function setBigger1000Half2(string $bigger1000_half2) : self
+	public function setBigger1000Half2(float $bigger1000_half2) : self
 	{
 		$this->bigger1000_half2 = $bigger1000_half2;
 		return $this;
@@ -224,12 +224,12 @@ class ShopsPriceSchemes
 		return $this;
 	}
 
-	public function getRoundFullValues():  ?string
+	public function getRoundFullValues():  ?int
 	{
 		return $this->round_full_values;
 	}
 
-	public function setRoundFullValues(string $round_full_values) : self
+	public function setRoundFullValues(int $round_full_values) : self
 	{
 		$this->round_full_values = $round_full_values;
 		return $this;

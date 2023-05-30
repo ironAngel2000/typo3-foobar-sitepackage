@@ -26,10 +26,10 @@ class OrdersCredits
 	private ?int $payment_providers_requests_id = null;
 
 	#[ORM\Column]
-	private ?string $amount_credited_calculated = null;
+	private ?float $amount_credited_calculated = null;
 
 	#[ORM\Column]
-	private ?string $amount_credited_transferred = null;
+	private ?float $amount_credited_transferred = null;
 
 	#[ORM\Column]
 	private ?int $currencies_id = null;
@@ -76,23 +76,23 @@ class OrdersCredits
 		return $this;
 	}
 
-	public function getAmountCreditedCalculated():  ?string
+	public function getAmountCreditedCalculated():  ?float
 	{
 		return $this->amount_credited_calculated;
 	}
 
-	public function setAmountCreditedCalculated(string $amount_credited_calculated) : self
+	public function setAmountCreditedCalculated(float $amount_credited_calculated) : self
 	{
 		$this->amount_credited_calculated = $amount_credited_calculated;
 		return $this;
 	}
 
-	public function getAmountCreditedTransferred():  ?string
+	public function getAmountCreditedTransferred():  ?float
 	{
 		return $this->amount_credited_transferred;
 	}
 
-	public function setAmountCreditedTransferred(string $amount_credited_transferred) : self
+	public function setAmountCreditedTransferred(float $amount_credited_transferred) : self
 	{
 		$this->amount_credited_transferred = $amount_credited_transferred;
 		return $this;

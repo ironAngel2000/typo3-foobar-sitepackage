@@ -29,7 +29,7 @@ class ShopsProductsVariationsErrors
 	private ?string $shops_products_variations_errors_message = null;
 
 	#[ORM\Column]
-	private ?string $is_deleted = null;
+	private ?int $is_deleted = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?string $occurences = null;
@@ -87,12 +87,12 @@ class ShopsProductsVariationsErrors
 		return $this;
 	}
 
-	public function getIsDeleted():  ?string
+	public function getIsDeleted():  ?int
 	{
 		return $this->is_deleted;
 	}
 
-	public function setIsDeleted(string $is_deleted) : self
+	public function setIsDeleted(int $is_deleted) : self
 	{
 		$this->is_deleted = $is_deleted;
 		return $this;

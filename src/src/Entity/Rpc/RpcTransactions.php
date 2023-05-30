@@ -29,7 +29,7 @@ class RpcTransactions
 	private ?int $relationship_value = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $rpc_transactions_success = null;
+	private ?int $rpc_transactions_success = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -84,12 +84,12 @@ class RpcTransactions
 		return $this;
 	}
 
-	public function getRpcTransactionsSuccess():  ?string
+	public function getRpcTransactionsSuccess():  ?int
 	{
 		return $this->rpc_transactions_success;
 	}
 
-	public function setRpcTransactionsSuccess(string $rpc_transactions_success) : self
+	public function setRpcTransactionsSuccess(int $rpc_transactions_success) : self
 	{
 		$this->rpc_transactions_success = $rpc_transactions_success;
 		return $this;

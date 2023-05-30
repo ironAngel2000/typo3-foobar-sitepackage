@@ -26,7 +26,7 @@ class TasksSuppliersToSuppliers
 	private ?int $suppliers_id = null;
 
 	#[ORM\Column]
-	private ?string $tasks_suppliers_to_suppliers_active = null;
+	private ?int $tasks_suppliers_to_suppliers_active = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $data_date = null;
@@ -73,12 +73,12 @@ class TasksSuppliersToSuppliers
 		return $this;
 	}
 
-	public function getTasksSuppliersToSuppliersActive():  ?string
+	public function getTasksSuppliersToSuppliersActive():  ?int
 	{
 		return $this->tasks_suppliers_to_suppliers_active;
 	}
 
-	public function setTasksSuppliersToSuppliersActive(string $tasks_suppliers_to_suppliers_active) : self
+	public function setTasksSuppliersToSuppliersActive(int $tasks_suppliers_to_suppliers_active) : self
 	{
 		$this->tasks_suppliers_to_suppliers_active = $tasks_suppliers_to_suppliers_active;
 		return $this;

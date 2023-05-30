@@ -23,7 +23,7 @@ class TasksSuppliers
 	private ?string $tasks_suppliers_code = null;
 
 	#[ORM\Column]
-	private ?string $tasks_suppliers_active = null;
+	private ?int $tasks_suppliers_active = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -56,12 +56,12 @@ class TasksSuppliers
 		return $this;
 	}
 
-	public function getTasksSuppliersActive():  ?string
+	public function getTasksSuppliersActive():  ?int
 	{
 		return $this->tasks_suppliers_active;
 	}
 
-	public function setTasksSuppliersActive(string $tasks_suppliers_active) : self
+	public function setTasksSuppliersActive(int $tasks_suppliers_active) : self
 	{
 		$this->tasks_suppliers_active = $tasks_suppliers_active;
 		return $this;

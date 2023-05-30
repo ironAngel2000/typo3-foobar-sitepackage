@@ -203,6 +203,8 @@ class ToolsController extends AbstractController
             $getter = "\t".'public function get'.$colFormatName.'()';
 
             switch ($item['DATA_TYPE']){
+                case 'date':
+                    //no break
                 case 'datetime':
                     $fieldLine .= "\t".'#[ORM\Column(type: Types::DATETIME_MUTABLE)]'.PHP_EOL;
                     $fieldLine .= "\t".'private ?\DateTimeInterface $'.$colName.' = null;'.PHP_EOL;
@@ -222,6 +224,10 @@ class ToolsController extends AbstractController
                     $setter .= 'string $'.$colName.') : self'.PHP_EOL."\t".'{'.PHP_EOL;
                     $getter .= ':  ?string'.PHP_EOL."\t".'{';
                     break;
+                case 'tinyint':
+                    // no break
+                case 'timestamp':
+                    //no break
                 case 'int':
                     if($item['IS_NULLABLE']==='NO'){
                         $fieldLine .= "\t".'#[ORM\Column]'.PHP_EOL;
@@ -232,6 +238,45 @@ class ToolsController extends AbstractController
 
                     $setter .= 'int $'.$colName.') : self'.PHP_EOL."\t".'{'.PHP_EOL;
                     $getter .= ':  ?int'.PHP_EOL."\t".'{';
+                    break;
+                case 'decimal':
+                    //no break
+                case 'float':
+                    if($item['IS_NULLABLE']==='NO'){
+                        $fieldLine .= "\t".'#[ORM\Column]'.PHP_EOL;
+                    } else {
+                        $fieldLine .= "\t".'#[ORM\Column(nullable: true)]'.PHP_EOL;
+                    }
+                    $fieldLine .= "\t".'private ?float $'.$colName.' = null;'.PHP_EOL;
+
+                    $setter .= 'float $'.$colName.') : self'.PHP_EOL."\t".'{'.PHP_EOL;
+                    $getter .= ':  ?float'.PHP_EOL."\t".'{';
+                    break;
+                case 'blob':
+                    if($item['IS_NULLABLE']==='NO'){
+                        $fieldLine .= "\t".'#[ORM\Column(type: Types::BLOB)]'.PHP_EOL;
+                    } else {
+                        $fieldLine .= "\t".'#[ORM\Column(type: Types::BLOB, nullable: true)]'.PHP_EOL;
+                    }
+                    $fieldLine .= "\t".'private $'.$colName.' = null;'.PHP_EOL;
+                    $setter .= '$'.$colName.') : self'.PHP_EOL."\t".'{'.PHP_EOL;
+                    $getter .= PHP_EOL."\t".'{';
+                    break;
+                case 'binary':
+                    if($item['IS_NULLABLE']==='NO'){
+                        $fieldLine .= "\t".'#[ORM\Column(type: Types::BINARY)]'.PHP_EOL;
+                    } else {
+                        $fieldLine .= "\t".'#[ORM\Column(type: Types::BINARY, nullable: true)]'.PHP_EOL;
+                    }
+                    $fieldLine .= "\t".'private $'.$colName.' = null;'.PHP_EOL;
+                    $setter .= '$'.$colName.') : self'.PHP_EOL."\t".'{'.PHP_EOL;
+                    $getter .= PHP_EOL."\t".'{';
+                    break;
+                case 'json':
+                    $fieldLine .= "\t".'#[ORM\Column]'.PHP_EOL;
+                    $fieldLine .= "\t".'private array $'.$colName.' = [];'.PHP_EOL;
+                    $setter .= 'array $'.$colName.') : self'.PHP_EOL."\t".'{'.PHP_EOL;
+                    $getter .= ':  array'.PHP_EOL."\t".'{';
                     break;
                 default:
                     if($item['IS_NULLABLE']==='NO'){

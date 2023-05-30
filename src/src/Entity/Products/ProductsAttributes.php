@@ -41,16 +41,16 @@ class ProductsAttributes
 	private ?string $usage = null;
 
 	#[ORM\Column]
-	private ?string $multi_assign = null;
+	private ?int $multi_assign = null;
 
 	#[ORM\Column]
-	private ?string $mandatory = null;
+	private ?int $mandatory = null;
 
 	#[ORM\Column]
-	private ?string $create_on_assign = null;
+	private ?int $create_on_assign = null;
 
 	#[ORM\Column]
-	private ?string $keep_on_import = null;
+	private ?int $keep_on_import = null;
 
 	#[ORM\Column]
 	private ?int $sort_order = null;
@@ -152,45 +152,45 @@ class ProductsAttributes
 		return $this;
 	}
 
-	public function getMultiAssign():  ?string
+	public function getMultiAssign():  ?int
 	{
 		return $this->multi_assign;
 	}
 
-	public function setMultiAssign(string $multi_assign) : self
+	public function setMultiAssign(int $multi_assign) : self
 	{
 		$this->multi_assign = $multi_assign;
 		return $this;
 	}
 
-	public function getMandatory():  ?string
+	public function getMandatory():  ?int
 	{
 		return $this->mandatory;
 	}
 
-	public function setMandatory(string $mandatory) : self
+	public function setMandatory(int $mandatory) : self
 	{
 		$this->mandatory = $mandatory;
 		return $this;
 	}
 
-	public function getCreateOnAssign():  ?string
+	public function getCreateOnAssign():  ?int
 	{
 		return $this->create_on_assign;
 	}
 
-	public function setCreateOnAssign(string $create_on_assign) : self
+	public function setCreateOnAssign(int $create_on_assign) : self
 	{
 		$this->create_on_assign = $create_on_assign;
 		return $this;
 	}
 
-	public function getKeepOnImport():  ?string
+	public function getKeepOnImport():  ?int
 	{
 		return $this->keep_on_import;
 	}
 
-	public function setKeepOnImport(string $keep_on_import) : self
+	public function setKeepOnImport(int $keep_on_import) : self
 	{
 		$this->keep_on_import = $keep_on_import;
 		return $this;

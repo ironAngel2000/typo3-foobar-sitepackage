@@ -19,8 +19,8 @@ class TrackingAnalyticsEntries
 	#[ORM\Column]
 	private ?int $tracking_analytics_entries_id = null;
 
-	#[ORM\Column(nullable: true)]
-	private ?string $date = null;
+	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
+	private ?\DateTimeInterface $date = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $entries = null;
@@ -45,12 +45,12 @@ class TrackingAnalyticsEntries
 		return $this;
 	}
 
-	public function getDate():  ?string
+	public function getDate():  ?\DateTimeInterface
 	{
 		return $this->date;
 	}
 
-	public function setDate(string $date) : self
+	public function setDate(\DateTimeInterface $date) : self
 	{
 		$this->date = $date;
 		return $this;

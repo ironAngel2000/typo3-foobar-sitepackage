@@ -29,13 +29,13 @@ class ShopsProductsOffers
 	private ?\DateTimeInterface $end = null;
 
 	#[ORM\Column]
-	private ?string $variations_offer = null;
+	private ?int $variations_offer = null;
 
 	#[ORM\Column]
-	private ?string $lock_active = null;
+	private ?int $lock_active = null;
 
 	#[ORM\Column]
-	private ?string $has_variations = null;
+	private ?int $has_variations = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -90,34 +90,34 @@ class ShopsProductsOffers
 		return $this;
 	}
 
-	public function getVariationsOffer():  ?string
+	public function getVariationsOffer():  ?int
 	{
 		return $this->variations_offer;
 	}
 
-	public function setVariationsOffer(string $variations_offer) : self
+	public function setVariationsOffer(int $variations_offer) : self
 	{
 		$this->variations_offer = $variations_offer;
 		return $this;
 	}
 
-	public function getLockActive():  ?string
+	public function getLockActive():  ?int
 	{
 		return $this->lock_active;
 	}
 
-	public function setLockActive(string $lock_active) : self
+	public function setLockActive(int $lock_active) : self
 	{
 		$this->lock_active = $lock_active;
 		return $this;
 	}
 
-	public function getHasVariations():  ?string
+	public function getHasVariations():  ?int
 	{
 		return $this->has_variations;
 	}
 
-	public function setHasVariations(string $has_variations) : self
+	public function setHasVariations(int $has_variations) : self
 	{
 		$this->has_variations = $has_variations;
 		return $this;

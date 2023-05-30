@@ -26,28 +26,28 @@ class ProductsVariationsPrices
 	private ?int $currencies_id = null;
 
 	#[ORM\Column]
-	private ?string $is_net = null;
+	private ?int $is_net = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price = null;
+	private ?float $price = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_rrp = null;
+	private ?float $price_rrp = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_quantity = null;
+	private ?float $price_quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_base_quantity = null;
+	private ?float $price_base_quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $content_quantity = null;
+	private ?float $content_quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $order_quantity = null;
+	private ?float $order_quantity = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_rrp_quantity = null;
+	private ?float $price_rrp_quantity = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $price_units_id = null;
@@ -65,13 +65,13 @@ class ProductsVariationsPrices
 	private ?int $order_units_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price_premium = null;
+	private ?float $price_premium = null;
 
 	#[ORM\Column]
-	private ?string $special_price_status = null;
+	private ?int $special_price_status = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $special_price = null;
+	private ?float $special_price = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $special_price_stock_threshold = null;
@@ -86,7 +86,7 @@ class ProductsVariationsPrices
 	private ?int $order = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $pledge = null;
+	private ?float $pledge = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -130,89 +130,89 @@ class ProductsVariationsPrices
 		return $this;
 	}
 
-	public function getIsNet():  ?string
+	public function getIsNet():  ?int
 	{
 		return $this->is_net;
 	}
 
-	public function setIsNet(string $is_net) : self
+	public function setIsNet(int $is_net) : self
 	{
 		$this->is_net = $is_net;
 		return $this;
 	}
 
-	public function getPrice():  ?string
+	public function getPrice():  ?float
 	{
 		return $this->price;
 	}
 
-	public function setPrice(string $price) : self
+	public function setPrice(float $price) : self
 	{
 		$this->price = $price;
 		return $this;
 	}
 
-	public function getPriceRrp():  ?string
+	public function getPriceRrp():  ?float
 	{
 		return $this->price_rrp;
 	}
 
-	public function setPriceRrp(string $price_rrp) : self
+	public function setPriceRrp(float $price_rrp) : self
 	{
 		$this->price_rrp = $price_rrp;
 		return $this;
 	}
 
-	public function getPriceQuantity():  ?string
+	public function getPriceQuantity():  ?float
 	{
 		return $this->price_quantity;
 	}
 
-	public function setPriceQuantity(string $price_quantity) : self
+	public function setPriceQuantity(float $price_quantity) : self
 	{
 		$this->price_quantity = $price_quantity;
 		return $this;
 	}
 
-	public function getPriceBaseQuantity():  ?string
+	public function getPriceBaseQuantity():  ?float
 	{
 		return $this->price_base_quantity;
 	}
 
-	public function setPriceBaseQuantity(string $price_base_quantity) : self
+	public function setPriceBaseQuantity(float $price_base_quantity) : self
 	{
 		$this->price_base_quantity = $price_base_quantity;
 		return $this;
 	}
 
-	public function getContentQuantity():  ?string
+	public function getContentQuantity():  ?float
 	{
 		return $this->content_quantity;
 	}
 
-	public function setContentQuantity(string $content_quantity) : self
+	public function setContentQuantity(float $content_quantity) : self
 	{
 		$this->content_quantity = $content_quantity;
 		return $this;
 	}
 
-	public function getOrderQuantity():  ?string
+	public function getOrderQuantity():  ?float
 	{
 		return $this->order_quantity;
 	}
 
-	public function setOrderQuantity(string $order_quantity) : self
+	public function setOrderQuantity(float $order_quantity) : self
 	{
 		$this->order_quantity = $order_quantity;
 		return $this;
 	}
 
-	public function getPriceRrpQuantity():  ?string
+	public function getPriceRrpQuantity():  ?float
 	{
 		return $this->price_rrp_quantity;
 	}
 
-	public function setPriceRrpQuantity(string $price_rrp_quantity) : self
+	public function setPriceRrpQuantity(float $price_rrp_quantity) : self
 	{
 		$this->price_rrp_quantity = $price_rrp_quantity;
 		return $this;
@@ -273,34 +273,34 @@ class ProductsVariationsPrices
 		return $this;
 	}
 
-	public function getPricePremium():  ?string
+	public function getPricePremium():  ?float
 	{
 		return $this->price_premium;
 	}
 
-	public function setPricePremium(string $price_premium) : self
+	public function setPricePremium(float $price_premium) : self
 	{
 		$this->price_premium = $price_premium;
 		return $this;
 	}
 
-	public function getSpecialPriceStatus():  ?string
+	public function getSpecialPriceStatus():  ?int
 	{
 		return $this->special_price_status;
 	}
 
-	public function setSpecialPriceStatus(string $special_price_status) : self
+	public function setSpecialPriceStatus(int $special_price_status) : self
 	{
 		$this->special_price_status = $special_price_status;
 		return $this;
 	}
 
-	public function getSpecialPrice():  ?string
+	public function getSpecialPrice():  ?float
 	{
 		return $this->special_price;
 	}
 
-	public function setSpecialPrice(string $special_price) : self
+	public function setSpecialPrice(float $special_price) : self
 	{
 		$this->special_price = $special_price;
 		return $this;
@@ -350,12 +350,12 @@ class ProductsVariationsPrices
 		return $this;
 	}
 
-	public function getPledge():  ?string
+	public function getPledge():  ?float
 	{
 		return $this->pledge;
 	}
 
-	public function setPledge(string $pledge) : self
+	public function setPledge(float $pledge) : self
 	{
 		$this->pledge = $pledge;
 		return $this;

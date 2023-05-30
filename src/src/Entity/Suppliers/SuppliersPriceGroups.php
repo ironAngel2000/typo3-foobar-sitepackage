@@ -26,7 +26,7 @@ class SuppliersPriceGroups
 	private ?string $suppliers_price_groups_code = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $purchase_price = null;
+	private ?float $purchase_price = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class SuppliersPriceGroups
 		return $this;
 	}
 
-	public function getPurchasePrice():  ?string
+	public function getPurchasePrice():  ?float
 	{
 		return $this->purchase_price;
 	}
 
-	public function setPurchasePrice(string $purchase_price) : self
+	public function setPurchasePrice(float $purchase_price) : self
 	{
 		$this->purchase_price = $purchase_price;
 		return $this;

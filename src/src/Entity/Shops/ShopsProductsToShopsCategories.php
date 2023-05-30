@@ -26,13 +26,13 @@ class ShopsProductsToShopsCategories
 	private ?int $shops_categories_id = null;
 
 	#[ORM\Column]
-	private ?string $filter_passed = null;
+	private ?int $filter_passed = null;
 
 	#[ORM\Column]
-	private ?string $manual_assignment = null;
+	private ?int $manual_assignment = null;
 
 	#[ORM\Column]
-	private ?string $to_delete = null;
+	private ?int $to_delete = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $sort_order = null;
@@ -82,34 +82,34 @@ class ShopsProductsToShopsCategories
 		return $this;
 	}
 
-	public function getFilterPassed():  ?string
+	public function getFilterPassed():  ?int
 	{
 		return $this->filter_passed;
 	}
 
-	public function setFilterPassed(string $filter_passed) : self
+	public function setFilterPassed(int $filter_passed) : self
 	{
 		$this->filter_passed = $filter_passed;
 		return $this;
 	}
 
-	public function getManualAssignment():  ?string
+	public function getManualAssignment():  ?int
 	{
 		return $this->manual_assignment;
 	}
 
-	public function setManualAssignment(string $manual_assignment) : self
+	public function setManualAssignment(int $manual_assignment) : self
 	{
 		$this->manual_assignment = $manual_assignment;
 		return $this;
 	}
 
-	public function getToDelete():  ?string
+	public function getToDelete():  ?int
 	{
 		return $this->to_delete;
 	}
 
-	public function setToDelete(string $to_delete) : self
+	public function setToDelete(int $to_delete) : self
 	{
 		$this->to_delete = $to_delete;
 		return $this;

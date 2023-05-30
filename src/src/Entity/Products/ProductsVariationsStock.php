@@ -35,13 +35,13 @@ class ProductsVariationsStock
 	private ?int $minimum_stock_quantity = null;
 
 	#[ORM\Column]
-	private ?string $never_out_of_stock = null;
+	private ?int $never_out_of_stock = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $delivery_times_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $shipping_costs = null;
+	private ?float $shipping_costs = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -118,12 +118,12 @@ class ProductsVariationsStock
 		return $this;
 	}
 
-	public function getNeverOutOfStock():  ?string
+	public function getNeverOutOfStock():  ?int
 	{
 		return $this->never_out_of_stock;
 	}
 
-	public function setNeverOutOfStock(string $never_out_of_stock) : self
+	public function setNeverOutOfStock(int $never_out_of_stock) : self
 	{
 		$this->never_out_of_stock = $never_out_of_stock;
 		return $this;
@@ -140,12 +140,12 @@ class ProductsVariationsStock
 		return $this;
 	}
 
-	public function getShippingCosts():  ?string
+	public function getShippingCosts():  ?float
 	{
 		return $this->shipping_costs;
 	}
 
-	public function setShippingCosts(string $shipping_costs) : self
+	public function setShippingCosts(float $shipping_costs) : self
 	{
 		$this->shipping_costs = $shipping_costs;
 		return $this;

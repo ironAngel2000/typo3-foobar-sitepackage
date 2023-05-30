@@ -23,7 +23,7 @@ class ShopsProductsVariationsSpecialPricesHistory
 	private ?int $shops_products_variations_prices_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $special_price = null;
+	private ?float $special_price = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $special_price_start = null;
@@ -62,12 +62,12 @@ class ShopsProductsVariationsSpecialPricesHistory
 		return $this;
 	}
 
-	public function getSpecialPrice():  ?string
+	public function getSpecialPrice():  ?float
 	{
 		return $this->special_price;
 	}
 
-	public function setSpecialPrice(string $special_price) : self
+	public function setSpecialPrice(float $special_price) : self
 	{
 		$this->special_price = $special_price;
 		return $this;

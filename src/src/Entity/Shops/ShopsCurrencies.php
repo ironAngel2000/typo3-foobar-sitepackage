@@ -29,7 +29,7 @@ class ShopsCurrencies
 	private ?string $extern_shops_currencies_id = null;
 
 	#[ORM\Column]
-	private ?string $main_currency = null;
+	private ?int $main_currency = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -84,12 +84,12 @@ class ShopsCurrencies
 		return $this;
 	}
 
-	public function getMainCurrency():  ?string
+	public function getMainCurrency():  ?int
 	{
 		return $this->main_currency;
 	}
 
-	public function setMainCurrency(string $main_currency) : self
+	public function setMainCurrency(int $main_currency) : self
 	{
 		$this->main_currency = $main_currency;
 		return $this;

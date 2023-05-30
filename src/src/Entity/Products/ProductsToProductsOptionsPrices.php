@@ -23,13 +23,13 @@ class ProductsToProductsOptionsPrices
 	private ?int $products_to_products_options_id = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $price = null;
+	private ?float $price = null;
 
 	#[ORM\Column]
 	private ?int $currencies_id = null;
 
 	#[ORM\Column]
-	private ?string $is_net = null;
+	private ?int $is_net = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -62,12 +62,12 @@ class ProductsToProductsOptionsPrices
 		return $this;
 	}
 
-	public function getPrice():  ?string
+	public function getPrice():  ?float
 	{
 		return $this->price;
 	}
 
-	public function setPrice(string $price) : self
+	public function setPrice(float $price) : self
 	{
 		$this->price = $price;
 		return $this;
@@ -84,12 +84,12 @@ class ProductsToProductsOptionsPrices
 		return $this;
 	}
 
-	public function getIsNet():  ?string
+	public function getIsNet():  ?int
 	{
 		return $this->is_net;
 	}
 
-	public function setIsNet(string $is_net) : self
+	public function setIsNet(int $is_net) : self
 	{
 		$this->is_net = $is_net;
 		return $this;

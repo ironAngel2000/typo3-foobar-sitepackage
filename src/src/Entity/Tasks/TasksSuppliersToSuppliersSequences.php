@@ -23,7 +23,7 @@ class TasksSuppliersToSuppliersSequences
 	private ?int $tasks_suppliers_to_suppliers_id = null;
 
 	#[ORM\Column]
-	private ?string $sequences_weekday = null;
+	private ?int $sequences_weekday = null;
 
 	#[ORM\Column]
 	private ?string $sequences_time = null;
@@ -71,12 +71,12 @@ class TasksSuppliersToSuppliersSequences
 		return $this;
 	}
 
-	public function getSequencesWeekday():  ?string
+	public function getSequencesWeekday():  ?int
 	{
 		return $this->sequences_weekday;
 	}
 
-	public function setSequencesWeekday(string $sequences_weekday) : self
+	public function setSequencesWeekday(int $sequences_weekday) : self
 	{
 		$this->sequences_weekday = $sequences_weekday;
 		return $this;

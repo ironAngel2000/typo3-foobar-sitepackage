@@ -23,7 +23,7 @@ class ErpSystemsMatchingOrdersLinesTaxRate
 	private ?int $erp_systems_id = null;
 
 	#[ORM\Column]
-	private ?string $tax_rate = null;
+	private ?float $tax_rate = null;
 
 	 #[ORM\Column(length: 32)]
 	private ?string $erp_tax_rate_code = null;
@@ -59,12 +59,12 @@ class ErpSystemsMatchingOrdersLinesTaxRate
 		return $this;
 	}
 
-	public function getTaxRate():  ?string
+	public function getTaxRate():  ?float
 	{
 		return $this->tax_rate;
 	}
 
-	public function setTaxRate(string $tax_rate) : self
+	public function setTaxRate(float $tax_rate) : self
 	{
 		$this->tax_rate = $tax_rate;
 		return $this;

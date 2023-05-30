@@ -29,7 +29,7 @@ class ProductsClassification
 	private ?int $products_classification_delivery_times_types_id = null;
 
 	#[ORM\Column]
-	private ?string $sort_order = null;
+	private ?int $sort_order = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -84,12 +84,12 @@ class ProductsClassification
 		return $this;
 	}
 
-	public function getSortOrder():  ?string
+	public function getSortOrder():  ?int
 	{
 		return $this->sort_order;
 	}
 
-	public function setSortOrder(string $sort_order) : self
+	public function setSortOrder(int $sort_order) : self
 	{
 		$this->sort_order = $sort_order;
 		return $this;

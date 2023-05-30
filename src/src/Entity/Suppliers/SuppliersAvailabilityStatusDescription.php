@@ -20,7 +20,7 @@ class SuppliersAvailabilityStatusDescription
 	private ?int $suppliers_availability_status_description_id = null;
 
 	#[ORM\Column]
-	private ?string $suppliers_availability_status_id = null;
+	private ?int $suppliers_availability_status_id = null;
 
 	#[ORM\Column]
 	private ?int $languages_id = null;
@@ -48,12 +48,12 @@ class SuppliersAvailabilityStatusDescription
 		return $this;
 	}
 
-	public function getSuppliersAvailabilityStatusId():  ?string
+	public function getSuppliersAvailabilityStatusId():  ?int
 	{
 		return $this->suppliers_availability_status_id;
 	}
 
-	public function setSuppliersAvailabilityStatusId(string $suppliers_availability_status_id) : self
+	public function setSuppliersAvailabilityStatusId(int $suppliers_availability_status_id) : self
 	{
 		$this->suppliers_availability_status_id = $suppliers_availability_status_id;
 		return $this;

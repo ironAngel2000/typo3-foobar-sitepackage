@@ -26,7 +26,7 @@ class ProductsToProductsOptions
 	private ?int $products_options_values_id = null;
 
 	#[ORM\Column]
-	private ?string $default = null;
+	private ?int $default = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -70,12 +70,12 @@ class ProductsToProductsOptions
 		return $this;
 	}
 
-	public function getDefault():  ?string
+	public function getDefault():  ?int
 	{
 		return $this->default;
 	}
 
-	public function setDefault(string $default) : self
+	public function setDefault(int $default) : self
 	{
 		$this->default = $default;
 		return $this;

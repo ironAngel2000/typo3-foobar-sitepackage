@@ -26,7 +26,7 @@ class SuppliersOrdersToSuppliersAdviceMethods
 	private ?int $suppliers_advice_methods_id = null;
 
 	#[ORM\Column]
-	private ?string $send_status = null;
+	private ?int $send_status = null;
 
 	#[ORM\Column(length: 255, nullable: true)]
 	private ?string $send_status_message = null;
@@ -73,12 +73,12 @@ class SuppliersOrdersToSuppliersAdviceMethods
 		return $this;
 	}
 
-	public function getSendStatus():  ?string
+	public function getSendStatus():  ?int
 	{
 		return $this->send_status;
 	}
 
-	public function setSendStatus(string $send_status) : self
+	public function setSendStatus(int $send_status) : self
 	{
 		$this->send_status = $send_status;
 		return $this;

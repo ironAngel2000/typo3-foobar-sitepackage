@@ -23,10 +23,10 @@ class ProductsToProductsArrangements
 	private ?string $products_to_products_arrangements_code = null;
 
 	#[ORM\Column]
-	private ?string $multi_assign = null;
+	private ?int $multi_assign = null;
 
 	#[ORM\Column]
-	private ?string $multi_quantity = null;
+	private ?int $multi_quantity = null;
 
 	#[ORM\Column]
 	private ?int $sort_order = null;
@@ -62,23 +62,23 @@ class ProductsToProductsArrangements
 		return $this;
 	}
 
-	public function getMultiAssign():  ?string
+	public function getMultiAssign():  ?int
 	{
 		return $this->multi_assign;
 	}
 
-	public function setMultiAssign(string $multi_assign) : self
+	public function setMultiAssign(int $multi_assign) : self
 	{
 		$this->multi_assign = $multi_assign;
 		return $this;
 	}
 
-	public function getMultiQuantity():  ?string
+	public function getMultiQuantity():  ?int
 	{
 		return $this->multi_quantity;
 	}
 
-	public function setMultiQuantity(string $multi_quantity) : self
+	public function setMultiQuantity(int $multi_quantity) : self
 	{
 		$this->multi_quantity = $multi_quantity;
 		return $this;

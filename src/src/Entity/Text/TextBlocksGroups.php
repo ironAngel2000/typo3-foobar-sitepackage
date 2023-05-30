@@ -23,7 +23,7 @@ class TextBlocksGroups
 	private ?string $text_blocks_groups_code = null;
 
 	#[ORM\Column]
-	private ?string $text_blocks_updated = null;
+	private ?int $text_blocks_updated = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -56,12 +56,12 @@ class TextBlocksGroups
 		return $this;
 	}
 
-	public function getTextBlocksUpdated():  ?string
+	public function getTextBlocksUpdated():  ?int
 	{
 		return $this->text_blocks_updated;
 	}
 
-	public function setTextBlocksUpdated(string $text_blocks_updated) : self
+	public function setTextBlocksUpdated(int $text_blocks_updated) : self
 	{
 		$this->text_blocks_updated = $text_blocks_updated;
 		return $this;

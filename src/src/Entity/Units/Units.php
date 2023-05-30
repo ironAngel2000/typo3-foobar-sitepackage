@@ -23,7 +23,7 @@ class Units
 	private ?int $base_units_id = null;
 
 	#[ORM\Column]
-	private ?string $base_units_factor = null;
+	private ?float $base_units_factor = null;
 
 	 #[ORM\Column(length: 255)]
 	private ?string $measure = null;
@@ -65,12 +65,12 @@ class Units
 		return $this;
 	}
 
-	public function getBaseUnitsFactor():  ?string
+	public function getBaseUnitsFactor():  ?float
 	{
 		return $this->base_units_factor;
 	}
 
-	public function setBaseUnitsFactor(string $base_units_factor) : self
+	public function setBaseUnitsFactor(float $base_units_factor) : self
 	{
 		$this->base_units_factor = $base_units_factor;
 		return $this;

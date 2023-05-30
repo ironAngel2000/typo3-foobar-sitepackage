@@ -26,19 +26,19 @@ class Vouchers
 	private ?int $coupons_id = null;
 
 	#[ORM\Column]
-	private ?string $vouchers_amount = null;
+	private ?float $vouchers_amount = null;
 
 	#[ORM\Column(nullable: true)]
 	private ?int $redeemed_in_orders_id = null;
 
 	#[ORM\Column]
-	private ?string $redeemed_amount = null;
+	private ?float $redeemed_amount = null;
 
 	#[ORM\Column]
-	private ?string $calculated_amount = null;
+	private ?float $calculated_amount = null;
 
 	#[ORM\Column]
-	private ?string $is_sent = null;
+	private ?int $is_sent = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -82,12 +82,12 @@ class Vouchers
 		return $this;
 	}
 
-	public function getVouchersAmount():  ?string
+	public function getVouchersAmount():  ?float
 	{
 		return $this->vouchers_amount;
 	}
 
-	public function setVouchersAmount(string $vouchers_amount) : self
+	public function setVouchersAmount(float $vouchers_amount) : self
 	{
 		$this->vouchers_amount = $vouchers_amount;
 		return $this;
@@ -104,34 +104,34 @@ class Vouchers
 		return $this;
 	}
 
-	public function getRedeemedAmount():  ?string
+	public function getRedeemedAmount():  ?float
 	{
 		return $this->redeemed_amount;
 	}
 
-	public function setRedeemedAmount(string $redeemed_amount) : self
+	public function setRedeemedAmount(float $redeemed_amount) : self
 	{
 		$this->redeemed_amount = $redeemed_amount;
 		return $this;
 	}
 
-	public function getCalculatedAmount():  ?string
+	public function getCalculatedAmount():  ?float
 	{
 		return $this->calculated_amount;
 	}
 
-	public function setCalculatedAmount(string $calculated_amount) : self
+	public function setCalculatedAmount(float $calculated_amount) : self
 	{
 		$this->calculated_amount = $calculated_amount;
 		return $this;
 	}
 
-	public function getIsSent():  ?string
+	public function getIsSent():  ?int
 	{
 		return $this->is_sent;
 	}
 
-	public function setIsSent(string $is_sent) : self
+	public function setIsSent(int $is_sent) : self
 	{
 		$this->is_sent = $is_sent;
 		return $this;

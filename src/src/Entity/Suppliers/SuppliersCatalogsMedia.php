@@ -32,13 +32,13 @@ class SuppliersCatalogsMedia
 	private ?string $source_uri = null;
 
 	#[ORM\Column(nullable: true)]
-	private ?string $status = null;
+	private ?int $status = null;
 
 	#[ORM\Column]
 	private ?int $sort_order = null;
 
 	#[ORM\Column]
-	private ?string $main_media = null;
+	private ?int $main_media = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $date_insert = null;
@@ -104,12 +104,12 @@ class SuppliersCatalogsMedia
 		return $this;
 	}
 
-	public function getStatus():  ?string
+	public function getStatus():  ?int
 	{
 		return $this->status;
 	}
 
-	public function setStatus(string $status) : self
+	public function setStatus(int $status) : self
 	{
 		$this->status = $status;
 		return $this;
@@ -126,12 +126,12 @@ class SuppliersCatalogsMedia
 		return $this;
 	}
 
-	public function getMainMedia():  ?string
+	public function getMainMedia():  ?int
 	{
 		return $this->main_media;
 	}
 
-	public function setMainMedia(string $main_media) : self
+	public function setMainMedia(int $main_media) : self
 	{
 		$this->main_media = $main_media;
 		return $this;

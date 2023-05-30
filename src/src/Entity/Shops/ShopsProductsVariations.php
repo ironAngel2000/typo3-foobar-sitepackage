@@ -38,13 +38,13 @@ class ShopsProductsVariations
 	private ?string $extern_sku = null;
 
 	#[ORM\Column]
-	private ?string $products_variations_status = null;
+	private ?int $products_variations_status = null;
 
 	#[ORM\Column]
-	private ?string $has_errors = null;
+	private ?int $has_errors = null;
 
 	#[ORM\Column]
-	private ?string $to_delete = null;
+	private ?int $to_delete = null;
 
 	#[ORM\Column(type: Types::DATETIME_MUTABLE)]
 	private ?\DateTimeInterface $initial_shop_date = null;
@@ -138,34 +138,34 @@ class ShopsProductsVariations
 		return $this;
 	}
 
-	public function getProductsVariationsStatus():  ?string
+	public function getProductsVariationsStatus():  ?int
 	{
 		return $this->products_variations_status;
 	}
 
-	public function setProductsVariationsStatus(string $products_variations_status) : self
+	public function setProductsVariationsStatus(int $products_variations_status) : self
 	{
 		$this->products_variations_status = $products_variations_status;
 		return $this;
 	}
 
-	public function getHasErrors():  ?string
+	public function getHasErrors():  ?int
 	{
 		return $this->has_errors;
 	}
 
-	public function setHasErrors(string $has_errors) : self
+	public function setHasErrors(int $has_errors) : self
 	{
 		$this->has_errors = $has_errors;
 		return $this;
 	}
 
-	public function getToDelete():  ?string
+	public function getToDelete():  ?int
 	{
 		return $this->to_delete;
 	}
 
-	public function setToDelete(string $to_delete) : self
+	public function setToDelete(int $to_delete) : self
 	{
 		$this->to_delete = $to_delete;
 		return $this;
