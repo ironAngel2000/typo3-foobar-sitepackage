@@ -1,0 +1,16 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          finishersDefinition:
+            Formstatistik:
+              FormEngine:
+                label: "When is this label used? And for what?"
+                elements:
+                  # hier nochmal alle Felder
+                  # ich habe keine Ahnung wofür diese sind aber ohne geht es nicht
+                  # spontan würde ich behaupten das es tca configuration ist
+                  # aber ich definiere keine Datenbank Felder ~ vielleicht ist das aber eine Option
+                  apiKey: {label: apiKey, config: {type: input}}
+                  logUrl:  {label: logUrl , config: {type: input}}

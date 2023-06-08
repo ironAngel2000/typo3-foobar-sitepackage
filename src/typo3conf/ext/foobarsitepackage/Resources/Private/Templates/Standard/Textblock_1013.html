@@ -1,0 +1,27 @@
+{namespace fb=FooBar\foobarSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Elements" />
+
+<f:section name="main"><f:spaceless>
+	<f:variable name="aktLink" value="t3://page?uid={data.pid}"/>
+
+	<f:variable name="chldClass" value="col-12 col-sm-6 col-lg-3 mb-6" />
+
+	<div class="{chldClass}">
+		<div class="entry">
+			<div class="img"><f:link.typolink parameter="{aktLink}"><f:if condition="{main.inhaltbild.0}">
+				<f:render partial="imageOutput" arguments="{file:main.inhaltbild.0, variants:main.inhaltbild.variants, class:'lozad'}" ></f:render>
+			</f:if></f:link.typolink></div>
+			<div class="txt">
+				<span class="inh">
+					<f:render partial="Headline" arguments="{headline:main.header1, subheader:'', type:0, class:'subline'}" />
+					<f:format.html>{main.introtext }</f:format.html>
+				</span>
+			</div>
+		</div>
+	</div>
+
+
+
+</f:spaceless></f:section>
+</html>

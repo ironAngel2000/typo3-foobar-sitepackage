@@ -1,0 +1,24 @@
+##################################################
+### CONTENT ELEMENT SETTINGS                   ###
+### Shared settings for TYPO3 content elements ###
+##################################################
+lib.contentElement >
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+    templateName = Default
+    templateRootPaths {
+        0 = EXT:foobarsitepackage/Resources/Private/Templates/
+        10 = {$plugin.foobarsitepackage.view.templateRootPath}
+    }
+    partialRootPaths {
+        0 = EXT:foobarsitepackage/Resources/Private/Partials/
+        10 = {$plugin.foobarsitepackage_contentelements.view.partialRootPath}
+    }
+    layoutRootPaths {
+        0 = EXT:foobarsitepackage/Resources/Private/Layouts/
+        10 = {$plugin.foobarsitepackage_contentelements.view.layoutRootPath}
+    }
+
+}
+
+

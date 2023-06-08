@@ -1,0 +1,42 @@
+{namespace fb=FooBar\foobarSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Elements" />
+
+<f:section name="main">
+  <section class="textblock main_3" id="c{main.uid}">
+    <div class="textblockContent container">
+      <div class="row">
+        <f:for each="{sub}" as="record" key="itemkey" reverse="false" iteration="iterator">
+          <div class="col-12 col-md-4 entry">
+            <div class="entryCont h-100">
+              <f:link.typolink parameter="{record.linkButton}" class="h-100">
+                <f:render partial="Headline"
+                  arguments="{headline:record.header1, subheader:'', type:record.optHeadline, class:'subline text-center'}" />
+                <f:if condition="{record.bildgalerie.0}">
+                  <div class="img">
+                    <f:render partial="imageOutput"
+                      arguments="{file:record.bildgalerie.0, variants:record.bildgalerie.variants, class:''}">
+                    </f:render>
+                  </div>
+                </f:if>
+                <div class="txt text-center">
+                  <f:format.html>{record.introtext}</f:format.html>
+                </div>
+              </f:link.typolink>
+            </div>
+          </div>
+        </f:for>
+      </div>
+      <f:if condition="{main.linkButton}">
+        <div class="row more">
+          <div class="col-12 text-center">
+              <f:link.typolink parameter="{main.linkButton}" class="button">{main.textButton}</f:link.typolink>
+          </div>
+        </div>
+      </f:if>
+    </div>
+  </section>
+</f:section>
+
+</html>

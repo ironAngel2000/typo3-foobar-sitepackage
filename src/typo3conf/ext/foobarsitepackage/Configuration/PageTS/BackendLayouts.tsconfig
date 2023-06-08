@@ -1,0 +1,4 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:foobarsitepackage/Configuration/PageTS/Mod/mod.SHARED.tsconfig" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:foobarsitepackage/Configuration/PageTS/Pages/default.tsconfig" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:foobarsitepackage/Configuration/PageTS/Pages/simple.tsconfig" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:foobarsitepackage/Configuration/PageTS/Pages/news.tsconfig" extensions="typoscript">

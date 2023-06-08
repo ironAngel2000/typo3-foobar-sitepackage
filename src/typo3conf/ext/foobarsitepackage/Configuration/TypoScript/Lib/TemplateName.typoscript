@@ -1,0 +1,10 @@
+lib.templateName = TEXT
+lib.templateName{
+	stdWrap{
+		data = pagelayout
+		split{
+			token = pagets__
+			1.curent = 1
+		}
+	}
+}

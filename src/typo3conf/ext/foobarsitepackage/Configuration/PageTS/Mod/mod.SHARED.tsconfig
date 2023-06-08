@@ -1,0 +1,19 @@
+mod.SHARED {
+	defaultLanguageFlag = de
+	defaultLanguageLabel = deutsch
+	defLangBinding = 1
+}
+
+mod.web_list {
+	listOnlyInSingleTableView = 1
+}
+
+mod.web_list.table.tt_content.hideTable = 1
+mod.web_list.table.tx_foobarsitepackage_inhblockitem.hideTable = 1
+
+mod {
+	web_layout {
+		localization.enableCopy = 0
+		localization.enableTranslate = 1
+	}
+}

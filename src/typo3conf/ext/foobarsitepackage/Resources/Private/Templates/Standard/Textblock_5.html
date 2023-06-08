@@ -1,0 +1,40 @@
+{namespace fb=FooBar\foobarSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Elements" />
+
+<f:section name="main">
+    <section class="textblock main_5" id="c{main.uid}">
+        <div class="textblockContent container">
+            <div class="row no-gutters">
+                <f:for each="{main.bild}" as="fileObj"  key="itemkey" iteration="i">
+                    <f:if condition="{main.bild.url.{itemkey}}">
+                        <f:switch expression="{main.bild.crop.{itemkey}.default.selectedRatio}">
+                            <f:case value="crop2">
+                                <f:variable name="colClass" value="col-12 col-sm-6 col-md-5-3ths" />
+                            </f:case>
+                            <f:case value="crop3">
+                                <f:variable name="colClass" value="col-12 col-sm-6 col-md-5ths" />
+                            </f:case>
+                            <f:defaultCase>
+                                <f:variable name="colClass" value="col-12 col-sm-6 col-md-5-2ths" />
+                            </f:defaultCase>
+                        </f:switch>   
+                        <f:variable name="variants" value="{main.bild.variants}" />
+                        <f:variable name="bgSrc" value="" />
+                        <f:for each="{variants}" as="variant" key="varKey" reverse="false" iteration="iterator">
+                            <f:variable name="bgSrc"
+                                value="{bgSrc} {variant.breakpoint}:{f:uri.image(image:fileObj,width:variant.renderwidth,cropVariant:varKey)};" />
+                        </f:for>
+                        <div class="entry {colClass} background-data" background-data="{bgSrc}">
+                            <a class="imgZoom" href="javascript:;" data-src="{main.bild.url.{itemkey}}"></a>
+                        </div>                     
+                    </f:if>
+                </f:for>
+            </div>
+        </div>
+    </section>
+
+</f:section>
+
+</html>

@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:variable name="fileObj" value="{file.{fileNr}}" />
+<f:variable name="variants" value="{file.variants}" />
+<f:variable name="type" value="{file.type.{fileNr}}" />
+<f:variable name="url" value="{file.url.{fileNr}}" />
+
+<f:variable name="vdoMod" value="loop muted autoplay" />
+<f:if condition="{stopautoplay}">
+	<f:variable name="vdoMod" value="loop muted" />
+</f:if>
+
+<f:if condition="{vimeoId}">
+	<f:then>
+		<div class="{class}">
+			<div class="hgVdo vimeo-lazy" data-vimeo="{vimeoId}" data-vdomod="background autoplay"></div>
+		</div>
+	</f:then>
+	<f:else>
+		<f:switch expression="{type}">
+			<f:case value="video/vimeo">
+				<div class="{class}">
+					<div class="hgVdo vimeo-lazy" data-vimeo="{url}" data-vdomod="background autoplay"></div>
+				</div>
+			</f:case>
+			<f:case value="video/mp4">
+				<div class="{class}">
+					<div class="hgVdo vdo-lazy" data-vdo="{url}" data-vdomod="{vdoMod}"></div>
+				</div>
+			</f:case>
+			<f:defaultCase>
+				<f:variable name="bgSrc" value="" />
+				<f:if condition="{fileObj}">
+					<f:then>
+						<f:if condition="{useLazy}">
+							<f:variable name="class" value="{class} background-lazy" />
+						</f:if>
+						<f:for each="{variants}" as="variant" key="varKey" reverse="false" iteration="iterator">
+							<f:variable  name="bgSrc" value="{bgSrc} {variant.breakpoint}:{f:uri.image(image:fileObj,width:variant.renderwidth,cropVariant:varKey)};" />
+						</f:for>
+						<div class="{class} background-data" background-data="{bgSrc}"></div>
+					</f:then>
+					<f:else>
+						<div class="{class}"></div>
+					</f:else>
+				</f:if>
+
+			</f:defaultCase>
+		</f:switch>
+	</f:else>
+</f:if>
+
+
+
+</html>

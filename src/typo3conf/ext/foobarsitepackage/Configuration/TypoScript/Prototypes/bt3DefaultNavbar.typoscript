@@ -1,0 +1,10 @@
+prototype.bt3DefaultNavbar = HMENU
+prototype.bt3DefaultNavbar{
+
+	1 = TMENU
+
+	1{
+
+	}
+
+}

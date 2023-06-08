@@ -1,0 +1,12 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/foobarsitepackage/Configuration/TypoScript/Config.typoscript">
+
+<INCLUDE_TYPOSCRIPT: source="DIR:typo3conf/ext/foobarsitepackage/Configuration/TypoScript/Lib/" extensions="typoscript">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:foobarsitepackage/Configuration/TypoScript/Elements/ContentElement.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:foobarsitepackage/Configuration/TypoScript/Elements/DynamicContent.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:foobarsitepackage/Configuration/TypoScript/Elements/FormFramework.typoscript">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/foobarsitepackage/Configuration/TypoScript/Page.typoscript">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:foobarsitepackage/Configuration/TypoScript/Formfinisher/Formstatistik.typoscript">
+

@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{headline} || {subheader}">
+	<f:switch expression="{type}">
+		<f:case value="1">
+			<f:variable name="hType" value="2" />
+		</f:case>
+		<f:case value="2">
+			<f:variable name="hType" value="3" />
+		</f:case>
+		<f:case value="3">
+			<f:variable name="hType" value="4" />
+		</f:case>
+		<f:defaultCase>
+			<f:variable name="hType" value="1" />
+		</f:defaultCase>
+	</f:switch>
+
+	<f:variable name="headCls" value="headline" />
+	<f:if condition="{class}">
+		<f:variable name="headCls" value="{class}" />
+	</f:if>
+
+	<h{hType} class="{headCls}">
+	<f:if condition="{headline}">
+		<f:format.raw>{headline}</f:format.raw>
+	</f:if>
+	</h{hType}>
+
+</f:if>
+</html>

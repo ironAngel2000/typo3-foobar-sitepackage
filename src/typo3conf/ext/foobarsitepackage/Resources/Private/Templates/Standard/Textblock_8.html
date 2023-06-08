@@ -1,0 +1,29 @@
+{namespace fb=FooBar\foobarSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Elements" />
+
+<f:section name="main">
+    <section class="textblock main_8" id="c{main.uid}">
+		<div class="container formularContainer">
+            <div class="row justify-content-center">
+                 <div class="col-12 col-sm-8 col-md-6 txt txtbefore">
+                    <f:render partial="Headline" arguments="{headline:main.header1, subheader:main.header2, type:main.optHeadline, class:'headline', size:main.optHeadlineSize, align:main.optHeadlineAlign}" />
+                    <f:format.html>{main.introtext}</f:format.html>
+                </div>
+
+				<div class="col-12 col-sm-8 col-md-6">
+					<f:if condition="{main.refform.data.CType} == 'form_formframework'">
+						<f:then>
+							<div class="formOverlay formularContainer">
+								<f:cObject typoscriptObjectPath="tt_content.{main.refform.data.CType}.20" data="{main.refform.data}" table="tt_content" />
+							</div>
+						</f:then>
+					</f:if>
+				</div>
+			</div>
+		</div>
+    </section>
+</f:section>
+
+</html>

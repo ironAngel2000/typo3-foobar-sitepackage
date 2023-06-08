@@ -1,0 +1,20 @@
+{
+	"name": "foobar/sitepackage",
+	"type": "typo3-cms-extension",
+	"description": "local sitepackage",
+	"license": ["GPL-2.0-or-later"],
+	"autoload": {
+		"psr-4": {
+			"FooBar\\foobarSitePackage\\": "Classes/"
+		}
+	},
+    "version": "3.0.1",
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "foobarsitepackage"
+        }
+    },
+	"require": {
+		"typo3/cms-core": "^11.5"
+	}	
+}

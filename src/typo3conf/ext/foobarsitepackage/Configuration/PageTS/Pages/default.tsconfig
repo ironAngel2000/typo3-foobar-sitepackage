@@ -1,0 +1,64 @@
+#BackendLayouts
+mod.web_layout.BackendLayouts.Default {
+	title = Startseite
+	config {
+		backend_layout {
+			colCount = 12
+			rowCount = 3
+			rows {
+				1{
+					columns {
+						1 {
+							name = Metanavigation
+							colPos = 12
+							colspan = 6
+						}
+					}
+				}
+				2 {
+					columns {
+						1 {
+							name = Inhaltcontainer
+							colPos = 1
+							colspan = 12
+						}
+					}
+				}
+				3 {
+					columns {
+						1 {
+							name = Footer Text
+							colPos = 10
+							colspan = 4
+						}
+						2 {
+							name = Footernavigation
+							colPos = 11
+							colspan = 4
+						}
+						3 {
+							name = SocialMedia
+							colPos = 13
+							colspan = 4
+						}
+					}
+				}
+				4{
+					columns{
+						1{
+							name = Hidden
+							colPos = 999
+							colspan = 0
+						}
+					}
+				}
+			}
+		}
+
+	}
+	icon = EXT:foobarsitepackage/Resources/Public/Icons/BackendLayouts/default.gif
+}
+
+
+
+

@@ -1,0 +1,12 @@
+# frontend configuration
+plugin.tx_form.settings.yamlConfigurations {
+	1499086547 = EXT:foobarsitepackage/Configuration/Formfinisher/BaseSetup.yaml
+	1499088215 = EXT:foobarsitepackage/Configuration/Formfinisher/FormEngineSetup.yaml
+}
+# backend configuration
+module.tx_form.settings.yamlConfigurations {
+	1499086547 = EXT:foobarsitepackage/Configuration/Formfinisher/BaseSetup.yaml
+	1499086867 = EXT:foobarsitepackage/Configuration/Formfinisher/FormEditorSetup.yaml
+	1499088215 = EXT:foobarsitepackage/Configuration/Formfinisher/FormEngineSetup.yaml
+}
+

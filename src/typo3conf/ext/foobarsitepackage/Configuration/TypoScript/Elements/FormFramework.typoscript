@@ -1,0 +1,15 @@
+tt_content {
+
+	form_formframework = < lib.contentElement
+	form_formframework{
+		20 = USER
+		20{
+			userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+			extensionName = Form
+			pluginName = Formframework
+			vendorName = TYPO3\CMS
+		}
+		templateName = FormGeneric
+	}
+
+}

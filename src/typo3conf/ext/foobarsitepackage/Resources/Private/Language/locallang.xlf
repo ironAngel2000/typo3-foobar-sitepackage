@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-08-03T11:30:00Z"
+		  product-name="foobarsitepackage">
+		<header/>
+		<body>
+			<trans-unit id="lngAlle">
+				<source>All</source>
+			</trans-unit>
+			<trans-unit id="lngBewerben">
+				<source>Apply for</source>
+			</trans-unit>
+			<trans-unit id="lngKontakt">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="KMSProdukte">
+				<source>KMS Products</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

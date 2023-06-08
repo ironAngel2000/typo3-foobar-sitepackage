@@ -1,0 +1,18 @@
+{namespace kms=KMS\kmsSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Elements" />
+
+<f:section name="main">
+	<f:spaceless>
+		<f:if condition="{main.link}">
+			<f:then>
+				<div class="col-auto social pr-0 pl-0">
+					<f:link.typolink parameter="{main.link}" target="_blank"  class="">
+						<i class="mdi mdi-{main.icon}"></i>
+					</f:link.typolink>
+				</div>
+			</f:then>
+		</f:if>
+	</f:spaceless>
+</f:section>
+</html>

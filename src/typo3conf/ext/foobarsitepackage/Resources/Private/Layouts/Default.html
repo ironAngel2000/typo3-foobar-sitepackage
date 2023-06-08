@@ -1,0 +1,22 @@
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <f:spaceless>
+    <div id="inaktiv"></div>
+    <div id="imgPopup"><div class="inh"></div></div>
+    <div class="bodyWrapper">
+      <a id="top"></a>
+      <f:render
+        partial="mainmenu"
+        arguments="{mainnavigation:mainnavigation, languagenavigation:languagenavigation, data:data, rootId:settings.rootId, template:settings.template}"
+      ></f:render>
+      <div class="contentWrapper">
+        <div class="textblockWrapper">
+          <f:render section="main" />
+        </div>
+        <f:render partial="footer" arguments="{rootId:settings.rootId}"></f:render>
+      </div>
+    </div>
+  </f:spaceless>
+</html>

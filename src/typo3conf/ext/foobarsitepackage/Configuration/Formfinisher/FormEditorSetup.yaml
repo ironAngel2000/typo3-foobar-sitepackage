@@ -1,0 +1,57 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              formEditor:
+                editors:
+                  900:
+                    # Diese Definition erweitert das Dropdown der Finisher im menü
+                    selectOptions:
+                      35:
+                        value: 'Formstatistik'
+                        label: 'Formular Auswertung'
+                propertyCollections:
+                  finishers:
+                    # Hier wird definiert, welche Felder der Finisher später haben soll
+                    25:
+                      identifier: 'Formstatistik'
+                      editors:
+                        __inheritances:
+                          10: 'TYPO3.CMS.Form.mixins.formElementMixins.BaseCollectionEditorsMixin'
+                        100:
+                          label: "Formular Auswertung"
+                        # Das ist die Definition für die darstellung von apiKey im Backend
+                        110:
+                          identifier: 'apiKey'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'apiKey'
+                          propertyPath: 'options.apiKey'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        # Und das hier ist die definition für das email feld.
+                        # Es hat die Besonderheit, dass ein Feld aus dem Formular ausgewählt werden kann
+                        # Es wird dann sowas wie {input-1} gespeichert.
+                        # ->parseOption('email') im Finisher löst die Referenz dann auf
+                        # und gibt den Wert von input-1 zurück.
+                        140:
+                          identifier: 'logUrl'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Url Datenerfassung'
+                          propertyPath: 'options.logUrl'
+                          propertyValidators:
+                            10: 'NotEmpty'
+
+          # Hier ist definiert welche optionen das javascript im backend beim hinzufügen lädt.
+          # Am besten sollten es die selben sein wie in finisher.
+          finishersDefinition:
+            CleverreachSubscribe:
+              formEditor:
+                iconIdentifier: 't3-form-icon-finisher'
+                label: 'A Label that seems to be never used...'
+                predefinedDefaults:
+                  options:
+                    apiKey: ''
+                    logUrl: ''

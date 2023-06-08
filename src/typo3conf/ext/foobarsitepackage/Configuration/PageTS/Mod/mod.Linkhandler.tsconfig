@@ -1,0 +1,15 @@
+TCEMAIN{
+    linkHandler{
+        tx_kmssitepackage_inhblockitem {
+            handler = KMS\kmsSitePackage\LinkHandler\KMSLinkHandler
+            label = KMS: Links für Unterelemente
+            configuration {
+                table = pages
+                storagePid = 1
+            }
+        scanAfter = page
+        displayAfter = page
+        }        
+    }
+}
+

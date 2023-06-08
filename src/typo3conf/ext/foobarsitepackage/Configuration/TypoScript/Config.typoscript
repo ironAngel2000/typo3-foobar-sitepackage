@@ -1,0 +1,14 @@
+config{
+	locale_all = de_DE.UTF-8
+	language = de
+	sys_language_uid = 0
+	linkVars = L(int)
+	contentObjectExceptionHandler = 0
+	absRefPrefix = /
+}
+
+lib.parseFunc_RTE.allowTags := removeFromList(acronym, font, u, div)
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.list := addToList(angebote)
+
+#extbase.pluginName = foobarsitepackage
+#extbase.controllerExtensionName = foobarsitepackage

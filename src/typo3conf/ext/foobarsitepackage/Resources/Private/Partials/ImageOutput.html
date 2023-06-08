@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<picture>
+	<!--[if IE 9]><video style="display: none;"><![endif]-->
+	<f:for each="{variants}" as="variant" key="varKey" reverse="false" iteration="iterator">
+		<source srcset="{f:uri.image(image:file,width:variant.renderwidth,cropVariant:varKey)}" media="(min-width:{variant.breakpoint}px)" />
+	</f:for>
+	<!--[if IE 9]></video><![endif]-->
+	<img class="{class}" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" srcset="{f:uri.image(image:file,width:'variants.default.renderwidth',cropVariant:'default')}" alt="{file.alternative}" title="{file.title}" />
+</picture>
+</html>

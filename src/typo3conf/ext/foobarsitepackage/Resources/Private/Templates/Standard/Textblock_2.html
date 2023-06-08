@@ -1,0 +1,98 @@
+{namespace fb=FooBar\foobarSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Elements" />
+
+<f:section name="main">
+    <f:variable name="secClass" value="" />
+    <f:variable name="maskSet" value="" />
+    <f:variable name="textSet" value="" />
+
+    <f:if condition="{main.header2} || {main.header1} || {main.introtext}">
+        <f:variable name="secClass" value="{secClass} text" />
+        <f:variable name="textSet" value="1" />
+
+        <f:if condition="{main.optTextmask}">
+            <f:variable name="secClass" value="{secClass} mask" />
+            <f:variable name="maskSet" value="1" />
+        </f:if>
+    </f:if>
+
+    <f:variable name="bgSrc" value="" />
+    <f:variable name="setParallax" value="" />
+    <f:if condition="{main.hintergrundbild.0}">
+        <f:for each="{main.hintergrundbild.variants}" as="variant" key="varKey" reverse="false" iteration="iterator">
+            <f:variable name="bgSrc"
+                value="{bgSrc} {variant.breakpoint}:{f:uri.image(image:main.hintergrundbild.0,width:variant.renderwidth,cropVariant:varKey)};" />
+        </f:for>
+
+
+        <f:switch expression="{main.bildHGOption}">
+            <f:case value="1">
+                <f:variable name="secClass" value="{secClass} fixed" />
+                <f:variable name="secClass" value="{secClass} bild background-data" />
+            </f:case>
+            <f:case value="2">
+                <f:variable name="secClass" value="{secClass} bild parallax " />
+                <f:variable name="setParallax" value="{bgSrc}" />
+                <f:variable name="bgSrc" value="" />
+            </f:case>
+            <f:defaultCase>
+                <f:variable name="secClass" value="{secClass} bild background-data" />
+            </f:defaultCase>
+        </f:switch>
+
+    </f:if>
+
+    <f:variable name="rowJustify" value="justify-content-center" />
+    <f:variable name="textJustify" value="text-center" />
+    <f:variable name="textColCls" value="col-12 col-sm-8" />
+
+    <f:if condition="{main.textausrichtung} == 1">
+        <f:variable name="rowJustify" value="justify-content-start" />
+        <f:variable name="textJustify" value="text-left" />
+        <f:variable name="textColCls" value="col-12 col-sm-8 col-md-6" />
+    </f:if>
+    <f:if condition="{main.textausrichtung} == 2">
+        <f:variable name="rowJustify" value="justify-content-end" />
+        <f:variable name="textJustify" value="text-left" />
+        <f:variable name="textColCls" value="col-12 col-sm-8 col-md-6" />
+    </f:if>
+
+
+    <f:switch expression="{main.minhoehe}">
+        <f:case value="1">
+            <f:variable name="secClass" value="{secClass} mheiht-middle" />
+        </f:case>
+        <f:case value="2">
+            <f:variable name="secClass" value="{secClass} mheiht-large" />
+        </f:case>
+        <f:defaultCase></f:defaultCase>
+    </f:switch>
+    <section class="textblock main_2 {secClass}" id="c{main.uid}" background-data="{bgSrc}">
+        <f:if condition="{maskSet}">
+            <div class="txtHg"></div>
+            <div class="txtHg op2"></div>
+        </f:if>
+        <div class="textblockContent container">
+            <div class="row {rowJustify}">
+                <div class="{textColCls} {textJustify}">
+                    <f:render partial="Headline"
+                        arguments="{headline:main.header1, subheader:main.header2, type:main.optHeadline, class:'headline'}" />
+                    <f:if condition="{main.introtext}">
+                        <div class="intro">
+                            <f:format.html>{main.introtext}</f:format.html>
+                        </div>
+                    </f:if>
+                    <f:if condition="{main.inhalttext}">
+                        <div class="txt">
+                            <f:format.html>{main.inhalttext}</f:format.html>
+                        </div>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </section>
+</f:section>
+
+</html>

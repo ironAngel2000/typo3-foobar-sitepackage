@@ -1,0 +1,67 @@
+body{
+	font-family: Helvetica, Geneva, Arial, sans-serif;
+	font-size: 1rem;
+}
+
+.button{
+	display: inline-block;
+	text-align: center;
+	color: rgb(177,78,91);
+	padding-left: 3.5em;
+	padding-right: 3.5em;
+	padding-top: 0.125em;
+	padding-bottom: 0.125em;
+	-webkit-border-radius: 0em;
+	-moz-border-radius: 0em;
+	border-radius: 0em;
+	border: 1px solid rgb(177,78,91);
+	background-color: transparent;
+	margin-bottom: 0.25em;
+	margin-top: 0.25em;
+}
+
+.button.invers{
+	color: rgb(220,220,220);
+	border: 1px solid rgb(220,220,220);
+	background-color: rgba(177,78,91,0.5);
+}
+
+.keinumbruch{
+	white-space: nowrap;
+	display: inline-block;
+	border: 1px dashed red;
+	padding: 0.125em;
+}
+
+
+table {
+	width: 100%;
+	table-layout: fixed;
+}
+table td{
+	vertical-align: top;
+	text-align: left;
+}
+
+
+table.angebote {
+	width: 100% !important;
+	table-layout: fixed !important;
+}
+
+table.angebote tr:first-child td{
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 0.125em;
+	padding-bottom: 0.125em;
+	color: #ffffff;
+	background-color: rgb(177,78,91);
+	border-left: none;
+}
+
+table.angebote td{
+	 vertical-align: top !important;
+	 text-align: center !important;
+	border-left: 1px solid black;
+}
+

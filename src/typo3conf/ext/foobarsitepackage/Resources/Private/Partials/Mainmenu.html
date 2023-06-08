@@ -1,0 +1,78 @@
+{namespace fb=FooBar\foobarSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<header class="mainMenuWrapper">
+  <nav class="mainMenu" role="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-7 col-lg-4">
+          <f:variable name="hrefLink" value="t3://page?uid={rootId}" />
+          <f:link.typolink parameter="{hrefLink}">
+            <picture class="" data-ga-category="" data-ga-action="" data-ga-label="" data-sys-id="">
+              <!--[if IE 9]>
+                <video style="display: none;"><![endif]-->
+              <source media="(min-width: 20px)"
+                srcset="<f:uri.image src='EXT:foobarsitepackage/Resources/Public/images/logo_1.jpg' />, <f:uri.image src='EXT:foobarsitepackage/Resources/Public/images/logo_2.jpg' /> 2x, <f:uri.image src='EXT:foobarsitepackage/Resources/Public/images/logo_3.jpg' 3x />">
+              <!--[if IE 9]></video><![endif]-->
+              <img class="{class}" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
+                srcset="<f:uri.image src='EXT:foobarsitepackage/Resources/Public/images/logo_1.jpg' />"
+                alt="Gosheimer Freunde der Behinderten e.V." />
+            </picture>
+          </f:link.typolink>
+        </div>
+        <div class="d-none d-lg-inline-block col-md-8">
+          <div class="row justify-content-end h-100">
+            <div class="col-12 text-right align-self-start">
+              <nav role="navigation" class="metanav">
+                <ul>
+                  <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '12',pageUid: '{rootId}'}" />
+                </ul>
+              </nav>
+            </div>
+            <div class="col-12 text-right align-self-end">
+              <nav role="navigation" class="mainnav">
+                <ul>
+                  <f:<f:for each="{mainnavigation}" as="firstNav" iteration="iFirst">
+                    <li>
+                      <f:variable name="navClass" value="" />
+                      <f:if condition="{firstNav.active}">
+                        <f:variable name="navClass" value="aktiv" />
+                      </f:if>
+                      <f:variable name="hrefLink" value="t3://page?uid={firstNav.data.uid}" />
+                    <li>
+                      <f:link.typolink class="{navClass}" parameter="{hrefLink}">{firstNav.title}</f:link.typolink>
+                      <f:if condition="{firstNav.children}">
+                        <ul>
+                          <f:for each="{firstNav.children}" as="secondNav" iteration="iSecond">
+                            <li>
+                              <f:variable name="navClass" value="" />
+                              <f:if condition="{secondNav.active}">
+                                <f:variable name="navClass" value="aktiv" />
+                              </f:if>
+                              <f:variable name="hrefLink" value="t3://page?uid={secondNav.data.uid}" />
+                              <f:link.typolink class="{navClass}" parameter="{hrefLink}">{secondNav.title}
+                              </f:link.typolink>
+                            </li>
+                          </f:for>
+                        </ul>
+                      </f:if>
+                    </li>
+                    </li>
+                    </f:for>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 d-lg-none text-right">
+          <a class="mobileMenu" href="javascript:;"><button class="mnuHamb"><span></span></button></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<nav role="navigation" id="navMobile">
+	<f:format.raw><fb:MobileMenu menudata="{mainnavigation}" /></f:format.raw>
+</nav>
+
+</html>

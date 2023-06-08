@@ -1,0 +1,39 @@
+{namespace fb=FooBar\foobarSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Elements" />
+
+<f:section name="main">
+    <section class="textblock main_1" id="c{main.uid}">
+        <div class="slick-carousel">
+            <f:for each="{sub}" as="record" iteration="iterator">
+                <f:variable name="bgSrc" value="" />
+                <f:if condition="{record.bild.0}">
+                    <f:then>
+                        <f:variable name="fileObj" value="{record.bild.0}" />
+                        <f:variable name="variants" value="{record.bild.variants}" />
+                        <f:for each="{variants}" as="variant" key="varKey" reverse="false" iteration="iterator">
+                            <f:variable name="bgSrc"
+                                value="{bgSrc} {variant.breakpoint}:{f:uri.image(image:fileObj,width:variant.renderwidth,cropVariant:varKey)};" />
+                        </f:for>
+                        <div class="entry background-data" background-data="{bgSrc}">
+                            <f:if condition="{record.text_titel}">
+                                <div class="textblockContent container ">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <f:render partial="Headline"
+                                                arguments="{headline:record.text_titel, subheader:'', type:record.optHeadline, class:'headline'}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </f:if>
+                        </div>
+                    </f:then>
+                </f:if>
+            </f:for>
+        </div>
+    </section>
+
+</f:section>
+
+</html>

@@ -1,0 +1,17 @@
+{namespace fb=FooBar\foobarSitePackage\ViewHelper}
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <f:layout name="Elements" />
+
+  <f:section name="main">
+    <div>
+      <i class="mdi mdi-{main.mdiCls}"> </i>
+      <span>
+        <f:format.nl2br>{main.text}</f:format.nl2br>
+      </span>
+    </div>
+  </f:section>
+</html>

@@ -1,0 +1,87 @@
+{namespace kms=KMS\kmsSitePackage\ViewHelper}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Elements" />
+
+<f:section name="main">
+	<f:spaceless>
+		<f:variable name="secCls" value="" />
+		<f:variable name="imgPos" value="imgLeft" />
+		<f:variable name="fadeCls" value="fade-left" />
+		<f:if condition="{main.anzeigRechtsLinks}==1">
+			<f:variable name="imgPos" value="imgRight" />
+			<f:variable name="fadeCls" value="fade-right" />
+		</f:if>
+
+		<f:variable name="txtColCls" value="col-12 col-md-6" />
+		<f:variable name="imgColCls" value="col-12 col-md-6" />
+
+		<f:switch expression="{main.vollbild}">
+			<f:case value="1">
+				<f:variable name="txtColCls" value="col-12 col-md-6 col-lg-7 col-xl-8 text-wide" />
+				<f:variable name="imgColCls" value="col-12 col-md-6 col-lg-5 col-xl-4 img-small" />
+			</f:case>
+			<f:case value="2">
+				<f:variable name="txtColCls" value="col-12 col-md-6 col-lg-5 col-xl-4 text-small" />
+				<f:variable name="imgColCls" value="col-12 col-md-6 col-lg-7 col-xl-8 img-wide" />
+			</f:case>
+			<f:defaultCase></f:defaultCase>
+		</f:switch>
+
+		<f:if condition="{main.optTextmask}==1">
+			<f:variable name="secCls" value="bgGray " />
+		</f:if>
+
+		<section class="textblock main_4 {imgPos} {secCls}" id="c{main.uid}">
+			<div class="container-fluid no-gutters">
+				<div class="contWrapper">
+					<div class="row entry justify-content-between align-items-center">
+						<f:if condition="{main.bildgalerie.1}">
+							<f:then>
+								<div class="{imgColCls} contImg ">
+									<div class="imgWrapper">
+										<div class="slick-carousel h-100">
+											<f:for each="{main.bildgalerie}" as="record" key="itemkey" reverse="false"
+												iteration="iterator">
+												<f:if condition="{main.bildgalerie.url.{itemkey}}">
+													<f:render partial="backgroundImg"
+														arguments="{file:main.bildgalerie, class:'entry-carousel', fileNr:itemkey}">
+													</f:render>
+												</f:if>
+											</f:for>
+										</div>
+										<a href="javascript:;" class="move movePrev"><i
+												class="mdi mdi-chevron-left"></i></a><a href="javascript:;"
+											class="move moveNext"><i class="mdi mdi-chevron-right"></i></a>
+									</div>
+								</div>
+							</f:then>
+							<f:else>
+								<f:variable name="divCls" value="contImg {imgColCls}" />
+								<f:render partial="backgroundImg"
+									arguments="{file:main.bildgalerie, class:divCls, fileNr:0, useLazy:true}">
+								</f:render>
+							</f:else>
+						</f:if>
+						<div class="{txtColCls} contTxt ">
+							<f:if condition="{main.header1}">
+								<div data-aos="flip-up" data-aos-duration="900" data-aos-delay="200"
+									data-aos-easing="ease-in-cubic" data-aos-mirror="true">
+									<f:render partial="Headline"
+										arguments="{headline:main.header1, subheader:main.header2, type:main.optHeadline, class:'headline', size:main.optHeadlineSize, align:main.optHeadlineAlign}" />
+								</div>
+							</f:if>
+							<div class="txt" data-aos="{fadeCls}" data-aos-duration="750" data-aos-delay="350"
+								data-aos-easing="ease-in-cubic" data-aos-mirror="true">
+								<f:format.html>{main.introtext}</f:format.html>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</f:spaceless>
+</f:section>
+
+</html>

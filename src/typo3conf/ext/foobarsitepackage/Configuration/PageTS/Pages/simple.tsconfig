@@ -1,0 +1,35 @@
+#BackendLayouts
+mod.web_layout.BackendLayouts.Simple {
+	title = Inhaltseite
+	config {
+		backend_layout {
+			colCount = 12
+			rowCount = 1
+			rows {
+				1 {
+					columns {
+						1 {
+							name = Inhaltcontainer
+							colPos = 1
+							colspan = 12
+						}
+					}
+				}
+				2{
+					columns{
+						1{
+							name = Hidden
+							colPos = 999
+							colspan = 0
+						}
+					}
+				}
+			}
+		}
+	}
+	icon = EXT:foobarsitepackage/Resources/Public/Icons/BackendLayouts/simple.gif
+}
+
+
+
+
